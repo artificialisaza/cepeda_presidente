@@ -2,45 +2,33 @@
 import Layout from '../../layouts/Layout.astro';
 import AsciiPattern from '../../components/AsciiPattern.astro';
 
-const heroArtTop = [
-	'╭◜◝╮     ╭◜◝╮     ╭◜◝╮',
-	'╎╭╮╎     ╎╭╮╎     ╎╭╮╎',
-	'╎╰╯╎     ╎╰╯╎     ╎╰╯╎',
-];
-
-const heroArtBottom = [
-	'╭╲╱╮     ╭╲╱╮     ╭╲╱╮',
-	'╎∿∿╎     ╎∿∿╎     ╎∿∿╎',
-	'╰◟◞╯     ╰◟◞╯     ╰◟◞╯',
+const heroArtLines = [
+	'   /\\  /\\      /\\  /\\      /\\  /\\   ',
+	'  /  \\/  \\    /  \\/  \\    /  \\/  \\  ',
+	'  \\  /\\  /    \\  /\\  /    \\  /\\  /  ',
+	'   \\/  \\/      \\/  \\/      \\/  \\/   ',
+	'   [==+==]     [==+==]     [==+==]      ',
+	'    ~~~~~       ~~~~~       ~~~~~       ',
 ];
 
 const footerArtLines = [
-	'╭✿╮   ╭✿╮   ╭✿╮   ╭✿╮   ╭✿╮',
-	'╎╲╱╎   ╎╲╱╎   ╎╲╱╎   ╎╲╱╎   ╎╲╱╎',
-	'╎╋╳╋╎   ╎╋╳╋╎   ╎╋╳╋╎   ╎╋╳╋╎',
-	'╰◟◞╯   ╰◟◞╯   ╰◟◞╯   ╰◟◞╯   ╰◟◞╯',
+	'  /\\* /\\   /\\* /\\   /\\* /\\   /\\* /\\  ',
+	' /__V__\\  /__V__\\  /__V__\\  /__V__\\ ',
+	' \\  +  /  \\  +  /  \\  +  /  \\  +  / ',
+	'  \\/_\\/    \\/_\\/    \\/_\\/    \\/_\\/  ',
 ];
 ---
 
 <Layout title="Paz y Anticorrupción - Iván Cepeda 2026" description="El Sistema Nacional contra la Macrocorrupción y la búsqueda de la paz.">
 	<div class="max-w-3xl mx-auto px-4 py-8">
 		
-		<div class="mb-8 space-y-5">
-			<AsciiPattern
-				lines={heroArtTop}
-				colors={['text-eje-peace', 'text-sky-300', 'text-emerald-200']}
-				wrapperClass="mx-auto max-w-4xl group"
-				textClass="text-[11px] sm:text-sm md:text-base lg:text-lg"
-				blockClass="gap-2"
-			/>
-			<AsciiPattern
-				lines={heroArtBottom}
-				colors={['text-pink-300', 'text-violet-300', 'text-fuchsia-300']}
-				wrapperClass="mx-auto max-w-4xl group"
-				textClass="text-[11px] sm:text-sm md:text-base lg:text-lg"
-				blockClass="gap-2"
-			/>
-		</div>
+		<AsciiPattern
+			lines={heroArtLines}
+			colors={['text-eje-peace', 'text-sky-300', 'text-emerald-200', 'text-pink-300', 'text-violet-300', 'text-fuchsia-300']}
+			wrapperClass="mb-8 mx-auto max-w-4xl"
+			textClass="text-[11px] sm:text-sm md:text-base lg:text-lg"
+			blockClass="gap-2"
+		/>
 
 		<a href={import.meta.env.BASE_URL} class="inline-block mb-8 text-eje-peace hover:underline hover:text-white transition-colors relative">
 			← Volver al inicio <span class="absolute inline-block animate-bounce ml-2">🏃🏽‍♀️</span>
