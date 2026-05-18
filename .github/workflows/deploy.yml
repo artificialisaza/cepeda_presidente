@@ -17,13 +17,13 @@ jobs:
           node-version: '22'
 
       - name: Install dependencies
-        run: npm ci
+        run: cd website && npm install
 
       - name: Build site
-        run: npm run build
+        run: cd website && npm run build
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./website/dist
