@@ -14,12 +14,15 @@ const {
 	textClass = "text-[11px] sm:text-sm md:text-base lg:text-lg",
 	blockClass = "gap-1",
 } = Astro.props;
+
+const maxLineLength = Math.max(...lines.map((line) => line.length));
+const paddedLines = lines.map((line) => line.padEnd(maxLineLength, ' '));
 ---
 
 <div class={`font-mono whitespace-pre overflow-x-auto hide-scrollbar ${wrapperClass}`}>
-	<div class={`inline-flex flex-col items-center ${blockClass} leading-none tracking-[0.24em] ${textClass}`}>
-		{lines.map((line, index) => (
-			<span class={colors.length ? colors[index % colors.length] : undefined}>{line}</span>
+	<div class={`inline-flex flex-col items-start ${blockClass} leading-none tracking-[0.24em] ${textClass}`} style={`width: ${maxLineLength}ch; max-width: 100%;`}>
+		{paddedLines.map((line, index) => (
+			<span class={`block w-full ${colors.length ? colors[index % colors.length] : ''}`}>{line}</span>
 		))}
 	</div>
 </div>

@@ -19,7 +19,7 @@ const { myth, reality, mythEmoji = "🤔", realityEmoji = "💯" } = Astro.props
 			</div>
 			<span class="text-5xl sm:text-6xl mb-3 sm:mb-5 drop-shadow-[2px_2px_0px_rgba(255,255,255,0.35)]">{mythEmoji}</span>
 			<h4 class="font-bold text-black font-[Impact] tracking-[0.12em] text-2xl sm:text-3xl uppercase rotate-[-1deg]">Mito</h4>
-			<p class="flip-text text-black font-['Comic_Sans_MS',cursive] mt-3 sm:mt-4 leading-snug text-lg sm:text-2xl lg:text-3xl max-w-[16ch] sm:max-w-[18ch]">{myth}</p>
+			<p class="flip-text text-black font-['Comic_Sans_MS',cursive] mt-3 sm:mt-4 leading-[1.08] text-[clamp(1.05rem,2.1vw,1.7rem)] sm:text-[clamp(1.15rem,1.8vw,1.85rem)] w-full max-w-[min(100%,28ch)] mx-auto px-2 sm:px-4">{myth}</p>
 			<span class="absolute bottom-3 left-4 text-[10px] sm:text-sm font-bold text-black/75 rotate-[-4deg]">¡Pasa el mouse o toca! 👉🏽</span>
 			<span class="absolute bottom-3 right-4 text-[10px] sm:text-sm font-bold text-black/75 rotate-3">☆</span>
 		</div>
@@ -29,7 +29,7 @@ const { myth, reality, mythEmoji = "🤔", realityEmoji = "💯" } = Astro.props
 			<div class="absolute inset-x-0 top-0 h-3 bg-gradient-to-r from-emerald-300 via-white to-fuchsia-300"></div>
 			<span class="text-4xl sm:text-5xl mb-3">{realityEmoji}</span>
 			<h4 class="font-bold text-white text-xl sm:text-2xl font-serif mb-2 tracking-[0.12em] rotate-[-1deg]">LA VERDAD</h4>
-			<p class="flip-text text-white font-sans leading-snug sm:leading-relaxed text-lg sm:text-2xl lg:text-3xl my-auto max-w-[16ch] sm:max-w-[18ch]">"{reality}"</p>
+			<p class="flip-text text-white font-sans leading-[1.12] sm:leading-[1.15] text-[clamp(1rem,1.95vw,1.65rem)] sm:text-[clamp(1.1rem,1.65vw,1.9rem)] w-full max-w-[min(100%,30ch)] mx-auto px-2 sm:px-4 my-auto">"{reality}"</p>
 			<div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white/80 text-xs sm:text-sm font-bold rotate-[1deg]">
 				<span>✓</span><span>✺</span><span>✓</span><span>✿</span><span>✓</span>
 			</div>
