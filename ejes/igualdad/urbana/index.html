@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/cepeda_presidente/favicon.svg"><meta name="generator" content="Astro v6.3.3"><title>Revolución Urbana y Equidad - Iván Cepeda 2026</title><meta name="description" content="Superación de la pobreza en las ciudades y los territorios excluidos."><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/cepeda_presidente/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CAqDO0tx.js"></script><link rel="stylesheet" href="/cepeda_presidente/_astro/Layout.DYd7WAy3.css"></head> <body class="min-h-screen flex flex-col font-sans"> <div id="trailing-cursor" class="fixed pointer-events-none z-[9999] opacity-0 transition-opacity duration-300"> <span class="text-3xl" id="cursor-emoji">⭐</span> </div> <script>
+	document.addEventListener('astro:page-load', () => {
+		const cursor = document.getElementById('trailing-cursor');
+		const emoji = document.getElementById('cursor-emoji');
+		
+		if (!cursor || !emoji) return;
+
+		const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		const coarsePointer = window.matchMedia('(pointer: coarse)').matches;
+		if (prefersReduced || coarsePointer) return;
+
+		let mouseX = window.innerWidth / 2;
+		let mouseY = window.innerHeight / 2;
+		let cursorX = mouseX;
+		let cursorY = mouseY;
+		
+		// Un array divertido de emojis
+		const emojis = ["⭐", "✨", "🕊️", "💪🏽", "🌱", "🔥"];
+		let emojiIndex = 0;
+
+		window.addEventListener('mousemove', (e) => {
+			mouseX = e.clientX;
+			mouseY = e.clientY;
+			cursor.style.opacity = '1';
+		});
+
+		window.addEventListener('mouseout', () => {
+			cursor.style.opacity = '0';
+		});
+
+		// Interpolación lineal suave
+		function animate() {
+			const dx = mouseX - cursorX;
+			const dy = mouseY - cursorY;
+			
+			cursorX += dx * 0.15;
+			cursorY += dy * 0.15;
+			
+			// Offset para que no tape el cursor real
+			cursor.style.transform = `translate(${cursorX + 15}px, ${cursorY + 15}px)`;
+			
+			requestAnimationFrame(animate);
+		}
+		
+		animate();
+
+		// Cambiar emoji al hacer click!
+		window.addEventListener('click', () => {
+			emojiIndex = (emojiIndex + 1) % emojis.length;
+			emoji.innerText = emojis[emojiIndex];
+			emoji.style.transform = 'scale(1.5)';
+			setTimeout(() => {
+				emoji.style.transform = 'scale(1)';
+			}, 200);
+		});
+	});
+</script> <div id="emoji-rain-root" class="fixed inset-0 pointer-events-none z-[9998]" data-astro-cid-l4hdngnz></div> <button id="emoji-rain-toggle" class="fixed bottom-6 right-4 sm:right-6 z-[9999] bg-ph-light text-black px-4 py-2 rounded-full font-bold shadow-[4px_4px_0px_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform" data-astro-cid-l4hdngnz>
+🌧️ Lluvia de emojis
+</button> <script>
+	document.addEventListener('astro:page-load', () => {
+		const root = document.getElementById('emoji-rain-root');
+		const button = document.getElementById('emoji-rain-toggle');
+
+		if (!root || !button) return;
+
+		const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		if (prefersReduced) {
+			button.style.display = 'none';
+			return;
+		}
+
+		const emojis = ["✨", "🌱", "🕊️", "⚡", "💜", "🌎", "💧", "✊🏾"];
+		const isSmall = window.matchMedia('(max-width: 640px)').matches;
+		const maxEmojis = isSmall ? 18 : 36;
+		let active = false;
+		let intervalId = null;
+
+		function spawnEmoji() {
+			if (!active) return;
+			if (root.children.length >= maxEmojis) return;
+
+			const emoji = document.createElement('span');
+			const size = Math.floor(Math.random() * 16) + 16;
+			const left = Math.random() * 100;
+			const duration = Math.random() * 2.5 + 2.5;
+
+			emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+			emoji.style.position = 'absolute';
+			emoji.style.left = `${left}%`;
+			emoji.style.top = '-10%';
+			emoji.style.fontSize = `${size}px`;
+			emoji.style.animation = `emoji-fall ${duration}s linear forwards`;
+			root.appendChild(emoji);
+
+			emoji.addEventListener('animationend', () => {
+				root.removeChild(emoji);
+			});
+		}
+
+		function startRain() {
+			active = true;
+			button.setAttribute('aria-pressed', 'true');
+			button.textContent = '⏸️ Pausar lluvia';
+			intervalId = window.setInterval(spawnEmoji, 150);
+		}
+
+		function stopRain() {
+			active = false;
+			button.setAttribute('aria-pressed', 'false');
+			button.textContent = '🌧️ Lluvia de emojis';
+			if (intervalId) {
+				window.clearInterval(intervalId);
+				intervalId = null;
+			}
+		}
+
+		button.addEventListener('click', () => {
+			if (active) {
+				stopRain();
+			} else {
+				startRain();
+			}
+		});
+	});
+</script> <main class="flex-grow">  <div class="max-w-4xl mx-auto px-4 py-12 font-sans"> <div class="mb-10 text-sm"> <a href="/cepeda_presidente/ejes/igualdad" class="text-eje-equal hover:underline font-bold transition-colors">
+← Volver a Igualdad y Antirracismo
+</a> </div> <header class="mb-12 border-b-2 border-gray-800 pb-8"> <h1 class="text-4xl md:text-5xl font-bold mb-6 text-white font-serif leading-tight">
+La Revolución Urbana
+</h1> <p class="text-xl text-gray-300 font-sans leading-relaxed">
+No podemos seguir repartiendo gotas de ayuda en el desierto de la desigualdad. Requerimos intervenciones estructurales en la vivienda, servicios públicos, y desarrollo territorial allí donde más se ha ignorado al pueblo.
+</p> </header> <article class="prose prose-lg prose-invert max-w-none font-serif text-gray-300 leading-loose"> <p>
+Las zonas urbanas albergan profundas cicatrices de inequidad social, herederas directas del desplazamiento forzado, el abandono estatal y una planeación enfocada exclusivamente en el negocio inmobiliario de unos pocos. Nuestro enfoque busca cambiar el sistema completo.
+</p> <blockquote class="border-l-4 border-eje-equal pl-6 my-8 italic text-white text-2xl font-medium">
+"El cambio que necesitamos no puede limitarse a aliviar la pobreza con subsidios o paliativos temporales. Debemos asumir la lucha contra este mal como una política de igualdad sustantiva... Se trata de cambiar el sistema de irrigación de los derechos, no de soluciones pasajeras."
+</blockquote> <h2 class="text-3xl font-bold text-white mt-12 mb-6 font-sans">Las Propuestas Fundamentales</h2> <div class="space-y-8 mt-8"> <div class="bg-gray-900 border border-gray-800 p-8 rounded-xl"> <h3 class="text-2xl font-bold text-eje-equal mb-4 font-sans">Vivienda con Dignidad</h3> <p>
+Nuestra política de vivienda no concebirá techos como mercancías comerciales, sino como derechos fundamentales. Reforzaremos la política de autoconstrucción, los mejoramientos barriales profundos y la legalización de predios en aquellos asentamientos olvidados por el crecimiento voraz.
+</p> </div> <div class="bg-gray-900 border border-gray-800 p-8 rounded-xl"> <h3 class="text-2xl font-bold text-eje-equal mb-4 font-sans">Fiscalidad Progresiva y Redistribución</h3> <p>
+No basta con entregar subsidios: hay que redistribuir los recursos. Quienes han acaparado las rentas de la tierra y la especulación urbana deberán contribuir en mayor medida mediante una fiscalidad progresiva de la que provendrán las rentas mínimas integrales para quienes lo perdieron todo.
+</p> </div> <div class="bg-gray-900 border border-gray-800 p-8 rounded-xl"> <h3 class="text-2xl font-bold text-eje-equal mb-4 font-sans">Rescate de lo Público: Salud, Agua y Educación</h3> <p>
+Las poblaciones marginadas sufren la mercantilización del agua potable permanente, sin centros de salud adecuados. Llevaremos a cabo un plan de fortalecimiento de los servicios públicos, garantizando un hábitat urbano, colegios y hospitales fuertes sin la injerencia oligopólica.
+</p> </div> </div> </article> </div>  </main> <footer class="mt-12 border-t border-ph-purple p-6 text-center text-sm text-gray-400"> <div class="max-w-3xl mx-auto space-y-4"> <p>⚠️ <strong>Sitio Voluntario y No Oficial</strong> ⚠️</p> <p>Esta es una iniciativa ciudadana, divertida y no oficial creada para acercar el plan de gobierno "El Poder de la Verdad" a más personas.</p> <p>
+Visita la <a href="https://www.cepedapresidente.co/" target="_blank" rel="noopener noreferrer" class="text-ph-light font-bold hover:underline hover:text-white transition-colors">Página web oficial de Iván Cepeda</a>.<br>
+Consulta los discursos originales: <a href="https://www.movimientopactohistorico.co/docs/programa-gobierno-2026-2030.pdf" target="_blank" rel="noopener noreferrer" class="text-ph-light font-bold hover:underline hover:text-white transition-colors">Programa de gobierno 2026-2030 (PDF)</a>.
+</p> <p class="flex justify-center gap-4 mt-4 font-bold"> <a href="https://www.instagram.com/ivancepedacastr/" target="_blank" rel="noopener noreferrer" class="hover:text-ph-light transition-colors">Instagram</a> <a href="https://x.com/IvanCepedaCast" target="_blank" rel="noopener noreferrer" class="hover:text-ph-light transition-colors">X (Twitter)</a> <a href="https://www.facebook.com/IvanCepedaCastro" target="_blank" rel="noopener noreferrer" class="hover:text-ph-light transition-colors">Facebook</a> </p> <div class="font-mono mt-4 text-xs">
+(づ｡◕‿‿◕｡)づ ¡Colombia potencia de la vida y de la paz!
+</div> </div> </footer> <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script> <script>
+			document.addEventListener('astro:page-load', () => {
+				VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+					max: 15,
+					speed: 400,
+					glare: true,
+					"max-glare": 0.2,
+				});
+			});
+		</script> </body> </html>
