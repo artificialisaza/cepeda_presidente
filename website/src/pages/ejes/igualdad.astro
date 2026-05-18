@@ -3,18 +3,16 @@ import Layout from '../../layouts/Layout.astro';
 import AsciiPattern from '../../components/AsciiPattern.astro';
 
 const heroArtLines = [
-	'  /\\o/\\   /\\o/\\   /\\o/\\   /\\o/\\   /\\o/\\  ',
-	' /__+__\\ /__+__\\ /__+__\\ /__+__\\ /__+__\\ ',
-	' \\  |  / \\  |  / \\  |  / \\  |  / \\  |  / ',
-	'  \\/_\\/   \\/_\\/   \\/_\\/   \\/_\\/   \\/_\\/  ',
-	'  ==x==   ==x==   ==x==   ==x==   ==x==        ',
+	' <(+)>  {*}  <(+)>  {*}  <(+)>  {*} ',
+	' /| |\\  |||  /| |\\  |||  /| |\\  ||| ',
+	' \\| |/  |||  \\| |/  |||  \\| |/  ||| ',
+	'  [~]   [*]   [~]   [*]   [~]   [*] ',
 ];
 
 const footerArtLines = [
-	'  /\\*_/\\   /\\*_/\\   /\\*_/\\   /\\*_/\\  ',
-	' /__+__\\  /__+__\\  /__+__\\  /__+__\\ ',
-	' \\_/_\\_/  \\_/_\\_/  \\_/_\\_/  \\_/_\\_/ ',
-	'   /\\      /\\      /\\      /\\          ',
+	' (o@o)  *o*  (o@o)  *o*  (o@o) ',
+	'  |||   |||   |||   |||   |||   ',
+	'  ~~~   ~~~   ~~~   ~~~   ~~~   ',
 ];
 ---
 
@@ -24,8 +22,8 @@ const footerArtLines = [
 		<AsciiPattern
 			lines={heroArtLines}
 			colors={['text-eje-equal', 'text-fuchsia-300', 'text-sky-300', 'text-emerald-300', 'text-amber-300']}
-			wrapperClass="mb-8 mx-auto max-w-5xl"
-			textClass="text-[11px] sm:text-sm md:text-base lg:text-lg"
+			wrapperClass="mb-8"
+			textClass="text-[10px] xs:text-xs sm:text-[13px] md:text-sm lg:text-base xl:text-lg"
 			blockClass="gap-2"
 		/>
 
@@ -98,8 +96,8 @@ const footerArtLines = [
 				<AsciiPattern
 					lines={footerArtLines}
 					colors={['text-fuchsia-300', 'text-sky-300', 'text-eje-equal', 'text-emerald-300']}
-					wrapperClass="mx-auto"
-					textClass="text-[10px] sm:text-xs md:text-sm"
+					wrapperClass=""
+					textClass="text-[9px] xs:text-[10px] sm:text-xs md:text-sm lg:text-base"
 					blockClass="gap-2"
 				/>
 			</div>

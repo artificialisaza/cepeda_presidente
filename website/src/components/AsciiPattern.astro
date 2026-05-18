@@ -11,7 +11,7 @@ const {
 	lines,
 	colors = [],
 	wrapperClass = "",
-	textClass = "text-[11px] sm:text-sm md:text-base lg:text-lg",
+	textClass = "text-[10px] xs:text-xs sm:text-[13px] md:text-sm lg:text-base xl:text-lg",
 	blockClass = "gap-1",
 } = Astro.props;
 
@@ -20,8 +20,8 @@ const paddedLines = lines.map((line) => line.padEnd(maxLineLength, ' '));
 ---
 
 
-<div class={`font-mono whitespace-pre overflow-x-auto hide-scrollbar w-full ${wrapperClass}`}>
-	<div class="min-w-fit mx-auto">
+<div class={`font-mono whitespace-pre overflow-x-auto hide-scrollbar w-full flex justify-center ${wrapperClass}`}>
+	<div class="inline-block min-w-fit">
 		<div class={`inline-flex flex-col items-start ${blockClass} leading-none tracking-[0.08em] ${textClass}`} style={`width: ${maxLineLength}ch;`}>
 			{paddedLines.map((line, index) => (
 				<span class={`block w-full ${colors.length ? colors[index % colors.length] : ''}`}>{line}</span>

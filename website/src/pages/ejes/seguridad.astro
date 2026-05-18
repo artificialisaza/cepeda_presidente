@@ -3,18 +3,16 @@ import Layout from '../../layouts/Layout.astro';
 import AsciiPattern from '../../components/AsciiPattern.astro';
 
 const heroArtLines = [
-	'  /\\[]/\\   /\\[]/\\   /\\[]/\\   /\\[]/\\  ',
-	' /__  __\\ /__  __\\ /__  __\\ /__  __\\ ',
-	' \\_ /\\ _/ \\_ /\\ _/ \\_ /\\ _/ \\_ /\\ _/ ',
-	'   /__\\      /__\\      /__\\      /__\\ ',
-	' --==+==-- --==+==-- --==+==-- --==+==-- ',
+	' [#+#+#]  {^_^}  [#+#+#]  {^_^}  ',
+	' |#+#+#|  |~|~|  |#+#+#|  |~|~|  ',
+	' [#+#+#]  {v-v}  [#+#+#]  {v-v}  ',
+	'  =====   =====   =====   =====  ',
 ];
 
 const footerArtLines = [
-	'  /\\^/\\    /\\^/\\    /\\^/\\    /\\^/\\  ',
-	' /_x_x_\\  /_x_x_\\  /_x_x_\\  /_x_x_\\ ',
-	' \\__+__/  \\__+__/  \\__+__/  \\__+__/ ',
-	'   \\/       \\/       \\/       \\/      ',
+	' <[#]>  {X}  <[#]>  {X}  <[#]> ',
+	' |||||  |||  |||||  |||  ||||| ',
+	'  ===    ==   ===    ==   ===   ',
 ];
 ---
 
@@ -24,8 +22,8 @@ const footerArtLines = [
 		<AsciiPattern
 			lines={heroArtLines}
 			colors={['text-eje-safety', 'text-sky-300', 'text-amber-300', 'text-rose-200', 'text-ph-light']}
-			wrapperClass="mb-8 mx-auto max-w-5xl"
-			textClass="text-[11px] sm:text-sm md:text-base lg:text-lg"
+			wrapperClass="mb-8"
+			textClass="text-[10px] xs:text-xs sm:text-[13px] md:text-sm lg:text-base xl:text-lg"
 			blockClass="gap-2"
 		/>
 
@@ -84,8 +82,8 @@ const footerArtLines = [
 				<AsciiPattern
 					lines={footerArtLines}
 					colors={['text-sky-300', 'text-amber-300', 'text-eje-safety', 'text-rose-200']}
-					wrapperClass="mx-auto"
-					textClass="text-[10px] sm:text-xs md:text-sm"
+					wrapperClass=""
+					textClass="text-[9px] xs:text-[10px] sm:text-xs md:text-sm lg:text-base"
 					blockClass="gap-2"
 				/>
 			</div>
