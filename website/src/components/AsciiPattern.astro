@@ -1,0 +1,25 @@
+---
+export interface Props {
+	lines: string[];
+	colors?: string[];
+	wrapperClass?: string;
+	textClass?: string;
+	blockClass?: string;
+}
+
+const {
+	lines,
+	colors = [],
+	wrapperClass = "",
+	textClass = "text-[11px] sm:text-sm md:text-base lg:text-lg",
+	blockClass = "gap-1",
+} = Astro.props;
+---
+
+<div class={`font-mono whitespace-pre overflow-x-auto hide-scrollbar ${wrapperClass}`}>
+	<div class={`inline-flex flex-col items-center ${blockClass} leading-none tracking-[0.24em] ${textClass}`}>
+		{lines.map((line, index) => (
+			<span class={colors.length ? colors[index % colors.length] : undefined}>{line}</span>
+		))}
+	</div>
+</div>

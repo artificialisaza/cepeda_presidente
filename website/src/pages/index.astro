@@ -1,24 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import AsciiPattern from '../components/AsciiPattern.astro';
 import ThemeCard from '../components/ThemeCard.astro';
 import FlipCard from '../components/FlipCard.astro';
 import TimelineItem from '../components/TimelineItem.astro';
+
+const heroArtLines = [
+	'╭◜◝╮   ╭◜◝╮   ╭◜◝╮   ╭◜◝╮   ╭◜◝╮',
+	'╎╭╮╎╭╮╎╭╮╎   ╎╭╮╎╭╮╎╭╮╎   ╎╭╮╎',
+	'╎╰╯╎╰╯╎╰╯╎   ╎╰╯╎╰╯╎╰╯╎   ╎╰╯╎',
+	'╎╱╲╎╲╱╎╱╲╎   ╎╱╲╎╲╱╎╱╲╎   ╎╱╲╎',
+	'╎╳╋╳╎╳╋╳╎╳╋╳╎   ╎╳╋╳╎╳╋╳╎╳╋╳╎',
+	'╰◟◞╯  ∿∿∿  ╰◟◞╯  ∿∿∿  ╰◟◞╯',
+];
+
+const footerArtLines = [
+	'✺✹✸   ╭╮╭╮╭╮   ✸✹✺   ╭╮╭╮╭╮',
+	'╱╲╱╲╱╲  ╎╳╋╳╎  ╱╲╱╲╱╲  ╎╳╋╳╎',
+	'◜◝◜◝◜◝  ╎∿∿╎  ◜◝◜◝◜◝  ╎∿∿╎',
+	'╰◟◞╯╰◟◞╯  ╰◟◞╯  ╰◟◞╯╰◟◞╯',
+];
 ---
 
 <Layout title="IVÁN CEPEDA 2026 - El Poder de la Verdad" description="Explora de forma divertida el plan de gobierno de Iván Cepeda para 2026">
 	<div class="max-w-4xl mx-auto px-4 py-12">
 		<!-- Hero Section -->
 		<header class="text-center mb-16 space-y-6">
-			<div class="font-mono text-[9px] sm:text-[11px] md:text-xs leading-none tracking-[0.22em] text-center flex justify-center overflow-x-auto hide-scrollbar">
-				<div class="inline-flex flex-col items-center gap-1 whitespace-pre">
-					<span class="text-ph-light">╭╌╮  ◜◝   ╭╌╮  ◜◝   ╭╌╮</span>
-					<span class="text-fuchsia-300">╎╲╱╎ ╭╳╮  ╎╲╱╎ ╭╳╮  ╎╲╱╎</span>
-					<span class="text-emerald-300">╎╳╋╳╎ ╰╳╯  ╎╳╋╳╎ ╰╳╯  ╎╳╋╳╎</span>
-					<span class="text-sky-300">╎╱╲╎  ∿∿∿  ╎╱╲╎  ∿∿∿  ╎╱╲╎</span>
-					<span class="text-amber-300">╰╌╯  ◜◢◣◝ ╰╌╯  ◜◢◣◝ ╰╌╯</span>
-					<span class="text-rose-300">╭╮ ─┼─  ╭╮ ─┼─  ╭╮ ─┼─  ╭╮</span>
-				</div>
-			</div>
+			<AsciiPattern
+				lines={heroArtLines}
+				colors={['text-ph-light', 'text-fuchsia-300', 'text-emerald-300', 'text-sky-300', 'text-amber-300', 'text-rose-300']}
+				wrapperClass="mx-auto max-w-6xl"
+				textClass="text-[11px] sm:text-sm md:text-base lg:text-lg"
+				blockClass="gap-2"
+			/>
 			
 			<h1 class="text-4xl sm:text-6xl font-bold bg-gradient-to-r from-ph-light via-purple-300 to-ph-light text-transparent bg-clip-text inline-block animate-pulse">
 				IVÁN CEPEDA PRESIDENTE
@@ -189,6 +203,18 @@ import TimelineItem from '../components/TimelineItem.astro';
 			<div class="text-6xl mb-4 hover:animate-spin cursor-pointer">🌍</div>
 			<p class="text-xl font-bold bg-ph-purple px-4 py-2 rounded-full inline-block transform rotate-2">¡La justicia social viene en camino!</p>
 		</div>
+
+		<section class="mt-20 flex justify-center">
+			<div class="bg-black/40 border border-ph-purple/70 rounded-3xl px-6 py-6 shadow-[0_0_0_4px_rgba(144,75,168,0.2)] w-full max-w-5xl">
+				<AsciiPattern
+					lines={footerArtLines}
+					colors={['text-amber-300', 'text-sky-300', 'text-emerald-300', 'text-fuchsia-300']}
+					wrapperClass="mx-auto"
+					textClass="text-[10px] sm:text-xs md:text-sm lg:text-base"
+					blockClass="gap-2"
+				/>
+			</div>
+		</section>
 
 		<section class="mt-20 font-mono text-center p-8 border-dashed border-4 border-ph-light rounded-xl hover:bg-[#111] transition-colors relative overflow-hidden group">
 			<div class="absolute inset-0 bg-gradient-to-r from-transparent via-ph-light to-transparent opacity-0 group-hover:opacity-20 animate-pulse transition"></div>

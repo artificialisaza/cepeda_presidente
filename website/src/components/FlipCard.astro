@@ -8,22 +8,31 @@ export interface Props {
 
 const { myth, reality, mythEmoji = "🤔", realityEmoji = "💯" } = Astro.props;
 ---
-<div class="group h-80 sm:h-96 lg:h-[26rem] w-full [perspective:1000px] cursor-pointer" role="button" tabindex="0" onclick="this.querySelector('.flip-inner').classList.toggle('[transform:rotateY(180deg)]')" onkeydown="if (event.key === 'Enter' || event.key === ' ') this.click()">
+<div class="group h-96 sm:h-[26rem] lg:h-[30rem] w-full [perspective:1000px] cursor-pointer" role="button" tabindex="0" onclick="this.querySelector('.flip-inner').classList.toggle('[transform:rotateY(180deg)]')" onkeydown="if (event.key === 'Enter' || event.key === ' ') this.click()">
 	<div class="flip-inner relative h-full w-full rounded-2xl shadow-xl transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 		
 		<!-- Front: Myth -->
-		<div class="absolute inset-0 bg-yellow-300 border-4 border-black p-4 sm:p-6 rounded-2xl flex flex-col justify-center items-center text-center [backface-visibility:hidden]">
-			<span class="text-4xl mb-2 sm:mb-4">{mythEmoji}</span>
-			<h4 class="font-bold text-black font-[Impact] tracking-wide text-xl sm:text-2xl uppercase">Mito</h4>
-			<p class="flip-text text-black font-['Comic_Sans_MS',cursive] mt-2 sm:mt-3 leading-snug text-base sm:text-lg lg:text-xl">{myth}</p>
-			<span class="absolute bottom-3 right-4 text-[10px] sm:text-xs font-bold text-gray-800 rotate-2">¡Pasa el mouse o toca! 👉🏽</span>
+		<div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_#fde047_0%,_#facc15_45%,_#f59e0b_100%)] border-4 border-black p-4 sm:p-6 rounded-2xl flex flex-col justify-center items-center text-center [backface-visibility:hidden] overflow-hidden">
+			<div class="absolute inset-x-0 top-0 h-3 bg-gradient-to-r from-pink-500 via-sky-400 to-emerald-400"></div>
+			<div class="absolute inset-x-4 top-4 flex justify-between text-sm sm:text-base font-bold rotate-[-2deg] text-black/75">
+				<span>✦</span><span>✺</span><span>✿</span><span>✺</span><span>✦</span>
+			</div>
+			<span class="text-5xl sm:text-6xl mb-3 sm:mb-5 drop-shadow-[2px_2px_0px_rgba(255,255,255,0.35)]">{mythEmoji}</span>
+			<h4 class="font-bold text-black font-[Impact] tracking-[0.12em] text-2xl sm:text-3xl uppercase rotate-[-1deg]">Mito</h4>
+			<p class="flip-text text-black font-['Comic_Sans_MS',cursive] mt-3 sm:mt-4 leading-snug text-lg sm:text-2xl lg:text-3xl max-w-[16ch] sm:max-w-[18ch]">{myth}</p>
+			<span class="absolute bottom-3 left-4 text-[10px] sm:text-sm font-bold text-black/75 rotate-[-4deg]">¡Pasa el mouse o toca! 👉🏽</span>
+			<span class="absolute bottom-3 right-4 text-[10px] sm:text-sm font-bold text-black/75 rotate-3">☆</span>
 		</div>
 
 		<!-- Back: Reality -->
-		<div class="absolute inset-0 h-full w-full rounded-2xl bg-ph-purple border-4 border-white p-4 sm:p-6 flex flex-col justify-center items-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden] overflow-y-auto custom-scrollbar">
-			<span class="text-3xl sm:text-4xl mb-2">{realityEmoji}</span>
-			<h4 class="font-bold text-white text-lg sm:text-xl font-serif mb-2">LA VERDAD</h4>
-			<p class="flip-text text-white font-sans leading-snug sm:leading-relaxed text-base sm:text-lg lg:text-xl my-auto">"{reality}"</p>
+		<div class="absolute inset-0 h-full w-full rounded-2xl bg-[radial-gradient(circle_at_top,_#a855f7_0%,_#7c3aed_50%,_#4c1d95_100%)] border-4 border-white p-4 sm:p-6 flex flex-col justify-center items-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden] overflow-y-auto custom-scrollbar">
+			<div class="absolute inset-x-0 top-0 h-3 bg-gradient-to-r from-emerald-300 via-white to-fuchsia-300"></div>
+			<span class="text-4xl sm:text-5xl mb-3">{realityEmoji}</span>
+			<h4 class="font-bold text-white text-xl sm:text-2xl font-serif mb-2 tracking-[0.12em] rotate-[-1deg]">LA VERDAD</h4>
+			<p class="flip-text text-white font-sans leading-snug sm:leading-relaxed text-lg sm:text-2xl lg:text-3xl my-auto max-w-[16ch] sm:max-w-[18ch]">"{reality}"</p>
+			<div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white/80 text-xs sm:text-sm font-bold rotate-[1deg]">
+				<span>✓</span><span>✺</span><span>✓</span><span>✿</span><span>✓</span>
+			</div>
 		</div>
 
 	</div>
