@@ -1,0 +1,145 @@
+---
+import IvanImage from '../../assets/Montaje Cepeda.png';
+---
+
+<div 
+	id="floating-ivan" 
+	class="fixed bottom-8 right-8 w-32 h-auto cursor-pointer pointer-events-auto z-30 select-none transition-opacity duration-300 hover:scale-110"
+	style="filter: hue-rotate(280deg) brightness(0.9) saturate(1.5); transform: rotate(-12deg);"
+	data-interaction="true"
+>
+	<img 
+		src={IvanImage.src}
+		alt="¡Iván te acompaña! 💜"
+		class="w-full h-auto drop-shadow-lg cursor-grab active:cursor-grabbing hover:brightness-110 transition-brightness"
+		id="ivan-img"
+	/>
+	<div class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-ph-purple text-white px-3 py-1 rounded-full text-xs font-bold opacity-0 pointer-events-none whitespace-nowrap transition-opacity duration-300" id="ivan-tooltip">
+		¡Clickéame para desaparecer! 👋
+	</div>
+</div>
+
+<style>
+	#floating-ivan {
+		pointer-events: auto;
+	}
+
+	#ivan-img {
+		pointer-events: auto;
+		cursor: grab;
+	}
+
+	#ivan-img:active {
+		cursor: grabbing;
+	}
+</style>
+
+<script>
+	const floatingIvan = document.getElementById('floating-ivan');
+	const ivanImg = document.getElementById('ivan-img');
+	const tooltip = document.getElementById('ivan-tooltip');
+	let mouseX = 0;
+	let mouseY = 0;
+	let ivanX = window.innerWidth - 160;
+	let ivanY = window.innerHeight - 160;
+	let isVisible = true;
+	let isDragging = false;
+
+	// Follow cursor with smooth motion
+	document.addEventListener('mousemove', (e) => {
+		mouseX = e.clientX;
+		mouseY = e.clientY;
+
+		if (!isDragging && isVisible) {
+			// Calculate direction toward cursor
+			const dx = mouseX - (ivanX + 64);
+			const dy = mouseY - (ivanY + 64);
+			const distance = Math.sqrt(dx * dx + dy * dy);
+
+			// Move toward cursor if far enough
+			if (distance > 50) {
+				const speed = 0.08;
+				ivanX += dx * speed;
+				ivanY += dy * speed;
+
+				// Keep in bounds
+				ivanX = Math.max(0, Math.min(ivanX, window.innerWidth - 128));
+				ivanY = Math.max(0, Math.min(ivanY, window.innerHeight - 128));
+
+				floatingIvan.style.bottom = 'auto';
+				floatingIvan.style.right = 'auto';
+				floatingIvan.style.left = ivanX + 'px';
+				floatingIvan.style.top = ivanY + 'px';
+			}
+
+			// React to cursor proximity - rotate based on cursor distance
+			const cursorDx = mouseX - (ivanX + 64);
+			const cursorDy = mouseY - (ivanY + 64);
+			const angle = Math.atan2(cursorDy, cursorDx) * (180 / Math.PI);
+			const rotation = -12 + (angle - 90) * 0.1;
+			ivanImg.style.filter = `hue-rotate(280deg) brightness(0.9) saturate(1.5) drop-shadow(0 4px 12px rgba(0,0,0,0.3))`;
+			ivanImg.style.transform = `rotate(${rotation}deg)`;
+		}
+	});
+
+	// Show tooltip on hover
+	ivanImg.addEventListener('mouseenter', () => {
+		tooltip.classList.remove('opacity-0');
+		tooltip.classList.add('opacity-100');
+	});
+
+	ivanImg.addEventListener('mouseleave', () => {
+		tooltip.classList.add('opacity-0');
+		tooltip.classList.remove('opacity-100');
+	});
+
+	// Click to hide/show
+	ivanImg.addEventListener('click', (e) => {
+		e.stopPropagation();
+		isVisible = !isVisible;
+		if (isVisible) {
+			floatingIvan.style.opacity = '1';
+			floatingIvan.style.pointerEvents = 'auto';
+		} else {
+			floatingIvan.style.opacity = '0.3';
+			floatingIvan.style.pointerEvents = 'none';
+		}
+	});
+
+	// Drag functionality
+	let offsetX = 0;
+	let offsetY = 0;
+
+	ivanImg.addEventListener('mousedown', (e) => {
+		isDragging = true;
+		offsetX = e.clientX - ivanX;
+		offsetY = e.clientY - ivanY;
+	});
+
+	document.addEventListener('mousemove', (e) => {
+		if (isDragging) {
+			ivanX = e.clientX - offsetX;
+			ivanY = e.clientY - offsetY;
+
+			// Keep in bounds
+			ivanX = Math.max(0, Math.min(ivanX, window.innerWidth - 128));
+			ivanY = Math.max(0, Math.min(ivanY, window.innerHeight - 128));
+
+			floatingIvan.style.bottom = 'auto';
+			floatingIvan.style.right = 'auto';
+			floatingIvan.style.left = ivanX + 'px';
+			floatingIvan.style.top = ivanY + 'px';
+		}
+	});
+
+	document.addEventListener('mouseup', () => {
+		isDragging = false;
+	});
+
+	// Keyboard shortcut to toggle (press 'I')
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'i' || e.key === 'I') {
+			ivanImg.click();
+		}
+	});
+</script>
