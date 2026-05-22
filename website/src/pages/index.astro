@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import AsciiPattern from '../components/AsciiPattern.astro';
 import ThemeCard from '../components/ThemeCard.astro';
 import FlipCard from '../components/FlipCard.astro';
-import TimelineItem from '../components/TimelineItem.astro';
+import RevealCard from '../components/RevealCard.astro';
 
 const heroArtLines = [
 	'  /\\_/\\   /\\_/\\   /\\_/\\   /\\_/\\   /\\_/\\  ',
@@ -35,7 +35,7 @@ const footerArtLines = [
 			/>
 			
 			<h1 class="text-4xl sm:text-6xl font-bold bg-gradient-to-r from-ph-light via-purple-300 to-ph-light text-transparent bg-clip-text inline-block animate-pulse">
-				IVÁN CEPEDA MI PRESI!
+				¡CEPEDA MI PRESI!
 			</h1>
 			
 			<h2 class="text-2xl sm:text-3xl text-gray-200">
@@ -152,51 +152,81 @@ const footerArtLines = [
 			</div>
 		</section>
 
-		<!-- Timeline Section -->
-		<section class="mt-32 bg-gray-900 border-4 border-ph-light p-8 sm:p-12 rounded-3xl shadow-[10px_10px_0px_#A020F0] relative overflow-hidden">
-			<div class="absolute -top-10 -right-10 text-9xl opacity-10">⏱️</div>
+		<!-- Plan de Transformación Duradera -->
+		<section class="mt-32 bg-gray-900 border-4 border-ph-light p-6 sm:p-10 rounded-3xl shadow-[10px_10px_0px_#A020F0] relative overflow-hidden">
+			<div class="absolute -top-10 -right-10 text-8xl sm:text-9xl opacity-10">🌱</div>
 			
-			<h3 class="text-3xl sm:text-4xl text-center mb-12 font-bold flex justify-center items-center gap-3">
-				Plan de Choque <span class="text-xl text-eje-equal font-mono">(100 Días)</span>
+			<h3 class="text-2xl sm:text-4xl text-center mb-6 font-bold flex justify-center items-center gap-3 flex-wrap">
+				Plan de Transformación <span class="text-lg sm:text-xl text-eje-equal font-mono">(Duradera)</span>
 			</h3>
+			<p class="text-center text-gray-300 text-sm sm:text-base mb-8 max-w-2xl mx-auto">
+				Esto no es un plan de 100 días. Es una transformación profunda con procesos comunitarios, legislativos y territoriales que continúan y profundizan lo que el primer gobierno del cambio ya sembró. <strong>Toca cada tarjeta para leer la propuesta completa.</strong>
+			</p>
 
-			<div class="space-y-4">
-				<TimelineItem 
-					day="Día 1"
-					title="Diálogo Nacional y Cero Tolerancia"
-					description="Mi primera medida será convocar un diálogo nacional para un acuerdo de reconciliación. Desde el primer día seré implacable frente a la corrupción."
-					emoji="📣"
-				/>
-
-				<TimelineItem 
-					day="Días 1 - 30"
-					title="Caza a la Macrocorrupción"
-					description="Estructuración de la Unidad Nacional Especializada, creación de los tribunales de choque y el Fondo de Reparación para Víctimas del robo estatal."
-					emoji="🦅"
-				/>
-
-				<TimelineItem 
-					day="Días 1 - 10"
-					title="Ley de Austeridad Republicana"
-					description="Presentaremos al Congreso, con mensaje de urgencia, una Ley de Austeridad Republicana y dictaremos medidas ejecutivas para controlar el gasto."
-					emoji="🧾"
-				/>
-
-				<TimelineItem 
-					day="Días 1 - 30"
-					title="Fin de privilegios y lujos"
-					description="Reduciremos en el primer día el salario del presidente y ministros. Se eliminarán gastos suntuarios y cada peso irá al bienestar social."
-					emoji="✂️"
-				/>
-
-				<TimelineItem 
-					day="Día 100"
-					title="Ofensiva Agraria Inmediata"
-					description="Iniciar las vías de adjudicación y saneamiento del primer lote fundamental del millón de hectáreas. Y arranque del plan nacional de agua potable en áreas vulnerables."
-					emoji="🚜"
-				/>
+			<!-- BLOQUE 1: Arranque Inmediato -->
+			<div class="mb-10">
+				<h4 class="text-xl sm:text-2xl font-bold text-ph-light mb-4 flex items-center gap-2"><span class="text-2xl">🌻</span> Arranque inmediato</h4>
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+					<RevealCard effectIndex={0} title="Austeridad Republicana" description="Desde el primer segundo: reducción del salario presidencial y de ministros. Eliminación de gastos suntuarios. Ley de Austeridad Republicana al Congreso con urgencia. Quien debe apretarse el cinturón es el gobierno, no el pueblo." titleClass="text-ph-light" />
+					<RevealCard effectIndex={1} title="Mesa de Diálogo Nacional" description="Convocatoria a todas las fuerzas políticas, sociales y económicas —empezando por las organizaciones populares— para pactar agenda, cronograma y mecanismos de un Acuerdo Nacional. El pueblo sentado en la mesa y vigilando en las calles." />
+					<RevealCard effectIndex={2} title="Sistema Nacional contra la Macrocorrupción" description="5 pilares: prevención, investigación especializada, juzgamiento con reparación, presencia territorial y movilización ciudadana. Unidad Nacional de Investigación de la Macrocorrupción en la Fiscalía. Tolerancia cero." />
+					<RevealCard effectIndex={3} title="Fondo Nacional por el Derecho al Agua" description="Creación inmediata. El 80% de municipios tiene problemas de calidad de agua. Acueductos rurales, plantas modulares de potabilización y protección de cuencas con gestión comunitaria. Sin agua no hay paz." />
+				</div>
 			</div>
 
+			<!-- BLOQUE 2: Revolución Agraria y Territorial -->
+			<div class="mb-10">
+				<h4 class="text-xl sm:text-2xl font-bold text-eje-agri mb-4 flex items-center gap-2"><span class="text-2xl">🌾</span> Revolución Agraria y Transformación de los Territorios</h4>
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+					<RevealCard effectIndex={4} title="Redistribución y restitución de tierras" description="700 mil hectáreas ya disponibles, meta de 1 millón. Compra voluntaria sin expropiaciones. Restitución a víctimas del despojo. Zonas de Reserva Campesina y Territorios Campesinos Agroalimentarios (TECAM)." titleClass="text-eje-agri" />
+					<RevealCard effectIndex={5} title="Vías para la Paz" description="Más de 30.000 km de vías terciarias construidas con Juntas de Acción Comunal y comunidades como contratistas. Reforma de la Ley 80 de 1993 para que organizaciones populares ejecuten obras públicas con transparencia." />
+					<RevealCard effectIndex={6} title="Agua y energía para cada municipio" description="Agua potable como derecho humano fundamental. Energía eléctrica con fuentes limpias y alternativas. Sin agua no hay desarrollo posible, sin agua no hay paz en los territorios." />
+					<RevealCard effectIndex={7} title="Compra estatal de cosechas" description="El Estado comprará producción campesina en los municipios más pobres o bajo economías ilícitas. Destino: combatir el hambre en zonas urbanas y rurales, y venta a precios justos en mercados populares." />
+					<RevealCard effectIndex={8} title="Cadenas productivas estratégicas" description="Recuperar algodón, yuca, cacao, café arrasados por los TLC. Centros de acopio y plantas de transformación administradas por asociaciones campesinas. Programa Nacional de Pesca y Piscicultura." />
+					<RevealCard effectIndex={9} title="Pactos Territoriales y PDET" description="Cumplimiento integral de los PDET del Acuerdo de Paz. Pactos como el del Cauca: 42 municipios, 205 proyectos, 27.6 billones de pesos. Nueva Ley de Ordenamiento Territorial desde las comunidades." />
+					<RevealCard effectIndex={10} title="Territorialidades étnicas y campesinas" description="Implementación plena de Zonas de Reserva Campesina, Consejos Comunitarios afro, Entidades Territoriales Indígenas. Estatutos especiales para Amazonía y Pacífico. Comisión de armonización territorial." />
+					<RevealCard effectIndex={11} title="Campesinado sujeto de derechos" description="Derecho a la vida, trabajo rural digno, participación política real (puestos de votación cercanos), verdad, justicia y reparación. Justicia agraria. Protección integral de liderazgos campesinos." />
+				</div>
+			</div>
+
+			<!-- BLOQUE 3: Revolución Social -->
+			<div class="mb-10">
+				<h4 class="text-xl sm:text-2xl font-bold text-eje-equal mb-4 flex items-center gap-2"><span class="text-2xl">🤲</span> Revolución Social e Igualdad Sustantiva</h4>
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+					<RevealCard effectIndex={12} title="Salario Vital y trabajo digno" description="Defensa y consolidación de la reforma laboral: jornada digna, recargos nocturnos justos, formalización del empleo rural y urbano. Fortalecimiento de la economía popular y solidaria." titleClass="text-eje-equal" />
+					<RevealCard effectIndex={13} title="Reforma pensional" description="Defensa de la reforma ya aprobada. Colombia Mayor duplicado beneficia a más de 1.1 millones de adultos mayores. Movilización social si intentan echarla atrás por formalismos legales." />
+					<RevealCard effectIndex={14} title="Salud: derecho, no negocio" description="Reforma para superar la Ley 100 de Uribe. 10.000 equipos básicos de atención llegan a 7.5 millones de hogares. Infraestructura hospitalaria: 1.300 proyectos. SISPI para pueblos indígenas ya creado." />
+					<RevealCard effectIndex={15} title="Educación pública de calidad" description="Presupuesto educativo fortalecido. Universidades en los territorios para quien nunca tuvo acceso. SEIP para pueblos indígenas. Memoria y educación para la paz en cada escuela del país." />
+					<RevealCard effectIndex={16} title="Reforma urbana y vivienda" description="Programa masivo de vivienda para jóvenes y familias sin techo. Contratación comunitaria: juntas de acción comunal, asociaciones de mujeres y colectivos juveniles ejecutando obras públicas." />
+					<RevealCard effectIndex={17} title="Mujeres protagonistas del cambio" description="Paridad plena e igualdad de derechos. Superación del patriarcado como parte de la revolución ética. Reconocimiento del trabajo de cuidado. Protección frente a todas las formas de violencia. Participación decisoria real." />
+				</div>
+			</div>
+
+			<!-- BLOQUE 4: Revolución Ética y Paz -->
+			<div class="mb-10">
+				<h4 class="text-xl sm:text-2xl font-bold text-eje-safety mb-4 flex items-center gap-2"><span class="text-2xl">🕊️</span> Revolución Ética, Paz y Derechos Humanos</h4>
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+					<RevealCard effectIndex={18} title="Centralidad de las víctimas" description="Política pública de verdad, justicia, reparación integral y no repetición para los 10.110.121 víctimas registradas. Reparación colectiva con planes de desarrollo territorial. Programas de educación y empleo." titleClass="text-eje-safety" />
+					<RevealCard effectIndex={19} title="Memoria y educación para la paz" description="Historia del genocidio y crímenes de lesa humanidad en la enseñanza escolar. Informe de la Comisión de la Verdad en cada escuela. Museos de memoria. Que las nuevas generaciones sepan lo que pasó para que nunca más se repita." />
+					<RevealCard effectIndex={20} title="Implementación del Acuerdo de Paz" description="Fase final de implementación integral. Prórroga por 4 años. Cumplir PDET, reforma rural, sustitución de cultivos y garantías de seguridad. La paz se construye sobre hechos, no sobre promesas." />
+					<RevealCard effectIndex={21} title="Protección de líderes y firmantes" description="Comisión Nacional de Garantías de Seguridad activada con rigor. Enfoque de seguridad humana, no militarista. No asesinar líderes sociales y firmantes de paz es línea roja en cualquier diálogo con grupos armados." />
+					<RevealCard effectIndex={22} title="Política exterior soberana y de paz" description="Colombia actor principal de paz mundial. Soberanía: ni subordinación ni intervención extranjera. Nuevo paradigma frente al narcotráfico. Protección de migrantes colombianos. América Latina zona de paz." />
+					<RevealCard effectIndex={23} title="Revolución Política y Democrática" description="Poder constituyente: el pueblo organizado decidiendo todos los días, no solo cada 4 años. Mandar obedeciendo. Acuerdo Nacional con vigilancia social para que no sea un pacto de élites. Descentralización real con autonomía territorial." />
+				</div>
+			</div>
+
+			<!-- CIERRE -->
+			<div class="text-center mt-8 pt-6 border-t border-ph-purple/40">
+				<p class="text-gray-200 text-sm sm:text-base leading-relaxed mb-2">
+					🌱 <strong>Estas transformaciones no son obra de una sola persona ni de un solo gobierno.</strong> 
+					Son procesos colectivos que requieren la organización y movilización del campesinado, 
+					los pueblos indígenas, las comunidades afrodescendientes, las mujeres, la juventud, 
+					las víctimas y toda la ciudadanía.
+				</p>
+				<p class="text-ph-light font-bold italic text-base sm:text-lg">
+					"Solo el pueblo salva al pueblo, y solo el pueblo organizado salva la Nación."
+				</p>
+			</div>
 		</section>
 
 		<div class="mt-20 text-center flex flex-col items-center">

@@ -1,0 +1,160 @@
+---
+export interface Props {
+	title: string;
+	description: string;
+	effectIndex: number;
+	titleClass?: string;
+}
+
+const { title, description, effectIndex, titleClass = '' } = Astro.props;
+
+// Pool of fun, varied sparkle characters for the cards
+const sparkleEmojis = ['✦', '✧', '⋆', '⊹', '✿', '❋', '✺', '❀', '✾', '✤', '❁', 'ꕤ', '✶', '⁂', '☘'];
+const cardEmoji = sparkleEmojis[effectIndex % sparkleEmojis.length];
+
+// Unique rotation per card (-2 to 2 degrees)
+const rotation = ((effectIndex * 7 + 3) % 5) - 2;
+
+// Unique border style pool
+const borderStyles = [
+	'border-dashed',
+	'border-dotted',
+	'border-double',
+	'border-solid',
+];
+
+// Unique hover color shifts
+const hoverColors = [
+	'hover:border-ph-light hover:shadow-[0_0_20px_rgba(144,75,168,0.5)]',
+	'hover:border-emerald-400 hover:shadow-[0_0_20px_rgba(52,211,153,0.5)]',
+	'hover:border-amber-400 hover:shadow-[0_0_20px_rgba(251,191,36,0.5)]',
+	'hover:border-pink-400 hover:shadow-[0_0_20px_rgba(244,114,182,0.5)]',
+	'hover:border-sky-400 hover:shadow-[0_0_20px_rgba(96,165,250,0.5)]',
+	'hover:border-fuchsia-400 hover:shadow-[0_0_22px_rgba(232,121,249,0.55)]',
+	'hover:border-orange-400 hover:shadow-[0_0_20px_rgba(251,146,60,0.5)]',
+];
+
+// Unique gradient accents
+const accentGradients = [
+	'bg-gradient-to-r from-transparent via-ph-purple/10 to-transparent',
+	'bg-gradient-to-r from-transparent via-emerald-500/10 to-transparent',
+	'bg-gradient-to-r from-transparent via-amber-500/10 to-transparent',
+	'bg-gradient-to-r from-transparent via-pink-500/10 to-transparent',
+	'bg-gradient-to-r from-transparent via-sky-500/10 to-transparent',
+	'bg-gradient-to-r from-transparent via-fuchsia-500/10 to-transparent',
+	'bg-gradient-to-r from-transparent via-orange-500/10 to-transparent',
+	'bg-gradient-to-b from-transparent via-ph-purple/10 to-transparent',
+	'bg-gradient-to-b from-transparent via-emerald-500/10 to-transparent',
+	'bg-gradient-to-b from-transparent via-amber-500/10 to-transparent',
+	'bg-gradient-to-b from-transparent via-rose-500/10 to-transparent',
+];
+
+// Unique shadow styles
+const shadowStyles = [
+	'shadow-[3px_3px_0px_rgba(144,75,168,0.3)]',
+	'shadow-[3px_3px_0px_rgba(52,211,153,0.3)]',
+	'shadow-[3px_3px_0px_rgba(251,191,36,0.3)]',
+	'shadow-[3px_3px_0px_rgba(244,114,182,0.3)]',
+	'shadow-[3px_3px_0px_rgba(96,165,250,0.3)]',
+	'shadow-[-3px_3px_0px_rgba(232,121,249,0.25)]',
+	'shadow-[-3px_-3px_0px_rgba(251,146,60,0.25)]',
+	'shadow-[4px_-2px_0px_rgba(144,75,168,0.3)]',
+];
+
+// Unique size modifiers
+const sizeModifiers = [
+	'min-h-[100px]',
+	'min-h-[110px]',
+	'min-h-[120px]',
+	'min-h-[105px]',
+	'min-h-[115px]',
+	'min-h-[95px]',
+	'min-h-[125px]',
+];
+
+const borderStyle = borderStyles[effectIndex % borderStyles.length];
+const hoverColor = hoverColors[(effectIndex * 3 + 1) % hoverColors.length];
+const accentGrad = accentGradients[(effectIndex * 5 + 2) % accentGradients.length];
+const shadow = shadowStyles[(effectIndex * 4) % shadowStyles.length];
+const sizeMod = sizeModifiers[(effectIndex * 2) % sizeModifiers.length];
+const uniqueId = `card-${effectIndex}`;
+---
+
+<div
+	id={uniqueId}
+	class="reveal-card group relative rounded-xl p-4 cursor-pointer select-none transition-all duration-300 {borderStyle} {hoverColor} {accentGrad} {shadow} {sizeMod}"
+	style={`transform: rotate(${rotation}deg);`}
+	data-effect={effectIndex}
+	role="button" tabindex="0" aria-label={`Abrir: ${title}`}
+>
+
+	<!-- FRONT: Title + emoji -->
+	<div class="card-front flex flex-col items-center justify-center text-center gap-2 py-3">
+		<span class="text-3xl sm:text-4xl opacity-70">{cardEmoji}</span>
+		<h5 class="text-lg sm:text-xl font-bold text-white leading-tight {titleClass}">{title}</h5>
+		<span class="text-[10px] sm:text-xs text-gray-500 mt-1 font-mono">toca para leer mas &rarr;</span>
+	</div>
+
+	<!-- BACK: Description (hidden by default) -->
+	<div class="card-back hidden flex-col items-center justify-center text-center gap-2 py-3">
+		<p class="text-gray-200 text-sm sm:text-base leading-relaxed">{description}</p>
+		<span class="text-[10px] sm:text-xs text-gray-500 mt-2 font-mono">toca para volver</span>
+	</div>
+
+</div>
+
+<script>
+	function initRevealCards() {
+		document.querySelectorAll('.reveal-card').forEach((card) => {
+			// Skip cards already initialized
+			if (card.dataset.revealInit === 'true') return;
+			card.dataset.revealInit = 'true';
+
+			const front = card.querySelector('.card-front');
+			const back = card.querySelector('.card-back');
+			let isFlipped = false;
+
+			function flip() {
+				isFlipped = !isFlipped;
+				if (isFlipped) {
+					front.classList.add('!hidden');
+					back.classList.remove('hidden');
+					back.classList.add('!flex');
+					card.style.transform = 'rotate(0deg)';
+				} else {
+					front.classList.remove('!hidden');
+					back.classList.add('hidden');
+					back.classList.remove('!flex');
+					const rot = card.dataset.effect;
+					const rotation = ((parseInt(rot) * 7 + 3) % 5) - 2;
+					card.style.transform = `rotate(${rotation}deg)`;
+				}
+			}
+
+			card.addEventListener('click', flip);
+			card.addEventListener('keydown', (e) => {
+				if (e.key === 'Enter' || e.key === ' ') {
+					e.preventDefault();
+					flip();
+				}
+			});
+		});
+	}
+
+	// Run on initial load
+	initRevealCards();
+
+	// Re-run on every Astro SPA navigation
+	document.addEventListener('astro:page-load', initRevealCards);
+</script>
+
+<style>
+	.card-front.\!hidden {
+		display: none !important;
+	}
+	.card-back.\!flex {
+		display: flex !important;
+	}
+	.\!flex { display: flex !important; }
+	.\!hidden { display: none !important; }
+</style>
