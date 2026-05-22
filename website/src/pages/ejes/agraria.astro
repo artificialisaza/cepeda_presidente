@@ -3,99 +3,219 @@ import Layout from '../../layouts/Layout.astro';
 import AsciiPattern from '../../components/AsciiPattern.astro';
 
 const heroArtLines = [
-	' ~~~v~~~  ~~~v~~~  ~~~v~~~  ~~~v~~~ ',
-	' ((~))   ((~))   ((~))   ((~))  ',
-	' /|   |\\  /|   |\\  /|   |\\  /|   |\\ ',
-	' \\|   |/  \\|   |/  \\|   |/  \\|   |/ ',
-	'  [~~~]   [~~~]   [~~~]   [~~~]     ',
+  '  ~^~^~^~^~  ~^~^~^~^~  ~^~~^~^~^~  ~^~^~^~^~ ',
+  ' /  O   O  \\/  O   O  \\/  O   O  \\/  O   O  \\',
+  '|    __    ||    __    ||    __    ||    __    |',
+  ' \\__/  \\__/ \\__/  \\__/ \\__/  \\__/ \\__/  \\__/ ',
+  '  ~^~^~^~^~  ~^~^~^~^~  ~^~^~^~^~  ~^~^~^~^~ ',
 ];
 
-const footerArtLines = [
-	' @~@~@  *-*-*  @~@~@  *-*-*  @~@~@ ',
-	' |~~~|  |~~~|  |~~~|  |~~~|  |~~~|  ',
-	'  v v    v v    v v    v v    v v   ',
+const fieldArt = [
+  '  🌱  🌽  🌱  🌻  🌱  🥔  🌱  🌾  🌱  ',
+  ' |/|  |/|  |/|  |/|  |/|  |/|  |/|  |/|  |/| ',
+  '  |    |    |    |    |    |    |    |    |  ',
+  '--+----+----+----+----+----+----+----+----+--',
+];
+
+const footerArt = [
+  '  @~@~@  *-*-*  @~@~@  *-*-*  @~@~@ ',
+  '  |~~~|  |~~~|  |~~~|  |~~~|  |~~~|  ',
+  '   v v    v v    v v    v v    v v   ',
 ];
 ---
 
-<Layout title="Revolución Agraria - Iván Cepeda 2026" description="Acceso al agua, justicia territorial y soberanía alimentaria.">
-	<div class="max-w-3xl mx-auto px-4 py-8">
+<Layout title="🌾 Revolución Agraria - Iván Cepeda 2026" description="Tierra, agua, naturaleza y soberanía alimentaria. La Revolución Agraria es el corazón del cambio.">
+  <div class="max-w-5xl mx-auto px-4 py-8 sm:py-12 relative overflow-hidden">
 
-		<AsciiPattern
-			lines={heroArtLines}
-			colors={['text-eje-agri', 'text-amber-300', 'text-emerald-300', 'text-ph-light', 'text-lime-300']}
-			wrapperClass="mb-8"
-			textClass="text-[10px] xs:text-xs sm:text-[13px] md:text-sm lg:text-base xl:text-lg"
-			blockClass="gap-2"
-		/>
+    <!-- Fondo de campo vivo -->
+    <div class="absolute inset-0 pointer-events-none opacity-10 z-0" aria-hidden="true">
+      <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-emerald-950 via-green-950 to-amber-950"></div>
+      <div class="absolute inset-0" style="background: repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(52,211,153,0.04) 60px, rgba(52,211,153,0.04) 62px);"></div>
+    </div>
 
-		<a href={import.meta.env.BASE_URL} class="inline-block mb-8 text-eje-agri hover:underline hover:text-white transition-colors font-sans">
-			← Volver a casa 🚜
-		</a>
+    <!-- ASCII Header -->
+    <AsciiPattern lines={heroArtLines} colors={['text-eje-agri', 'text-amber-300', 'text-emerald-300', 'text-lime-300', 'text-amber-200']} wrapperClass="mb-6" textClass="text-[9px] sm:text-xs md:text-sm" blockClass="gap-1" />
 
-		<header class="bg-eje-agri text-black border-4 border-white p-8 rounded-3xl shadow-[8px_8px_0px_#ffffff] transform -rotate-1 mb-12 relative overflow-hidden">
-			<div class="absolute bottom-0 right-0 text-7xl opacity-30 transform translate-x-4 translate-y-4">🌾</div>
-			<h1 class="text-4xl md:text-5xl uppercase mb-4 flex items-center gap-4 relative z-10 font-[Impact]">
-				Revolución Agraria <span class="animate-bounce">💧🌱</span>
-			</h1>
-			<p class="text-xl font-medium relative z-10 font-['Comic_Sans_MS',cursive]">
-				¡Tierra para el que la trabaja, agua para todos y soberanía en el territorio! {`(ง ͠° ͟ل͜ ͡°)ง`}
-			</p>
-		</header>
+    <!-- Volver -->
+    <div class="mb-8 relative z-10">
+      <a href={import.meta.env.BASE_URL} class="inline-flex items-center gap-2 text-amber-300 hover:text-amber-100 font-bold transition-colors bg-amber-950/50 border border-amber-500/30 px-4 py-2 rounded-full hover:bg-amber-900/60 text-sm">
+        🏠 ← Volver al Inicio
+      </a>
+    </div>
 
-		<article class="space-y-12">
-			<section class="bg-gray-900 border-2 border-gray-700 p-6 sm:p-8 rounded-2xl hover:border-eje-agri transition-colors">
-				<h2 class="text-2xl font-bold mb-4 text-eje-agri flex gap-2 font-[Impact] tracking-wider">
-					<span>🌵</span> El campo está olvidado... ¯\_(ツ)_/¯
-				</h2>
-				<p class="text-lg leading-relaxed text-gray-300 font-sans">
-					Históricamente, nuestros campesinos han sido marginados, y la tierra y el agua han estado concentradas en pocas manos. Es urgente darle la vuelta a esta realidad para producir la comida del país, proteger la naturaleza y mejorar la calidad de vida de las familias rurales.
-				</p>
-			</section>
+    <!-- HERO: Animado con cultivos creciendo -->
+    <header class="relative z-10 mb-16">
+      <div class="relative bg-gradient-to-br from-amber-900/70 via-green-950/80 to-emerald-900/70 border-4 border-amber-400/40 rounded-3xl p-6 sm:p-10 shadow-[0_0_60px_rgba(251,191,36,0.15)] overflow-hidden">
+        <!-- Lluvia de emojis del campo -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+          <span class="absolute top-2 left-[10%] text-3xl animate-bounce opacity-40" style="animation-duration:2s;animation-delay:0s;">🌽</span>
+          <span class="absolute top-8 right-[15%] text-4xl animate-bounce opacity-30" style="animation-duration:2.5s;animation-delay:0.3s;">🥔</span>
+          <span class="absolute bottom-12 left-[20%] text-3xl animate-pulse opacity-25" style="animation-duration:3s;animation-delay:0.7s;">🌻</span>
+          <span class="absolute top-1/3 right-[8%] text-5xl animate-spin opacity-20" style="animation-duration:10s;">🐄</span>
+          <span class="absolute bottom-8 right-[25%] text-2xl animate-bounce opacity-35" style="animation-duration:1.8s;animation-delay:0.5s;">🐓</span>
+          <span class="absolute top-16 left-[40%] text-3xl animate-pulse opacity-20" style="animation-duration:2.2s;animation-delay:1s;">💧</span>
+        </div>
 
-			<section class="bg-gray-900 border-2 border-gray-700 p-6 sm:p-8 rounded-2xl hover:border-eje-agri transition-colors transform rotate-1 relative">
-				<h2 class="text-2xl font-bold mb-4 text-eje-agri flex gap-2 font-['Comic_Sans_MS',cursive]">
-					<span>🚜</span> Nuestras Propuestas
-					<span class="text-sm font-mono text-gray-400 mt-2 ml-2">(Haz clic para ponerte serio 🧐)</span>
-				</h2>
-				<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
-					
-					<a href={import.meta.env.BASE_URL + 'ejes/agraria/agua'} class="block border border-gray-700 p-4 rounded-xl hover:bg-gray-800 hover:scale-105 hover:border-eje-agri transition group cursor-pointer">
-						<div class="text-3xl mb-2 group-hover:animate-bounce">💧</div>
-						<h3 class="font-bold text-white text-lg font-[Impact]">El Acceso al Agua</h3>
-						<p class="text-gray-400 mt-2 font-sans">El agua es vida y es el eje de la revolución. Proteger las cuencas y garantizar el suministro universal.</p>
-					</a>
+        <div class="relative">
+          <h1 class="text-4xl sm:text-6xl md:text-7xl font-black uppercase mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-300 to-emerald-200 font-['Impact'] tracking-wider leading-tight">
+            🌾 Revolución Agraria
+          </h1>
+          <p class="text-xl sm:text-2xl text-amber-100 font-['Comic_Sans_MS',cursive] leading-relaxed max-w-3xl">
+            No es solo reforma: es <strong class="text-white">revolución</strong>. Tierra para quien la trabaja, agua para todos, 
+            comida para cada mesa colombiana. Del campo nace la potencia mundial de la vida. 
+            <span class="inline-block animate-bounce">🌱</span>
+          </p>
+        </div>
+      </div>
+    </header>
 
-					<a href={import.meta.env.BASE_URL + 'ejes/agraria/tierra'} class="block border border-gray-700 p-4 rounded-xl hover:bg-gray-800 hover:scale-105 hover:border-eje-agri transition group cursor-pointer">
-						<div class="text-3xl mb-2 group-hover:animate-spin">🥔</div>
-						<h3 class="font-bold text-white text-lg font-[Impact]">Tierra y Movilización</h3>
-						<p class="text-gray-400 mt-2 font-sans">Masificar el acceso y formalización de tierras para el campesinado, acabando con el despojo.</p>
-					</a>
+    <!-- STORYTELLING: De la semilla a la mesa -->
+    <section class="relative z-10 mb-16 bg-gradient-to-r from-amber-950/30 via-green-950/40 to-emerald-950/30 border-2 border-dashed border-amber-500/30 rounded-3xl p-6 sm:p-8">
+      <AsciiPattern lines={fieldArt} colors={['text-amber-300', 'text-green-400', 'text-amber-200', 'text-lime-300']} wrapperClass="mb-6" textClass="text-[8px] sm:text-xs md:text-sm" blockClass="gap-1" />
+      
+      <h2 class="text-2xl sm:text-3xl font-bold text-amber-200 mb-6 font-serif text-center">🌱 De la Semilla a la Mesa: La Historia de Nuestra Comida</h2>
+      
+      <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-5 text-2xl sm:text-4xl mb-8">
+        <span class="hover:scale-150 transition-transform cursor-default animate-bounce" style="animation-duration:1.5s" title="Semilla libre">🌱</span>
+        <span class="text-amber-400 text-xl sm:text-2xl">→</span>
+        <span class="hover:scale-150 transition-transform cursor-default animate-pulse" style="animation-duration:2s" title="Campesino sembrando">👩🏽‍🌾</span>
+        <span class="text-amber-400 text-xl sm:text-2xl">→</span>
+        <span class="hover:scale-150 transition-transform cursor-default animate-bounce" style="animation-duration:1.8s" title="Tierra fértil">🌍</span>
+        <span class="text-amber-400 text-xl sm:text-2xl">→</span>
+        <span class="hover:scale-150 transition-transform cursor-default animate-pulse" style="animation-duration:2.2s" title="Agua limpia">💧</span>
+        <span class="text-amber-400 text-xl sm:text-2xl">→</span>
+        <span class="hover:scale-150 transition-transform cursor-default animate-spin" style="animation-duration:4s" title="Cosecha abundante">🌾</span>
+        <span class="text-amber-400 text-xl sm:text-2xl">→</span>
+        <span class="hover:scale-150 transition-transform cursor-default animate-bounce" style="animation-duration:1.7s" title="Mercado campesino">🏪</span>
+        <span class="text-amber-400 text-xl sm:text-2xl">→</span>
+        <span class="hover:scale-150 transition-transform cursor-default animate-pulse" style="animation-duration:2s" title="Mesa digna">🍽️</span>
+      </div>
 
-					<a href={import.meta.env.BASE_URL + 'ejes/agraria/naturaleza'} class="block border border-gray-700 p-4 rounded-xl hover:bg-gray-800 hover:scale-105 hover:border-eje-agri transition group sm:col-span-2 cursor-pointer">
-						<div class="text-3xl mb-2 group-hover:animate-pulse">🦉</div>
-						<h3 class="font-bold text-white text-lg font-['Comic_Sans_MS',cursive]">Defensa del Territorio y la Naturaleza</h3>
-						<p class="text-gray-400 mt-2 font-sans">Frenar la depredación: la biodiversidad no es un recurso explotable, es nuestra casa común.</p>
-					</a>
+      <p class="text-amber-50/80 text-center text-lg font-sans leading-relaxed max-w-2xl mx-auto">
+        Cada alimento en tu plato tiene una historia de lucha, tierra y dignidad. La Revolución Agraria protege 
+        <strong class="text-white">cada paso de ese camino</strong>: desde la semilla criolla hasta el mercado justo.
+      </p>
+    </section>
 
-				</div>
-			</section>
+    <!-- PORTAFOLIO DE SUBPÁGINAS - Tarjetas interactivas -->
+    <section class="relative z-10 mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-amber-200 mb-8 text-center font-['Impact'] tracking-wider flex items-center justify-center gap-3">
+        <span class="animate-bounce">🚜</span> Explora los Frentes de la Revolución <span class="animate-bounce">🌾</span>
+      </h2>
 
-			<section class="text-center font-sans">
-				<div class="text-4xl hover:scale-125 transition-transform cursor-pointer inline-block">🌻🐝🐓🐕</div>
-				<p class="mt-4 text-eje-agri font-bold font-[Impact] tracking-widest text-2xl uppercase">Sin campo no hay ciudad</p>
-			</section>
-		</article>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <!-- Agua -->
+        <a href={import.meta.env.BASE_URL + 'ejes/agraria/agua'} class="group block relative bg-gradient-to-b from-cyan-950/80 to-blue-950/90 border-3 border-cyan-400/30 rounded-2xl p-5 text-center shadow-lg hover:shadow-cyan-500/20 hover:border-cyan-400/60 hover:-translate-y-2 hover:scale-105 transition-all duration-300 overflow-hidden">
+          <div class="absolute -top-4 -right-4 text-6xl opacity-20 group-hover:opacity-40 group-hover:scale-125 transition-all duration-500">💧</div>
+          <div class="text-5xl mb-3 group-hover:animate-bounce relative z-10">💧</div>
+          <h3 class="text-xl font-bold text-cyan-200 mb-2 font-['Impact']">El Río de la Vida</h3>
+          <p class="text-cyan-50/70 text-sm leading-relaxed">Agua potable para cada municipio. Sin agua no hay paz.</p>
+          <span class="inline-block mt-3 text-xs text-cyan-400 group-hover:text-cyan-200 transition-colors">🌊 Explorar →</span>
+        </a>
 
-		<section class="mt-16 flex justify-center">
-			<div class="rounded-3xl border border-eje-agri/60 bg-black/25 px-5 py-5 shadow-[0_0_0_4px_rgba(245,158,11,0.12)] w-full max-w-5xl">
-				<AsciiPattern
-					lines={footerArtLines}
-					colors={['text-amber-300', 'text-ph-light', 'text-lime-300', 'text-emerald-300']}
-					wrapperClass=""
-					textClass="text-[9px] xs:text-[10px] sm:text-xs md:text-sm lg:text-base"
-					blockClass="gap-2"
-				/>
-			</div>
-		</section>
-	</div>
+        <!-- Tierra -->
+        <a href={import.meta.env.BASE_URL + 'ejes/agraria/tierra'} class="group block relative bg-gradient-to-b from-amber-950/80 to-yellow-950/90 border-3 border-amber-400/30 rounded-2xl p-5 text-center shadow-lg hover:shadow-amber-500/20 hover:border-amber-400/60 hover:-translate-y-2 hover:scale-105 transition-all duration-300 overflow-hidden">
+          <div class="absolute -top-4 -right-4 text-6xl opacity-20 group-hover:opacity-40 group-hover:scale-125 transition-all duration-500">🥔</div>
+          <div class="text-5xl mb-3 group-hover:animate-spin relative z-10" style="animation-duration:3s">🥔</div>
+          <h3 class="text-xl font-bold text-amber-200 mb-2 font-['Impact']">La Tierra que Alimenta</h3>
+          <p class="text-amber-50/70 text-sm leading-relaxed">1M de hectáreas para el campesinado. Democratización real.</p>
+          <span class="inline-block mt-3 text-xs text-amber-400 group-hover:text-amber-200 transition-colors">🌾 Explorar →</span>
+        </a>
+
+        <!-- Naturaleza -->
+        <a href={import.meta.env.BASE_URL + 'ejes/agraria/naturaleza'} class="group block relative bg-gradient-to-b from-green-950/80 to-emerald-950/90 border-3 border-green-400/30 rounded-2xl p-5 text-center shadow-lg hover:shadow-green-500/20 hover:border-green-400/60 hover:-translate-y-2 hover:scale-105 transition-all duration-300 overflow-hidden">
+          <div class="absolute -top-4 -right-4 text-6xl opacity-20 group-hover:opacity-40 group-hover:scale-125 transition-all duration-500">🦜</div>
+          <div class="text-5xl mb-3 group-hover:animate-pulse relative z-10">🦜</div>
+          <h3 class="text-xl font-bold text-emerald-200 mb-2 font-['Impact']">El Pulmón del Mundo</h3>
+          <p class="text-emerald-50/70 text-sm leading-relaxed">Cero fracking. Amazonía protegida. Biodiversidad = vida.</p>
+          <span class="inline-block mt-3 text-xs text-emerald-400 group-hover:text-emerald-200 transition-colors">🌳 Explorar →</span>
+        </a>
+
+        <!-- Animales -->
+        <a href={import.meta.env.BASE_URL + 'ejes/agraria/animales'} class="group block relative bg-gradient-to-b from-lime-950/80 to-teal-950/90 border-3 border-lime-400/30 rounded-2xl p-5 text-center shadow-lg hover:shadow-lime-500/20 hover:border-lime-400/60 hover:-translate-y-2 hover:scale-105 transition-all duration-300 overflow-hidden">
+          <div class="absolute -top-4 -right-4 text-6xl opacity-20 group-hover:opacity-40 group-hover:scale-125 transition-all duration-500">🐾</div>
+          <div class="text-5xl mb-3 group-hover:animate-bounce relative z-10">🐾</div>
+          <h3 class="text-xl font-bold text-lime-200 mb-2 font-['Impact']">Justicia Animal</h3>
+          <p class="text-lime-50/70 text-sm leading-relaxed">Sujetos de derechos. Colombia libre de tauromaquia.</p>
+          <span class="inline-block mt-3 text-xs text-lime-400 group-hover:text-lime-200 transition-colors">🐕 Explorar →</span>
+        </a>
+
+        <!-- Soberanía Alimentaria NUEVA -->
+        <a href={import.meta.env.BASE_URL + 'ejes/agraria/soberania-alimentaria'} class="group block relative bg-gradient-to-b from-orange-950/80 to-red-950/90 border-3 border-orange-400/30 rounded-2xl p-5 text-center shadow-lg hover:shadow-orange-500/20 hover:border-orange-400/60 hover:-translate-y-2 hover:scale-105 transition-all duration-300 overflow-hidden sm:col-span-2 lg:col-span-2">
+          <div class="absolute -top-4 -right-4 text-6xl opacity-20 group-hover:opacity-40 group-hover:scale-125 transition-all duration-500">🍞</div>
+          <div class="text-5xl mb-3 group-hover:animate-bounce relative z-10">🍞</div>
+          <h3 class="text-xl font-bold text-orange-200 mb-2 font-['Impact']">Soberanía Alimentaria 🆕</h3>
+          <p class="text-orange-50/70 text-sm leading-relaxed">Compra estatal de cosechas, cadenas productivas, pesca y piscicultura. El Estado compra al campesino para combatir el hambre.</p>
+          <span class="inline-block mt-3 text-xs text-orange-400 group-hover:text-orange-200 transition-colors">🐟 Explorar →</span>
+        </a>
+
+        <!-- Transición Energética NUEVA -->
+        <a href={import.meta.env.BASE_URL + 'ejes/agraria/transicion-energetica'} class="group block relative bg-gradient-to-b from-sky-950/80 to-indigo-950/90 border-3 border-sky-400/30 rounded-2xl p-5 text-center shadow-lg hover:shadow-sky-500/20 hover:border-sky-400/60 hover:-translate-y-2 hover:scale-105 transition-all duration-300 overflow-hidden sm:col-span-2 lg:col-span-2">
+          <div class="absolute -top-4 -right-4 text-6xl opacity-20 group-hover:opacity-40 group-hover:scale-125 transition-all duration-500">⚡</div>
+          <div class="text-5xl mb-3 group-hover:animate-pulse relative z-10">⚡</div>
+          <h3 class="text-xl font-bold text-sky-200 mb-2 font-['Impact']">Transición Energética Justa 🆕</h3>
+          <p class="text-sky-50/70 text-sm leading-relaxed">Energías limpias, comunidades energéticas, cero fracking. La transición la hacen las comunidades, no las multinacionales.</p>
+          <span class="inline-block mt-3 text-xs text-sky-400 group-hover:text-sky-200 transition-colors">☀️ Explorar →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- DATOS DUROS que encienden -->
+    <section class="relative z-10 mb-16">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+        <div class="bg-gradient-to-b from-amber-950/60 to-yellow-950/60 border-2 border-amber-500/20 rounded-2xl p-6 text-center hover:border-amber-400/60 transition-all group">
+          <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">📋</div>
+          <div class="text-4xl font-black text-amber-300">700K</div>
+          <p class="text-amber-100/80 mt-2 text-sm">Hectáreas disponibles para redistribución</p>
+        </div>
+        <div class="bg-gradient-to-b from-green-950/60 to-emerald-950/60 border-2 border-green-500/20 rounded-2xl p-6 text-center hover:border-green-400/60 transition-all group">
+          <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">👨🏽‍🌾</div>
+          <div class="text-4xl font-black text-green-300">72K</div>
+          <p class="text-green-100/80 mt-2 text-sm">Familias campesinas beneficiadas con tierra</p>
+        </div>
+        <div class="bg-gradient-to-b from-cyan-950/60 to-blue-950/60 border-2 border-cyan-500/20 rounded-2xl p-6 text-center hover:border-cyan-400/60 transition-all group">
+          <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">💧</div>
+          <div class="text-4xl font-black text-cyan-300">80%</div>
+          <p class="text-cyan-100/80 mt-2 text-sm">Municipios con problemas de agua potable</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CITA ÉPICA -->
+    <blockquote class="relative z-10 my-12 bg-gradient-to-r from-amber-950/60 via-green-950/40 to-amber-950/60 border-l-4 border-amber-400 p-6 sm:p-8 rounded-r-2xl shadow-xl">
+      <div class="absolute -top-4 -left-4 text-5xl">🌾</div>
+      <p class="text-xl sm:text-2xl italic text-white font-medium leading-relaxed font-serif">
+        "Esta es una revolución pacífica del pueblo, una revolución de <strong class="text-amber-200">semillas y no de armas</strong>. 
+        Una revolución que no empuñará armas, sino siembra semillas, que no reparte balas sino tierra y esperanza, 
+        que no cultiva odio sino <strong class="text-amber-200">pan y justicia</strong>."
+      </p>
+      <footer class="mt-4 text-amber-300 text-sm font-sans">— Iván Cepeda, Sincelejo, Sucre</footer>
+    </blockquote>
+
+    <!-- MARQUEE DIVERTIDO -->
+    <div class="relative z-10 mb-12 bg-black/30 border-2 border-dashed border-amber-500/40 rounded-xl p-4 overflow-hidden">
+      <p class="text-amber-200 font-mono text-sm sm:text-base whitespace-nowrap animate-none" style="overflow-x:auto">
+        <span class="inline-block mr-8">🌽 Sin campo no hay ciudad 🌽</span>
+        <span class="inline-block mr-8">🥔 La tierra es para quien la trabaja 🥔</span>
+        <span class="inline-block mr-8">💧 Sin agua no hay paz 💧</span>
+        <span class="inline-block mr-8">🐄 Defendamos la producción nacional 🐄</span>
+        <span class="inline-block mr-8">🌱 Semillas libres, pueblos libres 🌱</span>
+        <span class="inline-block mr-8">🍞 Colombia potencia agroalimentaria 🍞</span>
+      </p>
+    </div>
+
+    <!-- CIERRE -->
+    <section class="relative z-10 mt-12 flex flex-col items-center text-center">
+      <AsciiPattern lines={footerArt} colors={['text-amber-300', 'text-ph-light', 'text-lime-300', 'text-emerald-300']} wrapperClass="mb-6" textClass="text-[9px] xs:text-[10px] sm:text-xs md:text-sm" blockClass="gap-2" />
+      <div class="text-6xl mb-4 hover:animate-spin cursor-default">🌍</div>
+      <p class="text-xl font-bold text-amber-200 font-sans">
+        "Solo el pueblo salva al pueblo, <br/> y solo el pueblo organizado salva la Nación."
+      </p>
+      <p class="text-amber-400/60 text-sm mt-2">— Andrés Manuel López Obrador</p>
+      <a href={import.meta.env.BASE_URL} class="inline-flex items-center gap-2 mt-8 bg-amber-700 hover:bg-amber-600 text-white px-6 py-3 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-amber-500/30">
+        🏠 Ir al Inicio
+      </a>
+    </section>
+
+  </div>
 </Layout>

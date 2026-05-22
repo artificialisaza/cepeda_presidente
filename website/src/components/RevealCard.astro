@@ -65,11 +65,11 @@ const shadowStyles = [
 const sizeModifiers = [
 	'min-h-[100px]',
 	'min-h-[110px]',
-	'min-h-[120px]',
+	'min-h-[130px]',
 	'min-h-[105px]',
 	'min-h-[115px]',
 	'min-h-[95px]',
-	'min-h-[125px]',
+	'min-h-[140px]',
 ];
 
 const borderStyle = borderStyles[effectIndex % borderStyles.length];
@@ -95,8 +95,8 @@ const uniqueId = `card-${effectIndex}`;
 		<span class="text-[10px] sm:text-xs text-gray-500 mt-1 font-mono">toca para leer mas &rarr;</span>
 	</div>
 
-	<!-- BACK: Description (hidden by default) -->
-	<div class="card-back hidden flex-col items-center justify-center text-center gap-2 py-3">
+	<!-- BACK: Description (hidden by default) with scroll -->
+	<div class="card-back hidden flex-col items-center justify-center text-center gap-2 py-3 overflow-y-auto max-h-[280px] sm:max-h-[320px] px-1">
 		<p class="text-gray-200 text-sm sm:text-base leading-relaxed">{description}</p>
 		<span class="text-[10px] sm:text-xs text-gray-500 mt-2 font-mono">toca para volver</span>
 	</div>
