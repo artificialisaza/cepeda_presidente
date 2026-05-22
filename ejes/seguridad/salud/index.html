@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/cepeda_presidente/favicon.svg"><meta name="generator" content="Astro v6.3.3"><title>Salud: Derecho, No Negocio - Iván Cepeda 2026</title><meta name="description" content="10,000 equipos básicos, 7.5M hogares, 1,300 proyectos hospitalarios, SISPI. Superar la Ley 100 de Uribe."><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/cepeda_presidente/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CAqDO0tx.js"></script><link rel="stylesheet" href="/cepeda_presidente/_astro/Layout.fL7kXObZ.css"></head> <body class="min-h-screen flex flex-col font-sans"> <div id="trailing-cursor" class="fixed pointer-events-none z-[9999] opacity-0 transition-opacity duration-300"> <span class="text-3xl" id="cursor-emoji">⭐</span> </div> <script>
+	document.addEventListener('astro:page-load', () => {
+		const cursor = document.getElementById('trailing-cursor');
+		const emoji = document.getElementById('cursor-emoji');
+		
+		if (!cursor || !emoji) return;
+
+		const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		const coarsePointer = window.matchMedia('(pointer: coarse)').matches;
+		if (prefersReduced || coarsePointer) return;
+
+		let mouseX = window.innerWidth / 2;
+		let mouseY = window.innerHeight / 2;
+		let cursorX = mouseX;
+		let cursorY = mouseY;
+		
+		// Un array divertido de emojis
+		const emojis = ["⭐", "✨", "🕊️", "💪🏽", "🌱", "🔥"];
+		let emojiIndex = 0;
+
+		window.addEventListener('mousemove', (e) => {
+			mouseX = e.clientX;
+			mouseY = e.clientY;
+			cursor.style.opacity = '1';
+		});
+
+		window.addEventListener('mouseout', () => {
+			cursor.style.opacity = '0';
+		});
+
+		// Interpolación lineal suave
+		function animate() {
+			const dx = mouseX - cursorX;
+			const dy = mouseY - cursorY;
+			
+			cursorX += dx * 0.15;
+			cursorY += dy * 0.15;
+			
+			// Offset para que no tape el cursor real
+			cursor.style.transform = `translate(${cursorX + 15}px, ${cursorY + 15}px)`;
+			
+			requestAnimationFrame(animate);
+		}
+		
+		animate();
+
+		// Cambiar emoji al hacer click!
+		window.addEventListener('click', () => {
+			emojiIndex = (emojiIndex + 1) % emojis.length;
+			emoji.innerText = emojis[emojiIndex];
+			emoji.style.transform = 'scale(1.5)';
+			setTimeout(() => {
+				emoji.style.transform = 'scale(1)';
+			}, 200);
+		});
+	});
+</script> <div id="emoji-rain-root" class="fixed inset-0 pointer-events-none z-[9998]" data-astro-cid-l4hdngnz></div> <button id="emoji-rain-toggle" class="fixed bottom-6 right-4 sm:right-6 z-[9999] bg-ph-light text-black px-4 py-2 rounded-full font-bold shadow-[4px_4px_0px_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform" data-astro-cid-l4hdngnz>
+🌧️ Lluvia de emojis
+</button> <script>
+	document.addEventListener('astro:page-load', () => {
+		const root = document.getElementById('emoji-rain-root');
+		const button = document.getElementById('emoji-rain-toggle');
+
+		if (!root || !button) return;
+
+		const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		if (prefersReduced) {
+			button.style.display = 'none';
+			return;
+		}
+
+		const emojis = ["✨", "🌱", "🕊️", "💜", "🌎", "💧", "✊🏾"];
+		const isSmall = window.matchMedia('(max-width: 640px)').matches;
+		const maxEmojis = isSmall ? 18 : 36;
+		let active = false;
+		let intervalId = null;
+
+		function spawnEmoji() {
+			if (!active) return;
+			if (root.children.length >= maxEmojis) return;
+
+			const emoji = document.createElement('span');
+			const size = Math.floor(Math.random() * 16) + 16;
+			const left = Math.random() * 100;
+			const duration = Math.random() * 2.5 + 2.5;
+
+			emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+			emoji.style.position = 'absolute';
+			emoji.style.left = `${left}%`;
+			emoji.style.top = '-10%';
+			emoji.style.fontSize = `${size}px`;
+			emoji.style.animation = `emoji-fall ${duration}s linear forwards`;
+			root.appendChild(emoji);
+
+			emoji.addEventListener('animationend', () => {
+				root.removeChild(emoji);
+			});
+		}
+
+		function startRain() {
+			active = true;
+			button.setAttribute('aria-pressed', 'true');
+			button.textContent = '⏸️ Pausar lluvia';
+			intervalId = window.setInterval(spawnEmoji, 150);
+		}
+
+		function stopRain() {
+			active = false;
+			button.setAttribute('aria-pressed', 'false');
+			button.textContent = '🌧️ Lluvia de emojis';
+			if (intervalId) {
+				window.clearInterval(intervalId);
+				intervalId = null;
+			}
+		}
+
+		button.addEventListener('click', () => {
+			if (active) {
+				stopRain();
+			} else {
+				startRain();
+			}
+		});
+	});
+</script> <div id="floating-ivan" class="fixed bottom-8 right-8 w-32 h-auto cursor-pointer pointer-events-auto z-30 select-none transition-opacity duration-300 hover:scale-110" style="filter: hue-rotate(280deg) brightness(0.9) saturate(1.5); transform: rotate(-12deg);" data-interaction="true" data-astro-cid-syl7cxhi> <img src="/cepeda_presidente/_astro/Montaje Cepeda.FJMa7sH8.png" alt="¡Iván te acompaña! 💜" class="w-full h-auto drop-shadow-lg cursor-grab active:cursor-grabbing hover:brightness-110 transition-brightness" id="ivan-img" data-astro-cid-syl7cxhi> <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-ph-purple text-white px-3 py-1 rounded-full text-xs font-bold opacity-0 pointer-events-none whitespace-nowrap transition-opacity duration-300" id="ivan-tooltip" data-astro-cid-syl7cxhi>
+¡Clickéame para desaparecer! 👋
+</div> </div>  <script type="module">const e=document.getElementById("floating-ivan"),o=document.getElementById("ivan-img"),a=document.getElementById("ivan-tooltip");let r=0,m=0,n=window.innerWidth-160,i=window.innerHeight-160,s=!0,d=!1;document.addEventListener("mousemove",t=>{if(r=t.clientX,m=t.clientY,!d&&s){const l=r-(n+64),c=m-(i+64);Math.sqrt(l*l+c*c)>50&&(n+=l*.08,i+=c*.08,n=Math.max(0,Math.min(n,window.innerWidth-128)),i=Math.max(0,Math.min(i,window.innerHeight-128)),e.style.bottom="auto",e.style.right="auto",e.style.left=n+"px",e.style.top=i+"px");const p=r-(n+64),g=m-(i+64),h=-12+(Math.atan2(g,p)*(180/Math.PI)-90)*.1;o.style.filter="hue-rotate(280deg) brightness(0.9) saturate(1.5) drop-shadow(0 4px 12px rgba(0,0,0,0.3))",o.style.transform=`rotate(${h}deg)`}});o.addEventListener("mouseenter",()=>{a.classList.remove("opacity-0"),a.classList.add("opacity-100")});o.addEventListener("mouseleave",()=>{a.classList.add("opacity-0"),a.classList.remove("opacity-100")});o.addEventListener("click",t=>{t.stopPropagation(),s=!s,s?(e.style.opacity="1",e.style.pointerEvents="auto"):(e.style.opacity="0.3",e.style.pointerEvents="none")});let y=0,u=0;o.addEventListener("mousedown",t=>{d=!0,y=t.clientX-n,u=t.clientY-i});document.addEventListener("mousemove",t=>{d&&(n=t.clientX-y,i=t.clientY-u,n=Math.max(0,Math.min(n,window.innerWidth-128)),i=Math.max(0,Math.min(i,window.innerHeight-128)),e.style.bottom="auto",e.style.right="auto",e.style.left=n+"px",e.style.top=i+"px")});document.addEventListener("mouseup",()=>{d=!1});document.addEventListener("keydown",t=>{(t.key==="i"||t.key==="I")&&o.click()});</script> <main class="flex-grow">  <div class="max-w-4xl mx-auto px-4 py-12 font-serif relative overflow-hidden"> <div class="absolute inset-0 pointer-events-none opacity-10 z-0" aria-hidden="true"> <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-emerald-950 via-green-950 to-teal-950"></div> </div> <div class="mb-10 text-sm relative z-10"> <a href="/cepeda_presidente/ejes/seguridad" class="inline-flex items-center gap-2 text-emerald-300 hover:text-emerald-100 font-bold transition-colors bg-emerald-950/60 border border-emerald-500/30 px-4 py-2 rounded-full hover:bg-emerald-900/60">
+🏥 ← Volver a Seguridad y Prosperidad
+</a> </div> <header class="relative z-10 mb-12"> <div class="relative bg-gradient-to-br from-emerald-900/80 via-green-950/90 to-teal-900/80 border-3 border-emerald-400/30 rounded-3xl p-8 sm:p-10 shadow-[0_0_40px_rgba(52,211,153,0.12)] overflow-hidden"> <div class="absolute top-4 right-8 text-6xl animate-bounce opacity-50" style="animation-duration:2s">🏥</div> <div class="absolute bottom-6 left-8 text-5xl animate-pulse opacity-35">💊</div> <h1 class="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 via-green-300 to-teal-200 font-serif leading-tight relative">🏥 Salud: Derecho, No Negocio</h1> <p class="text-xl text-emerald-100 font-sans leading-relaxed max-w-2xl relative">La <strong class="text-white">Ley 100 de 1993</strong>, impulsada por Álvaro Uribe, convirtió la salud en negocio. Vamos a superarla con una reforma democrática que garantice la salud como derecho fundamental. <strong class="text-emerald-200">10,000 equipos básicos ya llegan a 7.5 millones de hogares.</strong></p> </div> </header> <blockquote class="relative z-10 my-12 bg-gradient-to-r from-emerald-900/60 via-green-900/40 to-emerald-900/60 border-l-4 border-emerald-400 p-8 rounded-r-2xl shadow-xl"> <p class="text-2xl md:text-3xl italic text-white font-medium leading-relaxed font-serif">"Uribe privatizó el sistema de atención en salud con la Ley 100, que convirtió este derecho fundamental en negocio. <strong class="text-emerald-200">Consolidó un sistema en el que el Estado paga, pero los privados mandan.</strong>"</p> <footer class="mt-4 text-emerald-300 text-sm font-sans">— Iván Cepeda, Popayán, Cauca</footer> </blockquote> <section class="relative z-10 mb-10"> <h2 class="text-3xl font-bold text-emerald-200 mb-6 font-sans flex items-center gap-3"><span class="text-4xl">📊</span> Lo que Ya se ha Logrado</h2> <div class="grid grid-cols-1 sm:grid-cols-3 gap-6"> <div class="bg-gradient-to-b from-emerald-950/80 to-green-950/80 border border-emerald-400/20 rounded-2xl p-6 text-center shadow-lg"><div class="text-5xl mb-3">👨‍⚕️</div><div class="text-4xl font-black text-emerald-300">10,000</div><p class="text-emerald-100/80 text-sm">Equipos básicos de atención</p></div> <div class="bg-gradient-to-b from-green-950/80 to-teal-950/80 border border-green-400/20 rounded-2xl p-6 text-center shadow-lg"><div class="text-5xl mb-3">🏠</div><div class="text-4xl font-black text-green-300">7.5M</div><p class="text-green-100/80 text-sm">Hogares alcanzados</p></div> <div class="bg-gradient-to-b from-teal-950/80 to-cyan-950/80 border border-teal-400/20 rounded-2xl p-6 text-center shadow-lg"><div class="text-5xl mb-3">🏗️</div><div class="text-4xl font-black text-teal-300">1,300</div><p class="text-teal-100/80 text-sm">Proyectos de infraestructura hospitalaria</p></div> </div> </section> <section class="relative z-10 space-y-8"> <h2 class="text-3xl font-bold text-emerald-200 mb-6 font-sans flex items-center gap-3"><span class="text-4xl">✨</span> La Reforma que Proponemos</h2> <div class="bg-gradient-to-r from-emerald-950/80 via-green-950/60 to-emerald-950/80 border border-emerald-500/30 rounded-2xl p-8 shadow-xl hover:border-emerald-400/60 transition-all duration-300 group"> <div class="flex items-start gap-5"><div class="text-5xl group-hover:animate-pulse shrink-0">🏛️</div><div><h3 class="text-2xl font-bold text-emerald-200 mb-4">Salud como Derecho Fundamental</h3><p class="text-emerald-50/90 leading-relaxed text-lg">Superar el modelo de la Ley 100 donde <strong class="text-white">el Estado paga y los privados administran</strong>. La salud no puede seguir siendo un mercado donde unos pocos se enriquecen con el sufrimiento de los enfermos. Reforma estructural para devolverle la rectoría al Estado.</p></div></div> </div> <div class="bg-gradient-to-r from-green-950/80 via-teal-950/60 to-green-950/80 border border-green-500/30 rounded-2xl p-8 shadow-xl hover:border-green-400/60 transition-all duration-300 group"> <div class="flex items-start gap-5"><div class="text-5xl group-hover:animate-bounce shrink-0">🌍</div><div><h3 class="text-2xl font-bold text-green-200 mb-4">Atención Primaria Universal</h3><p class="text-green-50/90 leading-relaxed text-lg">Ampliación de los <strong class="text-white">10,000 equipos básicos</strong> para llegar a cada rincón de Colombia. Centros de salud fortalecidos en todos los municipios. Prevención, no solo curación.</p></div></div> </div> <div class="bg-gradient-to-r from-teal-950/80 via-cyan-950/60 to-teal-950/80 border border-teal-500/30 rounded-2xl p-8 shadow-xl hover:border-teal-400/60 transition-all duration-300 group"> <div class="flex items-start gap-5"><div class="text-5xl group-hover:animate-spin shrink-0" style="animation-duration:4s">🪶</div><div><h3 class="text-2xl font-bold text-teal-200 mb-4">SISPI: Salud Indígena Propia</h3><p class="text-teal-50/90 leading-relaxed text-lg">Implementación plena del <strong class="text-white">Sistema Indígena de Salud Propia e Intercultural</strong>, ya creado por decreto. Reconocimiento de los saberes ancestrales en salud y su articulación con el sistema nacional.</p></div></div> </div> <div class="bg-gradient-to-r from-rose-950/80 via-red-950/60 to-rose-950/80 border border-rose-500/30 rounded-2xl p-8 shadow-xl hover:border-rose-400/60 transition-all duration-300 group"> <div class="flex items-start gap-5"><div class="text-5xl group-hover:animate-bounce shrink-0">🛡️</div><div><h3 class="text-2xl font-bold text-rose-200 mb-4">Protección contra la Corrupción en Salud</h3><p class="text-rose-50/90 leading-relaxed text-lg"><strong class="text-white">Los recursos de la salud son sagrados.</strong> Cuando la corrupción golpee el sector salud, los recursos recuperados se destinarán a fortalecer ese sistema. Tolerancia cero con quienes roban la salud de los colombianos.</p></div></div> </div> </section> <div class="relative z-10 mt-16 text-center"> <div class="text-6xl mb-4 hover:animate-spin cursor-default inline-block">🏥</div> <p class="text-xl font-bold text-emerald-200 font-sans">"Curar, no lucrar. <strong class="text-white">La salud es un derecho, no un negocio.</strong>"</p> <a href="/cepeda_presidente/ejes/seguridad" class="inline-block mt-8 bg-emerald-700 hover:bg-emerald-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-emerald-500/30">🏥 Volver a Seguridad</a> </div> </div>  </main> <footer class="mt-12 border-t border-ph-purple p-6 text-center text-sm text-gray-400"> <div class="max-w-3xl mx-auto space-y-4"> <p>⚠️ <strong>Sitio Voluntario y No Oficial</strong> ⚠️</p> <p>Esta es una iniciativa ciudadana, divertida y no oficial creada para acercar el plan de gobierno "El Poder de la Verdad" a más personas.</p> <p>
+Para más información visita: <a href="https://www.cepedapresidente.co/" target="_blank" rel="noopener noreferrer" class="text-ph-light font-bold hover:underline hover:text-white transition-colors">Página web oficial de Iván Cepeda</a>.<br> </p> <p class="text-gray-300 leading-relaxed">
+Este sitio web fue construido con herramientas automáticas usando el <a href="https://www.movimientopactohistorico.co/docs/programa-gobierno-2026-2030.pdf" target="_blank" rel="noopener noreferrer" class="text-ph-light font-bold hover:underline hover:text-white transition-colors">Programa de gobierno 2026-2030 (PDF)</a>, nuestra interpretación puede contener errores e imprecisiones.
+					Puedes descargar el <a href="https://raw.githubusercontent.com/artificialisaza/cepeda_presidente/main/programa-gobierno-2026-2030.md" download="programa-gobierno-2026-2030.md" target="_blank" rel="noopener noreferrer" class="text-ph-light font-bold hover:underline hover:text-white transition-colors">archivo de texto md</a> y usarlo en cualquier modelo de IA para entender mejor el Programa de Gobierno o hacer un proyecto como este.
+</p> <p>
+Este contenido no se rige por derechos de autor, puedes usar o modificarlo como quieras siempre que sea al amparo de la Constitución del 91 y no le haga daño a nadie.
+</p> <p class="flex justify-center gap-4 mt-4 font-bold"> <a href="https://www.instagram.com/ivancepedacastr/" target="_blank" rel="noopener noreferrer" class="hover:text-ph-light transition-colors">Instagram</a> <a href="https://x.com/IvanCepedaCast" target="_blank" rel="noopener noreferrer" class="hover:text-ph-light transition-colors">X (Twitter)</a> <a href="https://www.facebook.com/IvanCepedaCastro" target="_blank" rel="noopener noreferrer" class="hover:text-ph-light transition-colors">Facebook</a> </p> <div class="font-mono mt-4 text-xs">
+(づ｡◕‿‿◕｡)づ ¡Colombia potencia de la vida y de la paz!
+</div> </div> </footer> <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script> <script>
+			document.addEventListener('astro:page-load', () => {
+				VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+					max: 15,
+					speed: 400,
+					glare: true,
+					"max-glare": 0.2,
+				});
+			});
+		</script> </body> </html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/cepeda_presidente/favicon.svg"><meta name="generator" content="Astro v6.3.3"><title>Víctimas y Paz Total - Iván Cepeda 2026</title><meta name="description" content="10.110.121 víctimas, PDET, Acuerdo de Paz, protección de líderes y firmantes. La paz se construye sobre hechos."><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/cepeda_presidente/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CAqDO0tx.js"></script><link rel="stylesheet" href="/cepeda_presidente/_astro/Layout.fL7kXObZ.css"></head> <body class="min-h-screen flex flex-col font-sans"> <div id="trailing-cursor" class="fixed pointer-events-none z-[9999] opacity-0 transition-opacity duration-300"> <span class="text-3xl" id="cursor-emoji">⭐</span> </div> <script>
+	document.addEventListener('astro:page-load', () => {
+		const cursor = document.getElementById('trailing-cursor');
+		const emoji = document.getElementById('cursor-emoji');
+		
+		if (!cursor || !emoji) return;
+
+		const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		const coarsePointer = window.matchMedia('(pointer: coarse)').matches;
+		if (prefersReduced || coarsePointer) return;
+
+		let mouseX = window.innerWidth / 2;
+		let mouseY = window.innerHeight / 2;
+		let cursorX = mouseX;
+		let cursorY = mouseY;
+		
+		// Un array divertido de emojis
+		const emojis = ["⭐", "✨", "🕊️", "💪🏽", "🌱", "🔥"];
+		let emojiIndex = 0;
+
+		window.addEventListener('mousemove', (e) => {
+			mouseX = e.clientX;
+			mouseY = e.clientY;
+			cursor.style.opacity = '1';
+		});
+
+		window.addEventListener('mouseout', () => {
+			cursor.style.opacity = '0';
+		});
+
+		// Interpolación lineal suave
+		function animate() {
+			const dx = mouseX - cursorX;
+			const dy = mouseY - cursorY;
+			
+			cursorX += dx * 0.15;
+			cursorY += dy * 0.15;
+			
+			// Offset para que no tape el cursor real
+			cursor.style.transform = `translate(${cursorX + 15}px, ${cursorY + 15}px)`;
+			
+			requestAnimationFrame(animate);
+		}
+		
+		animate();
+
+		// Cambiar emoji al hacer click!
+		window.addEventListener('click', () => {
+			emojiIndex = (emojiIndex + 1) % emojis.length;
+			emoji.innerText = emojis[emojiIndex];
+			emoji.style.transform = 'scale(1.5)';
+			setTimeout(() => {
+				emoji.style.transform = 'scale(1)';
+			}, 200);
+		});
+	});
+</script> <div id="emoji-rain-root" class="fixed inset-0 pointer-events-none z-[9998]" data-astro-cid-l4hdngnz></div> <button id="emoji-rain-toggle" class="fixed bottom-6 right-4 sm:right-6 z-[9999] bg-ph-light text-black px-4 py-2 rounded-full font-bold shadow-[4px_4px_0px_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform" data-astro-cid-l4hdngnz>
+🌧️ Lluvia de emojis
+</button> <script>
+	document.addEventListener('astro:page-load', () => {
+		const root = document.getElementById('emoji-rain-root');
+		const button = document.getElementById('emoji-rain-toggle');
+
+		if (!root || !button) return;
+
+		const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		if (prefersReduced) {
+			button.style.display = 'none';
+			return;
+		}
+
+		const emojis = ["✨", "🌱", "🕊️", "💜", "🌎", "💧", "✊🏾"];
+		const isSmall = window.matchMedia('(max-width: 640px)').matches;
+		const maxEmojis = isSmall ? 18 : 36;
+		let active = false;
+		let intervalId = null;
+
+		function spawnEmoji() {
+			if (!active) return;
+			if (root.children.length >= maxEmojis) return;
+
+			const emoji = document.createElement('span');
+			const size = Math.floor(Math.random() * 16) + 16;
+			const left = Math.random() * 100;
+			const duration = Math.random() * 2.5 + 2.5;
+
+			emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+			emoji.style.position = 'absolute';
+			emoji.style.left = `${left}%`;
+			emoji.style.top = '-10%';
+			emoji.style.fontSize = `${size}px`;
+			emoji.style.animation = `emoji-fall ${duration}s linear forwards`;
+			root.appendChild(emoji);
+
+			emoji.addEventListener('animationend', () => {
+				root.removeChild(emoji);
+			});
+		}
+
+		function startRain() {
+			active = true;
+			button.setAttribute('aria-pressed', 'true');
+			button.textContent = '⏸️ Pausar lluvia';
+			intervalId = window.setInterval(spawnEmoji, 150);
+		}
+
+		function stopRain() {
+			active = false;
+			button.setAttribute('aria-pressed', 'false');
+			button.textContent = '🌧️ Lluvia de emojis';
+			if (intervalId) {
+				window.clearInterval(intervalId);
+				intervalId = null;
+			}
+		}
+
+		button.addEventListener('click', () => {
+			if (active) {
+				stopRain();
+			} else {
+				startRain();
+			}
+		});
+	});
+</script> <div id="floating-ivan" class="fixed bottom-8 right-8 w-32 h-auto cursor-pointer pointer-events-auto z-30 select-none transition-opacity duration-300 hover:scale-110" style="filter: hue-rotate(280deg) brightness(0.9) saturate(1.5); transform: rotate(-12deg);" data-interaction="true" data-astro-cid-syl7cxhi> <img src="/cepeda_presidente/_astro/Montaje Cepeda.FJMa7sH8.png" alt="¡Iván te acompaña! 💜" class="w-full h-auto drop-shadow-lg cursor-grab active:cursor-grabbing hover:brightness-110 transition-brightness" id="ivan-img" data-astro-cid-syl7cxhi> <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-ph-purple text-white px-3 py-1 rounded-full text-xs font-bold opacity-0 pointer-events-none whitespace-nowrap transition-opacity duration-300" id="ivan-tooltip" data-astro-cid-syl7cxhi>
+¡Clickéame para desaparecer! 👋
+</div> </div>  <script type="module">const e=document.getElementById("floating-ivan"),o=document.getElementById("ivan-img"),a=document.getElementById("ivan-tooltip");let r=0,m=0,n=window.innerWidth-160,i=window.innerHeight-160,s=!0,d=!1;document.addEventListener("mousemove",t=>{if(r=t.clientX,m=t.clientY,!d&&s){const l=r-(n+64),c=m-(i+64);Math.sqrt(l*l+c*c)>50&&(n+=l*.08,i+=c*.08,n=Math.max(0,Math.min(n,window.innerWidth-128)),i=Math.max(0,Math.min(i,window.innerHeight-128)),e.style.bottom="auto",e.style.right="auto",e.style.left=n+"px",e.style.top=i+"px");const p=r-(n+64),g=m-(i+64),h=-12+(Math.atan2(g,p)*(180/Math.PI)-90)*.1;o.style.filter="hue-rotate(280deg) brightness(0.9) saturate(1.5) drop-shadow(0 4px 12px rgba(0,0,0,0.3))",o.style.transform=`rotate(${h}deg)`}});o.addEventListener("mouseenter",()=>{a.classList.remove("opacity-0"),a.classList.add("opacity-100")});o.addEventListener("mouseleave",()=>{a.classList.add("opacity-0"),a.classList.remove("opacity-100")});o.addEventListener("click",t=>{t.stopPropagation(),s=!s,s?(e.style.opacity="1",e.style.pointerEvents="auto"):(e.style.opacity="0.3",e.style.pointerEvents="none")});let y=0,u=0;o.addEventListener("mousedown",t=>{d=!0,y=t.clientX-n,u=t.clientY-i});document.addEventListener("mousemove",t=>{d&&(n=t.clientX-y,i=t.clientY-u,n=Math.max(0,Math.min(n,window.innerWidth-128)),i=Math.max(0,Math.min(i,window.innerHeight-128)),e.style.bottom="auto",e.style.right="auto",e.style.left=n+"px",e.style.top=i+"px")});document.addEventListener("mouseup",()=>{d=!1});document.addEventListener("keydown",t=>{(t.key==="i"||t.key==="I")&&o.click()});</script> <main class="flex-grow">  <div class="max-w-4xl mx-auto px-4 py-12 font-serif relative overflow-hidden"> <!-- Fondo memorial --> <div class="absolute inset-0 pointer-events-none opacity-10 z-0" aria-hidden="true"> <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-rose-950 via-red-950 to-amber-950"></div> <div class="absolute inset-0" style="background: radial-gradient(ellipse at 50% 30%, rgba(244,114,182,0.08) 0%, transparent 50%), radial-gradient(ellipse at 50% 70%, rgba(251,191,36,0.05) 0%, transparent 50%);"></div> </div> <div class="mb-10 text-sm relative z-10"> <a href="/cepeda_presidente/ejes/paz" class="inline-flex items-center gap-2 text-rose-300 hover:text-rose-100 font-bold transition-colors bg-rose-950/60 border border-rose-500/30 px-4 py-2 rounded-full hover:bg-rose-900/60">
+🕊️ ← Volver a Paz y Anticorrupción
+</a> </div> <header class="relative z-10 mb-12"> <div class="relative bg-gradient-to-br from-rose-900/80 via-red-950/90 to-amber-900/80 border-3 border-rose-400/30 rounded-3xl p-8 sm:p-10 shadow-[0_0_40px_rgba(244,114,182,0.1)] overflow-hidden"> <div class="absolute top-4 right-8 text-6xl animate-bounce opacity-50" style="animation-duration: 2.5s;">🕯️</div> <div class="absolute bottom-6 left-8 text-5xl animate-pulse opacity-35">☮️</div> <h1 class="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-rose-200 via-amber-300 to-rose-200 font-serif leading-tight relative">
+🕯️ Víctimas y Paz Total
+</h1> <p class="text-xl text-rose-100 font-sans leading-relaxed max-w-2xl relative"> <strong class="text-white">10.110.121 víctimas</strong> registradas en Colombia. Cada número es una vida, cada vida es una verdad que merece justicia. 
+          La paz total no es una consigna: es la implementación real del Acuerdo, la protección de líderes y la reparación integral.
+</p> </div> </header> <blockquote class="relative z-10 my-12 bg-gradient-to-r from-rose-900/60 via-red-900/40 to-rose-900/60 border-l-4 border-rose-400 p-8 rounded-r-2xl shadow-xl"> <div class="absolute -top-4 -left-4 text-4xl">🕊️</div> <p class="text-2xl md:text-3xl italic text-white font-medium leading-relaxed font-serif">
+"No habrá paz completa sin verdad y sin justicia; no habrá paz verdadera sin reparación y garantías de no repetición.
+<strong class="text-rose-200">Cada meta del Acuerdo de Paz que alcancemos será un ladrillo más en la construcción de esa paz con justicia social.</strong>"
+</p> <footer class="mt-4 text-rose-300 text-sm font-sans">— Iván Cepeda, Día Nacional por la Dignidad de las Víctimas de la UP</footer> </blockquote> <!-- Centralidad de las víctimas --> <section class="relative z-10 mb-12"> <h2 class="text-3xl font-bold text-rose-200 mb-8 font-sans flex items-center gap-3"> <span class="text-4xl">💔</span> Centralidad de las Víctimas
+</h2> <div class="bg-gradient-to-br from-rose-950/80 to-red-950/80 border border-rose-400/20 rounded-2xl p-8 shadow-lg"> <p class="text-rose-50/90 leading-relaxed text-lg mb-4">
+El gobierno de Iván Cepeda tendrá <strong class="text-white">centralidad de las víctimas y sus derechos</strong>. El reconocimiento de las víctimas, 
+          su poder de verdad, su memoria y su dignidad son componentes indispensables de la revolución ética.
+</p> <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6"> <div class="bg-rose-900/40 border border-rose-500/20 rounded-xl p-4"> <h4 class="font-bold text-rose-200 mb-2">Verdad</h4> <p class="text-rose-50/70 text-sm">Comisión de la Verdad en cada escuela. Museos de memoria. Informes en la enseñanza escolar.</p> </div> <div class="bg-red-900/40 border border-red-500/20 rounded-xl p-4"> <h4 class="font-bold text-red-200 mb-2">Justicia</h4> <p class="text-red-50/70 text-sm">Persecución penal implacable a quienes roben recursos de reparación. Jurisdicción Especial para la Paz.</p> </div> <div class="bg-amber-900/40 border border-amber-500/20 rounded-xl p-4"> <h4 class="font-bold text-amber-200 mb-2">Reparación Integral</h4> <p class="text-amber-50/70 text-sm">Más allá de indemnizaciones: planes de desarrollo territorial, salud, educación y empleo para víctimas.</p> </div> <div class="bg-orange-900/40 border border-orange-500/20 rounded-xl p-4"> <h4 class="font-bold text-orange-200 mb-2">No Repetición</h4> <p class="text-orange-50/70 text-sm">Comisión Nacional de Garantías de Seguridad activada. Nunca más un genocidio político en Colombia.</p> </div> </div> </div> </section> <!-- Implementación del Acuerdo de Paz --> <section class="relative z-10 mb-12"> <h2 class="text-3xl font-bold text-amber-200 mb-8 font-sans flex items-center gap-3"> <span class="text-4xl">📜</span> Implementación del Acuerdo de Paz de 2016
+</h2> <div class="bg-gradient-to-br from-amber-950/80 to-yellow-950/80 border border-amber-400/20 rounded-2xl p-8 shadow-lg"> <p class="text-amber-50/90 leading-relaxed text-lg mb-4">
+El próximo gobierno le corresponde el <strong class="text-white">último período gubernamental para la implementación integral</strong>. 
+          Iván Cepeda se compromete a buscar la <strong class="text-white">prórroga por 4 años más</strong>, recuperando el tiempo perdido bajo el gobierno Duque. 
+          La paz se construye sobre hechos, no sobre promesas.
+</p> <div class="space-y-4 mt-6"> <div class="bg-amber-900/40 border border-amber-500/20 rounded-xl p-4"> <h4 class="font-bold text-amber-200 mb-2">PDET: Planes de Desarrollo con Enfoque Territorial</h4> <p class="text-amber-50/70 text-sm">Hojas de ruta construidas desde las veredas. Salud, educación, vivienda, vías rurales, economía campesina. Presupuesto garantizado y cronogramas definidos.</p> </div> <div class="bg-yellow-900/40 border border-yellow-500/20 rounded-xl p-4"> <h4 class="font-bold text-yellow-200 mb-2">Sustitución de Cultivos</h4> <p class="text-yellow-50/70 text-sm">Sustitución voluntaria acompañada de inversión social. Alternativas productivas para las comunidades que abandonan las economías ilícitas.</p> </div> <div class="bg-orange-900/40 border border-orange-500/20 rounded-xl p-4"> <h4 class="font-bold text-orange-200 mb-2">Reincorporación de Firmantes</h4> <p class="text-orange-50/70 text-sm">Garantías plenas para quienes dejaron las armas. Proyectos productivos colectivos. Participación política real.</p> </div> </div> </div> </section> <!-- Protección de líderes y firmantes --> <section class="relative z-10 mb-12"> <h2 class="text-3xl font-bold text-red-200 mb-8 font-sans flex items-center gap-3"> <span class="text-4xl">🛡️</span> Protección de Líderes y Firmantes
+</h2> <div class="bg-gradient-to-br from-red-950/80 to-rose-950/80 border-3 border-red-400/30 rounded-2xl p-8 shadow-lg text-center"> <div class="text-6xl mb-4">🚨</div> <h3 class="text-2xl font-black text-red-300 mb-4">LÍNEA ROJA</h3> <p class="text-xl text-red-100 font-sans leading-relaxed mb-6"> <strong class="text-white">No asesinar líderes sociales y firmantes de paz</strong> es línea roja en cualquier diálogo con grupos armados. 
+          La Comisión Nacional de Garantías de Seguridad se activará con rigor. Enfoque de seguridad humana, no militarista.
+</p> <p class="text-red-50/80 text-lg">
+Cada líder comunitario amenazado, cada firmante asesinado, es una alerta de que la paz se construye día a día en los territorios. 
+          No se puede permitir que la historia de la UP vuelva a repetirse con otros nombres.
+</p> </div> </section> <!-- Diálogos y Paz Total --> <section class="relative z-10 mb-12"> <h2 class="text-3xl font-bold text-amber-200 mb-8 font-sans flex items-center gap-3"> <span class="text-4xl">🤝</span> Paz Total y Diálogos
+</h2> <div class="bg-gradient-to-br from-amber-950/80 to-orange-950/80 border border-amber-400/20 rounded-2xl p-8 shadow-lg"> <p class="text-amber-50/90 leading-relaxed text-lg">
+Como facilitador y negociador en procesos de paz durante dos décadas, Iván Cepeda sabe que <strong class="text-white">siempre es posible llegar a un acuerdo</strong>. 
+          La paz total implica diálogos simultáneos con todos los grupos armados, participación de las comunidades, 
+          y transformaciones territoriales que ataquen las causas estructurales de la violencia.
+</p> </div> </section> <div class="relative z-10 mt-16 text-center"> <div class="text-6xl mb-4 hover:animate-spin cursor-default inline-block">🕊️</div> <p class="text-xl font-bold text-rose-200 font-sans">
+"En memoria de todos los hombres y mujeres de la UP que perdieron la vida, <br>
+refrendamos nuestro juramento de que <strong class="text-white">nunca más habrá otro genocidio político en Colombia</strong>."
+</p> <a href="/cepeda_presidente/ejes/paz" class="inline-block mt-8 bg-rose-700 hover:bg-rose-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-rose-500/30">
+🕯️ Volver a Paz y Anticorrupción
+</a> </div> </div>  </main> <footer class="mt-12 border-t border-ph-purple p-6 text-center text-sm text-gray-400"> <div class="max-w-3xl mx-auto space-y-4"> <p>⚠️ <strong>Sitio Voluntario y No Oficial</strong> ⚠️</p> <p>Esta es una iniciativa ciudadana, divertida y no oficial creada para acercar el plan de gobierno "El Poder de la Verdad" a más personas.</p> <p>
+Para más información visita: <a href="https://www.cepedapresidente.co/" target="_blank" rel="noopener noreferrer" class="text-ph-light font-bold hover:underline hover:text-white transition-colors">Página web oficial de Iván Cepeda</a>.<br> </p> <p class="text-gray-300 leading-relaxed">
+Este sitio web fue construido con herramientas automáticas usando el <a href="https://www.movimientopactohistorico.co/docs/programa-gobierno-2026-2030.pdf" target="_blank" rel="noopener noreferrer" class="text-ph-light font-bold hover:underline hover:text-white transition-colors">Programa de gobierno 2026-2030 (PDF)</a>, nuestra interpretación puede contener errores e imprecisiones.
+					Puedes descargar el <a href="https://raw.githubusercontent.com/artificialisaza/cepeda_presidente/main/programa-gobierno-2026-2030.md" download="programa-gobierno-2026-2030.md" target="_blank" rel="noopener noreferrer" class="text-ph-light font-bold hover:underline hover:text-white transition-colors">archivo de texto md</a> y usarlo en cualquier modelo de IA para entender mejor el Programa de Gobierno o hacer un proyecto como este.
+</p> <p>
+Este contenido no se rige por derechos de autor, puedes usar o modificarlo como quieras siempre que sea al amparo de la Constitución del 91 y no le haga daño a nadie.
+</p> <p class="flex justify-center gap-4 mt-4 font-bold"> <a href="https://www.instagram.com/ivancepedacastr/" target="_blank" rel="noopener noreferrer" class="hover:text-ph-light transition-colors">Instagram</a> <a href="https://x.com/IvanCepedaCast" target="_blank" rel="noopener noreferrer" class="hover:text-ph-light transition-colors">X (Twitter)</a> <a href="https://www.facebook.com/IvanCepedaCastro" target="_blank" rel="noopener noreferrer" class="hover:text-ph-light transition-colors">Facebook</a> </p> <div class="font-mono mt-4 text-xs">
+(づ｡◕‿‿◕｡)づ ¡Colombia potencia de la vida y de la paz!
+</div> </div> </footer> <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script> <script>
+			document.addEventListener('astro:page-load', () => {
+				VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+					max: 15,
+					speed: 400,
+					glare: true,
+					"max-glare": 0.2,
+				});
+			});
+		</script> </body> </html>
