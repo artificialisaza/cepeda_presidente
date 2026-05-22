@@ -1,0 +1,45 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Educación Pública - Iván Cepeda 2026" description="Universidades en territorios, SEIP, ICETEX transformado, presupuesto educativo fortalecido. Educación para la paz y la libertad.">
+  <div class="max-w-4xl mx-auto px-4 py-12 font-serif relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none opacity-10 z-0" aria-hidden="true">
+      <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-amber-950 via-orange-950 to-yellow-950"></div>
+    </div>
+    <div class="mb-10 text-sm relative z-10">
+      <a href={import.meta.env.BASE_URL + 'ejes/seguridad'} class="inline-flex items-center gap-2 text-amber-300 hover:text-amber-100 font-bold transition-colors bg-amber-950/60 border border-amber-500/30 px-4 py-2 rounded-full hover:bg-amber-900/60">📚 ← Volver a Seguridad y Prosperidad</a>
+    </div>
+    <header class="relative z-10 mb-12">
+      <div class="relative bg-gradient-to-br from-amber-900/80 via-orange-950/90 to-yellow-900/80 border-3 border-amber-400/30 rounded-3xl p-8 sm:p-10 shadow-[0_0_40px_rgba(251,191,36,0.1)] overflow-hidden">
+        <div class="absolute top-4 right-8 text-6xl animate-bounce opacity-50" style="animation-duration:2.5s">📚</div>
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-orange-300 to-yellow-200 font-serif leading-tight relative">📚 Educación Pública de Calidad</h1>
+        <p class="text-xl text-amber-100 font-sans leading-relaxed max-w-2xl relative"><strong class="text-white">Donde llega la universidad, llega la esperanza.</strong> Universidades en los territorios para quienes nunca tuvieron acceso. SEIP para pueblos indígenas. Memoria y educación para la paz. ICETEX transformado.</p>
+      </div>
+    </header>
+    <blockquote class="relative z-10 my-12 bg-gradient-to-r from-amber-900/60 via-orange-900/40 to-amber-900/60 border-l-4 border-amber-400 p-8 rounded-r-2xl shadow-xl">
+      <p class="text-2xl md:text-3xl italic text-white font-medium leading-relaxed font-serif">"Una de las primeras fuentes de la opresión y el sometimiento es la ignorancia. <strong class="text-amber-200">Mientras más educación, más pensamiento crítico, Colombia será una sociedad más libre, más plena y democrática.</strong>"</p>
+      <footer class="mt-4 text-amber-300 text-sm font-sans">— Iván Cepeda, Universidad Industrial de Santander</footer>
+    </blockquote>
+    <section class="relative z-10 space-y-8">
+      <h2 class="text-3xl font-bold text-amber-200 mb-6 font-sans flex items-center gap-3"><span class="text-4xl">🎓</span> Ejes de la Revolución Educativa</h2>
+      <div class="bg-gradient-to-r from-amber-950/80 via-orange-950/60 to-amber-950/80 border border-amber-500/30 rounded-2xl p-8 shadow-xl hover:border-amber-400/60 transition-all duration-300 group">
+        <div class="flex items-start gap-5"><div class="text-5xl group-hover:animate-bounce shrink-0">🏫</div><div><h3 class="text-2xl font-bold text-amber-200 mb-4">Universidades en los Territorios</h3><p class="text-amber-50/90 leading-relaxed text-lg">Que la universidad llegue a cada territorio rural. <strong class="text-white">Nuevos campus universitarios y centros de investigación</strong> donde nunca hubo acceso. La investigación científica al servicio de las comunidades.</p></div></div>
+      </div>
+      <div class="bg-gradient-to-r from-orange-950/80 via-yellow-950/60 to-orange-950/80 border border-orange-500/30 rounded-2xl p-8 shadow-xl hover:border-orange-400/60 transition-all duration-300 group">
+        <div class="flex items-start gap-5"><div class="text-5xl group-hover:animate-pulse shrink-0">🪶</div><div><h3 class="text-2xl font-bold text-orange-200 mb-4">SEIP: Educación Indígena Propia</h3><p class="text-orange-50/90 leading-relaxed text-lg">Implementación plena del <strong class="text-white">Sistema Educativo Indígena Propio</strong>. Reconocimiento de los saberes, lenguas y pedagogías ancestrales como parte fundamental del sistema educativo nacional.</p></div></div>
+      </div>
+      <div class="bg-gradient-to-r from-yellow-950/80 via-amber-950/60 to-yellow-950/80 border border-yellow-500/30 rounded-2xl p-8 shadow-xl hover:border-yellow-400/60 transition-all duration-300 group">
+        <div class="flex items-start gap-5"><div class="text-5xl group-hover:animate-spin shrink-0" style="animation-duration:4s">🔄</div><div><h3 class="text-2xl font-bold text-yellow-200 mb-4">Transformación del ICETEX</h3><p class="text-yellow-50/90 leading-relaxed text-lg">Desmontar los embudos burocráticos y la <strong class="text-white">crisis de endeudamiento</strong>. Educación superior financiada estructuralmente como derecho absoluto, no como negocio pasajero.</p></div></div>
+      </div>
+      <div class="bg-gradient-to-r from-red-950/80 via-rose-950/60 to-red-950/80 border border-red-500/30 rounded-2xl p-8 shadow-xl hover:border-red-400/60 transition-all duration-300 group">
+        <div class="flex items-start gap-5"><div class="text-5xl group-hover:animate-bounce shrink-0">🕊️</div><div><h3 class="text-2xl font-bold text-red-200 mb-4">Memoria y Educación para la Paz</h3><p class="text-red-50/90 leading-relaxed text-lg"><strong class="text-white">El Informe de la Comisión de la Verdad en cada escuela.</strong> Historia del genocidio, el conflicto y los crímenes de lesa humanidad en la enseñanza escolar. Museos de memoria. Que las nuevas generaciones sepan lo que pasó para que nunca más se repita.</p></div></div>
+      </div>
+    </section>
+    <div class="relative z-10 mt-16 text-center">
+      <div class="text-6xl mb-4 hover:animate-spin cursor-default inline-block">📚</div>
+      <p class="text-xl font-bold text-amber-200 font-sans">"La universidad debe tomar en serio la necesidad de <strong class="text-white">cambiar la conciencia</strong> de la sociedad colombiana."</p>
+      <a href={import.meta.env.BASE_URL + 'ejes/seguridad'} class="inline-block mt-8 bg-amber-700 hover:bg-amber-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-amber-500/30">📚 Volver a Seguridad</a>
+    </div>
+  </div>
+</Layout>
