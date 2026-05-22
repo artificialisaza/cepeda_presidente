@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/cepeda_presidente/favicon.svg"><meta name="generator" content="Astro v6.3.3"><title>Justicia Ambiental y Protección Animal - Iván Cepeda 2026</title><meta name="description" content="Propuesta de justicia ambiental, protección animal y defensa de la biodiversidad."><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/cepeda_presidente/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CAqDO0tx.js"></script><link rel="stylesheet" href="/cepeda_presidente/_astro/Layout.DeMt9EDV.css"></head> <body class="min-h-screen flex flex-col font-sans"> <div id="trailing-cursor" class="fixed pointer-events-none z-[9999] opacity-0 transition-opacity duration-300"> <span class="text-3xl" id="cursor-emoji">⭐</span> </div> <script>
+	document.addEventListener('astro:page-load', () => {
+		const cursor = document.getElementById('trailing-cursor');
+		const emoji = document.getElementById('cursor-emoji');
+		
+		if (!cursor || !emoji) return;
+
+		const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		const coarsePointer = window.matchMedia('(pointer: coarse)').matches;
+		if (prefersReduced || coarsePointer) return;
+
+		let mouseX = window.innerWidth / 2;
+		let mouseY = window.innerHeight / 2;
+		let cursorX = mouseX;
+		let cursorY = mouseY;
+		
+		// Un array divertido de emojis
+		const emojis = ["⭐", "✨", "🕊️", "💪🏽", "🌱", "🔥"];
+		let emojiIndex = 0;
+
+		window.addEventListener('mousemove', (e) => {
+			mouseX = e.clientX;
+			mouseY = e.clientY;
+			cursor.style.opacity = '1';
+		});
+
+		window.addEventListener('mouseout', () => {
+			cursor.style.opacity = '0';
+		});
+
+		// Interpolación lineal suave
+		function animate() {
+			const dx = mouseX - cursorX;
+			const dy = mouseY - cursorY;
+			
+			cursorX += dx * 0.15;
+			cursorY += dy * 0.15;
+			
+			// Offset para que no tape el cursor real
+			cursor.style.transform = `translate(${cursorX + 15}px, ${cursorY + 15}px)`;
+			
+			requestAnimationFrame(animate);
+		}
+		
+		animate();
+
+		// Cambiar emoji al hacer click!
+		window.addEventListener('click', () => {
+			emojiIndex = (emojiIndex + 1) % emojis.length;
+			emoji.innerText = emojis[emojiIndex];
+			emoji.style.transform = 'scale(1.5)';
+			setTimeout(() => {
+				emoji.style.transform = 'scale(1)';
+			}, 200);
+		});
+	});
+</script> <div id="emoji-rain-root" class="fixed inset-0 pointer-events-none z-[9998]" data-astro-cid-l4hdngnz></div> <button id="emoji-rain-toggle" class="fixed bottom-6 right-4 sm:right-6 z-[9999] bg-ph-light text-black px-4 py-2 rounded-full font-bold shadow-[4px_4px_0px_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform" data-astro-cid-l4hdngnz>
+🌧️ Lluvia de emojis
+</button> <script>
+	document.addEventListener('astro:page-load', () => {
+		const root = document.getElementById('emoji-rain-root');
+		const button = document.getElementById('emoji-rain-toggle');
+
+		if (!root || !button) return;
+
+		const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		if (prefersReduced) {
+			button.style.display = 'none';
+			return;
+		}
+
+		const emojis = ["✨", "🌱", "🕊️", "💜", "🌎", "💧", "✊🏾"];
+		const isSmall = window.matchMedia('(max-width: 640px)').matches;
+		const maxEmojis = isSmall ? 18 : 36;
+		let active = false;
+		let intervalId = null;
+
+		function spawnEmoji() {
+			if (!active) return;
+			if (root.children.length >= maxEmojis) return;
+
+			const emoji = document.createElement('span');
+			const size = Math.floor(Math.random() * 16) + 16;
+			const left = Math.random() * 100;
+			const duration = Math.random() * 2.5 + 2.5;
+
+			emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+			emoji.style.position = 'absolute';
+			emoji.style.left = `${left}%`;
+			emoji.style.top = '-10%';
+			emoji.style.fontSize = `${size}px`;
+			emoji.style.animation = `emoji-fall ${duration}s linear forwards`;
+			root.appendChild(emoji);
+
+			emoji.addEventListener('animationend', () => {
+				root.removeChild(emoji);
+			});
+		}
+
+		function startRain() {
+			active = true;
+			button.setAttribute('aria-pressed', 'true');
+			button.textContent = '⏸️ Pausar lluvia';
+			intervalId = window.setInterval(spawnEmoji, 150);
+		}
+
+		function stopRain() {
+			active = false;
+			button.setAttribute('aria-pressed', 'false');
+			button.textContent = '🌧️ Lluvia de emojis';
+			if (intervalId) {
+				window.clearInterval(intervalId);
+				intervalId = null;
+			}
+		}
+
+		button.addEventListener('click', () => {
+			if (active) {
+				stopRain();
+			} else {
+				startRain();
+			}
+		});
+	});
+</script> <div id="floating-ivan" class="fixed bottom-8 right-8 w-32 h-auto cursor-pointer pointer-events-auto z-30 select-none transition-opacity duration-300 hover:scale-110" style="filter: hue-rotate(280deg) brightness(0.9) saturate(1.5); transform: rotate(-12deg);" data-interaction="true" data-astro-cid-syl7cxhi> <img src="/cepeda_presidente/_astro/Montaje Cepeda.FJMa7sH8.png" alt="¡Iván te acompaña! 💜" class="w-full h-auto drop-shadow-lg cursor-grab active:cursor-grabbing hover:brightness-110 transition-brightness" id="ivan-img" data-astro-cid-syl7cxhi> <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-ph-purple text-white px-3 py-1 rounded-full text-xs font-bold opacity-0 pointer-events-none whitespace-nowrap transition-opacity duration-300" id="ivan-tooltip" data-astro-cid-syl7cxhi>
+¡Clickéame para desaparecer! 👋
+</div> </div>  <script type="module">const e=document.getElementById("floating-ivan"),o=document.getElementById("ivan-img"),a=document.getElementById("ivan-tooltip");let r=0,m=0,n=window.innerWidth-160,i=window.innerHeight-160,s=!0,d=!1;document.addEventListener("mousemove",t=>{if(r=t.clientX,m=t.clientY,!d&&s){const l=r-(n+64),c=m-(i+64);Math.sqrt(l*l+c*c)>50&&(n+=l*.08,i+=c*.08,n=Math.max(0,Math.min(n,window.innerWidth-128)),i=Math.max(0,Math.min(i,window.innerHeight-128)),e.style.bottom="auto",e.style.right="auto",e.style.left=n+"px",e.style.top=i+"px");const p=r-(n+64),g=m-(i+64),h=-12+(Math.atan2(g,p)*(180/Math.PI)-90)*.1;o.style.filter="hue-rotate(280deg) brightness(0.9) saturate(1.5) drop-shadow(0 4px 12px rgba(0,0,0,0.3))",o.style.transform=`rotate(${h}deg)`}});o.addEventListener("mouseenter",()=>{a.classList.remove("opacity-0"),a.classList.add("opacity-100")});o.addEventListener("mouseleave",()=>{a.classList.add("opacity-0"),a.classList.remove("opacity-100")});o.addEventListener("click",t=>{t.stopPropagation(),s=!s,s?(e.style.opacity="1",e.style.pointerEvents="auto"):(e.style.opacity="0.3",e.style.pointerEvents="none")});let y=0,u=0;o.addEventListener("mousedown",t=>{d=!0,y=t.clientX-n,u=t.clientY-i});document.addEventListener("mousemove",t=>{d&&(n=t.clientX-y,i=t.clientY-u,n=Math.max(0,Math.min(n,window.innerWidth-128)),i=Math.max(0,Math.min(i,window.innerHeight-128)),e.style.bottom="auto",e.style.right="auto",e.style.left=n+"px",e.style.top=i+"px")});document.addEventListener("mouseup",()=>{d=!1});document.addEventListener("keydown",t=>{(t.key==="i"||t.key==="I")&&o.click()});</script> <main class="flex-grow">  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12"> <div class="font-mono whitespace-pre overflow-x-auto hide-scrollbar w-full flex justify-center mb-8"> <div class="inline-block min-w-fit"> <div class="inline-flex flex-col items-start gap-1 leading-none tracking-[0.08em] text-[10px] sm:text-sm" style="width: 33ch;"> <span class="block w-full text-emerald-400">  /\_/\   /\_/\   /\_/\   /\_/\  </span><span class="block w-full text-green-500"> ( o.o ) ( o.o ) ( o.o ) ( o.o ) </span><span class="block w-full text-emerald-400">  &gt; ^ &lt;   &gt; ^ &lt;   &gt; ^ &lt;   &gt; ^ &lt;  </span> </div> </div> </div> <a href="/cepeda_presidente/ejes/agraria" class="inline-block mb-8 text-eje-agri hover:underline hover:text-white transition-colors text-sm sm:text-base">
+← Volver a Revolución Agraria
+</a> <!-- Header --> <header class="bg-emerald-900/60 border-3 border-emerald-400/50 rounded-3xl p-6 sm:p-8 mb-10 shadow-[6px_6px_0px_rgba(52,211,153,0.4)] transform -rotate-1"> <h1 class="text-3xl sm:text-5xl font-extrabold text-emerald-300 mb-4 font-serif drop-shadow-[0_0_18px_#34d399]">🐾 Justicia Ambiental y Protección Animal</h1> <p class="text-emerald-100 text-lg sm:text-xl font-['Comic_Sans_MS',cursive] leading-relaxed">
+La justicia ambiental incluye a los animales como seres sintientes y protege la biodiversidad que es nuestra mayor riqueza como nación.
+</p> </header> <!-- Quote --> <blockquote class="border-l-4 border-emerald-400 pl-6 my-10 italic text-white text-xl sm:text-2xl font-medium font-serif leading-relaxed">
+"La naturaleza y la biodiversidad no son meros recursos explotables, sino nuestra casa común que debemos cuidar. La vida se defiende ante toda forma de violencia."<br> <span class="text-emerald-300 text-base">— Iván Cepeda, Programa de Gobierno 2026-2030</span> </blockquote> <!-- Sections --> <div class="space-y-12 leading-relaxed text-lg text-gray-200 font-sans"> <!-- Animal Rights --> <section class="bg-black/40 border-2 border-emerald-500/30 rounded-2xl p-6 sm:p-8 shadow-lg"> <h2 class="text-2xl sm:text-3xl font-bold text-emerald-300 mb-6 font-serif flex items-center gap-3"> <span class="text-4xl">🐕</span> Derechos de los Animales
+</h2> <div class="space-y-4"> <p class="text-base sm:text-lg leading-relaxed">
+Colombia ha dado pasos históricos para proteger a los animales. La Corte Constitucional, gracias al impulso del Pacto Histórico, declaró a Colombia <strong class="text-emerald-200">libre de espectáculos crueles con animales</strong>, prohibiendo la tauromaquia, las corralejas, el coleo y las peleas de gallos. Esta es una victoria de la conciencia ética del país.
+</p> <div class="bg-emerald-900/20 border border-emerald-600/40 rounded-xl p-5 mt-6"> <h3 class="text-xl font-bold text-emerald-200 mb-3">Compromisos concretos</h3> <ul class="list-disc list-inside space-y-2 text-base"> <li><strong>Reconocimiento constitucional</strong> de los animales como sujetos de derechos</li> <li>Creación del <strong>Viceministerio de Derechos Animales</strong></li> <li>Creación del <strong>Observatorio de Bienestar y Protección Animal</strong></li> <li>Programa nacional de <strong>reconversión laboral</strong> para sectores taurinos, gallísticos, de corralejas y coleo</li> <li>Programa nacional de <strong>sustitución de vehículos de tracción animal</strong></li> <li><strong>Educación climática y ética interespecie</strong> obligatoria en todos los niveles educativos</li> <li>Fortalecimiento del <strong>Sistema Nacional de Protección y Bienestar Animal</strong></li> <li>La <strong>Ley de Rescate Animal</strong> reconoce a los animales como sujetos de atención en el Sistema Nacional de Gestión del Riesgo de Desastres; financiación aumentada del 2% al 15%</li> </ul> </div> </div> </section> <!-- Environmental Justice --> <section class="bg-black/40 border-2 border-green-500/30 rounded-2xl p-6 sm:p-8 shadow-lg"> <h2 class="text-2xl sm:text-3xl font-bold text-green-300 mb-6 font-serif flex items-center gap-3"> <span class="text-4xl">🌿</span> Justicia Ambiental
+</h2> <div class="space-y-4"> <p class="text-base sm:text-lg leading-relaxed">
+Colombia es uno de los países con mayor biodiversidad del planeta. Esa riqueza no puede seguir siendo saqueada por el extractivismo voraz. Nuestra propuesta ambiental se centra en el <strong class="text-green-200">Pacto por la Vida</strong>, que articula la transición energética justa con la protección de ecosistemas estratégicos.
+</p> <div class="bg-green-900/20 border border-green-600/40 rounded-xl p-5 mt-6"> <h3 class="text-xl font-bold text-green-200 mb-3">Compromisos concretos</h3> <ul class="list-disc list-inside space-y-2 text-base"> <li><strong>Transición energética justa</strong>: acelerar energías renovables no convencionales, cero fracking</li> <li><strong>Protección de páramos</strong> y ecosistemas estratégicos como Santurbán</li> <li><strong>Defensa de la Amazonía</strong> y la Orinoquía como reservas de vida, no como zonas de extracción</li> <li><strong>Revisión de concesiones</strong> extractivas en zonas ecológicamente sensibles</li> <li>Fortalecimiento de las <strong>autoridades ambientales indígenas</strong> reconocidas por el Decreto 1275 de 2024</li> <li><strong>Consejos ambientales regionales</strong> con participación comunitaria vinculante</li> <li>Impulso de la <strong>bioeconomía</strong> y las economías de la biodiversidad como alternativa al extractivismo</li> <li><strong>Estatutos especiales</strong> para la Amazonía y el Pacífico que rompan con el modelo depredador</li> </ul> </div> </div> </section> <!-- Biodiversity by region --> <section class="bg-black/40 border-2 border-amber-500/30 rounded-2xl p-6 sm:p-8 shadow-lg"> <h2 class="text-2xl sm:text-3xl font-bold text-amber-300 mb-6 font-serif flex items-center gap-3"> <span class="text-4xl">🦜</span> Territorios de Biodiversidad
+</h2> <p class="text-base sm:text-lg leading-relaxed mb-4">
+Cada región de Colombia tiene un ecosistema único que merece protección especial. El programa de gobierno reconoce la necesidad de estatutos especiales y pactos territoriales que pongan la vida en el centro:
+</p> <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4"> <div class="bg-amber-900/20 border border-amber-600/30 rounded-xl p-4"> <h3 class="text-lg font-bold text-amber-200 mb-2">🌴 Pacífico</h3> <p class="text-sm leading-relaxed">Turismo sostenible, agroecología y economías culturales en lugar del despojo extractivista. Un Pacífico verde, digno y soberano.</p> </div> <div class="bg-green-900/20 border border-green-600/30 rounded-xl p-4"> <h3 class="text-lg font-bold text-green-200 mb-2">🌳 Amazonía</h3> <p class="text-sm leading-relaxed">Puerta de la Amazonía con desarrollo territorial sostenible. Protección de la selva como pulmón del mundo y hogar de pueblos ancestrales.</p> </div> <div class="bg-blue-900/20 border border-blue-600/30 rounded-xl p-4"> <h3 class="text-lg font-bold text-blue-200 mb-2">🏔️ Páramos</h3> <p class="text-sm leading-relaxed">Santurbán y todos los páramos de Colombia protegidos. El agua vale más que el oro. Autoridades ambientales indígenas reconocidas.</p> </div> <div class="bg-teal-900/20 border border-teal-600/30 rounded-xl p-4"> <h3 class="text-lg font-bold text-teal-200 mb-2">🌊 Mares y Costas</h3> <p class="text-sm leading-relaxed">Protección de nuestros vastos espacios oceánicos. Pesca artesanal sostenible. Defensa frente a la explotación indiscriminada.</p> </div> </div> </section> </div> <div class="mt-12 text-center"> <a href="/cepeda_presidente/ejes/agraria" class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white px-6 py-3 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg">
+🌱 Volver a Revolución Agraria
+</a> </div> </div>  </main> <footer class="mt-12 border-t border-ph-purple p-6 text-center text-sm text-gray-400"> <div class="max-w-3xl mx-auto space-y-4"> <p>⚠️ <strong>Sitio Voluntario y No Oficial</strong> ⚠️</p> <p>Esta es una iniciativa ciudadana, divertida y no oficial creada para acercar el plan de gobierno "El Poder de la Verdad" a más personas.</p> <p>
+Para más información visita: <a href="https://www.cepedapresidente.co/" target="_blank" rel="noopener noreferrer" class="text-ph-light font-bold hover:underline hover:text-white transition-colors">Página web oficial de Iván Cepeda</a>.<br> </p> <p class="text-gray-300 leading-relaxed">
+Este sitio web fue construido con herramientas automáticas usando el <a href="https://www.movimientopactohistorico.co/docs/programa-gobierno-2026-2030.pdf" target="_blank" rel="noopener noreferrer" class="text-ph-light font-bold hover:underline hover:text-white transition-colors">Programa de gobierno 2026-2030 (PDF)</a>, nuestra interpretación puede contener errores e imprecisiones.
+					Puedes descargar el <a href="https://raw.githubusercontent.com/artificialisaza/cepeda_presidente/main/programa-gobierno-2026-2030.md" download="programa-gobierno-2026-2030.md" target="_blank" rel="noopener noreferrer" class="text-ph-light font-bold hover:underline hover:text-white transition-colors">archivo de texto md</a> y usarlo en cualquier modelo de IA para entender mejor el Programa de Gobierno o hacer un proyecto como este.
+</p> <p>
+Este contenido no se rige por derechos de autor, puedes usar o modificarlo como quieras siempre que sea al amparo de la Constitución del 91 y no le haga daño a nadie.
+</p> <p class="flex justify-center gap-4 mt-4 font-bold"> <a href="https://www.instagram.com/ivancepedacastr/" target="_blank" rel="noopener noreferrer" class="hover:text-ph-light transition-colors">Instagram</a> <a href="https://x.com/IvanCepedaCast" target="_blank" rel="noopener noreferrer" class="hover:text-ph-light transition-colors">X (Twitter)</a> <a href="https://www.facebook.com/IvanCepedaCastro" target="_blank" rel="noopener noreferrer" class="hover:text-ph-light transition-colors">Facebook</a> </p> <div class="font-mono mt-4 text-xs">
+(づ｡◕‿‿◕｡)づ ¡Colombia potencia de la vida y de la paz!
+</div> </div> </footer> <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script> <script>
+			document.addEventListener('astro:page-load', () => {
+				VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+					max: 15,
+					speed: 400,
+					glare: true,
+					"max-glare": 0.2,
+				});
+			});
+		</script> </body> </html>

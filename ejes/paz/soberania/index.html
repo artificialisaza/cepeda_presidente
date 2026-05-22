@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/cepeda_presidente/favicon.svg"><meta name="generator" content="Astro v6.3.3"><title>Política Exterior Soberana - Iván Cepeda 2026</title><meta name="description" content="Política exterior autónoma, nuevo paradigma contra el narcotráfico y protección de migrantes colombianos."><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/cepeda_presidente/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CAqDO0tx.js"></script><link rel="stylesheet" href="/cepeda_presidente/_astro/Layout.DeMt9EDV.css"></head> <body class="min-h-screen flex flex-col font-sans"> <div id="trailing-cursor" class="fixed pointer-events-none z-[9999] opacity-0 transition-opacity duration-300"> <span class="text-3xl" id="cursor-emoji">⭐</span> </div> <script>
+	document.addEventListener('astro:page-load', () => {
+		const cursor = document.getElementById('trailing-cursor');
+		const emoji = document.getElementById('cursor-emoji');
+		
+		if (!cursor || !emoji) return;
+
+		const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		const coarsePointer = window.matchMedia('(pointer: coarse)').matches;
+		if (prefersReduced || coarsePointer) return;
+
+		let mouseX = window.innerWidth / 2;
+		let mouseY = window.innerHeight / 2;
+		let cursorX = mouseX;
+		let cursorY = mouseY;
+		
+		// Un array divertido de emojis
+		const emojis = ["⭐", "✨", "🕊️", "💪🏽", "🌱", "🔥"];
+		let emojiIndex = 0;
+
+		window.addEventListener('mousemove', (e) => {
+			mouseX = e.clientX;
+			mouseY = e.clientY;
+			cursor.style.opacity = '1';
+		});
+
+		window.addEventListener('mouseout', () => {
+			cursor.style.opacity = '0';
+		});
+
+		// Interpolación lineal suave
+		function animate() {
+			const dx = mouseX - cursorX;
+			const dy = mouseY - cursorY;
+			
+			cursorX += dx * 0.15;
+			cursorY += dy * 0.15;
+			
+			// Offset para que no tape el cursor real
+			cursor.style.transform = `translate(${cursorX + 15}px, ${cursorY + 15}px)`;
+			
+			requestAnimationFrame(animate);
+		}
+		
+		animate();
+
+		// Cambiar emoji al hacer click!
+		window.addEventListener('click', () => {
+			emojiIndex = (emojiIndex + 1) % emojis.length;
+			emoji.innerText = emojis[emojiIndex];
+			emoji.style.transform = 'scale(1.5)';
+			setTimeout(() => {
+				emoji.style.transform = 'scale(1)';
+			}, 200);
+		});
+	});
+</script> <div id="emoji-rain-root" class="fixed inset-0 pointer-events-none z-[9998]" data-astro-cid-l4hdngnz></div> <button id="emoji-rain-toggle" class="fixed bottom-6 right-4 sm:right-6 z-[9999] bg-ph-light text-black px-4 py-2 rounded-full font-bold shadow-[4px_4px_0px_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform" data-astro-cid-l4hdngnz>
+🌧️ Lluvia de emojis
+</button> <script>
+	document.addEventListener('astro:page-load', () => {
+		const root = document.getElementById('emoji-rain-root');
+		const button = document.getElementById('emoji-rain-toggle');
+
+		if (!root || !button) return;
+
+		const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		if (prefersReduced) {
+			button.style.display = 'none';
+			return;
+		}
+
+		const emojis = ["✨", "🌱", "🕊️", "💜", "🌎", "💧", "✊🏾"];
+		const isSmall = window.matchMedia('(max-width: 640px)').matches;
+		const maxEmojis = isSmall ? 18 : 36;
+		let active = false;
+		let intervalId = null;
+
+		function spawnEmoji() {
+			if (!active) return;
+			if (root.children.length >= maxEmojis) return;
+
+			const emoji = document.createElement('span');
+			const size = Math.floor(Math.random() * 16) + 16;
+			const left = Math.random() * 100;
+			const duration = Math.random() * 2.5 + 2.5;
+
+			emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+			emoji.style.position = 'absolute';
+			emoji.style.left = `${left}%`;
+			emoji.style.top = '-10%';
+			emoji.style.fontSize = `${size}px`;
+			emoji.style.animation = `emoji-fall ${duration}s linear forwards`;
+			root.appendChild(emoji);
+
+			emoji.addEventListener('animationend', () => {
+				root.removeChild(emoji);
+			});
+		}
+
+		function startRain() {
+			active = true;
+			button.setAttribute('aria-pressed', 'true');
+			button.textContent = '⏸️ Pausar lluvia';
+			intervalId = window.setInterval(spawnEmoji, 150);
+		}
+
+		function stopRain() {
+			active = false;
+			button.setAttribute('aria-pressed', 'false');
+			button.textContent = '🌧️ Lluvia de emojis';
+			if (intervalId) {
+				window.clearInterval(intervalId);
+				intervalId = null;
+			}
+		}
+
+		button.addEventListener('click', () => {
+			if (active) {
+				stopRain();
+			} else {
+				startRain();
+			}
+		});
+	});
+</script> <div id="floating-ivan" class="fixed bottom-8 right-8 w-32 h-auto cursor-pointer pointer-events-auto z-30 select-none transition-opacity duration-300 hover:scale-110" style="filter: hue-rotate(280deg) brightness(0.9) saturate(1.5); transform: rotate(-12deg);" data-interaction="true" data-astro-cid-syl7cxhi> <img src="/cepeda_presidente/_astro/Montaje Cepeda.FJMa7sH8.png" alt="¡Iván te acompaña! 💜" class="w-full h-auto drop-shadow-lg cursor-grab active:cursor-grabbing hover:brightness-110 transition-brightness" id="ivan-img" data-astro-cid-syl7cxhi> <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-ph-purple text-white px-3 py-1 rounded-full text-xs font-bold opacity-0 pointer-events-none whitespace-nowrap transition-opacity duration-300" id="ivan-tooltip" data-astro-cid-syl7cxhi>
+¡Clickéame para desaparecer! 👋
+</div> </div>  <script type="module">const e=document.getElementById("floating-ivan"),o=document.getElementById("ivan-img"),a=document.getElementById("ivan-tooltip");let r=0,m=0,n=window.innerWidth-160,i=window.innerHeight-160,s=!0,d=!1;document.addEventListener("mousemove",t=>{if(r=t.clientX,m=t.clientY,!d&&s){const l=r-(n+64),c=m-(i+64);Math.sqrt(l*l+c*c)>50&&(n+=l*.08,i+=c*.08,n=Math.max(0,Math.min(n,window.innerWidth-128)),i=Math.max(0,Math.min(i,window.innerHeight-128)),e.style.bottom="auto",e.style.right="auto",e.style.left=n+"px",e.style.top=i+"px");const p=r-(n+64),g=m-(i+64),h=-12+(Math.atan2(g,p)*(180/Math.PI)-90)*.1;o.style.filter="hue-rotate(280deg) brightness(0.9) saturate(1.5) drop-shadow(0 4px 12px rgba(0,0,0,0.3))",o.style.transform=`rotate(${h}deg)`}});o.addEventListener("mouseenter",()=>{a.classList.remove("opacity-0"),a.classList.add("opacity-100")});o.addEventListener("mouseleave",()=>{a.classList.add("opacity-0"),a.classList.remove("opacity-100")});o.addEventListener("click",t=>{t.stopPropagation(),s=!s,s?(e.style.opacity="1",e.style.pointerEvents="auto"):(e.style.opacity="0.3",e.style.pointerEvents="none")});let y=0,u=0;o.addEventListener("mousedown",t=>{d=!0,y=t.clientX-n,u=t.clientY-i});document.addEventListener("mousemove",t=>{d&&(n=t.clientX-y,i=t.clientY-u,n=Math.max(0,Math.min(n,window.innerWidth-128)),i=Math.max(0,Math.min(i,window.innerHeight-128)),e.style.bottom="auto",e.style.right="auto",e.style.left=n+"px",e.style.top=i+"px")});document.addEventListener("mouseup",()=>{d=!1});document.addEventListener("keydown",t=>{(t.key==="i"||t.key==="I")&&o.click()});</script> <main class="flex-grow">  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12"> <div class="font-mono whitespace-pre overflow-x-auto hide-scrollbar w-full flex justify-center mb-8"> <div class="inline-block min-w-fit"> <div class="inline-flex flex-col items-start gap-1 leading-none tracking-[0.08em] text-[10px] sm:text-sm" style="width: 37ch;"> <span class="block w-full text-blue-400">  ~^~^~^~^~  ~^~^~^~^~  ~^~^~^~^~    </span><span class="block w-full text-sky-300"> /  o   o  \/  o   o  \/  o   o  \   </span><span class="block w-full text-cyan-400">|    __    ||    __    ||    __    | </span><span class="block w-full text-blue-300"> \__/  \__/ \__/  \__/ \__/  \__/    </span> </div> </div> </div> <a href="/cepeda_presidente/ejes/paz" class="inline-block mb-8 text-eje-peace hover:underline hover:text-white transition-colors text-sm sm:text-base">
+&larr; Volver a Paz y Anticorrupcion
+</a> <header class="bg-blue-900/60 border-3 border-blue-400/50 rounded-3xl p-6 sm:p-8 mb-10 shadow-[6px_6px_0px_rgba(96,165,250,0.4)] transform -rotate-1"> <h1 class="text-3xl sm:text-5xl font-extrabold text-blue-300 mb-4 font-serif drop-shadow-[0_0_18px_#60a5fa]">&#127758; Politica Exterior Soberana y de Paz</h1> <p class="text-blue-100 text-lg sm:text-xl font-['Comic_Sans_MS',cursive] leading-relaxed">
+Colombia como actor principal de paz en el mundo, con autonomia, dignidad y solidaridad con los migrantes.
+</p> </header> <blockquote class="border-l-4 border-blue-400 pl-6 my-10 italic text-white text-xl sm:text-2xl font-medium font-serif leading-relaxed">
+"Colombia debe ser un actor principal de la paz en el mundo. El nuevo gobierno progresista debe contribuir a parar el curso hacia una tercera guerra mundial. America Latina debe seguir siendo una zona de paz."<br> <span class="text-blue-300 text-base">-- Ivan Cepeda, Discurso en Londres</span> </blockquote> <div class="space-y-12 leading-relaxed text-lg text-gray-200 font-sans"> <section class="bg-black/40 border-2 border-blue-500/30 rounded-2xl p-6 sm:p-8 shadow-lg"> <h2 class="text-2xl sm:text-3xl font-bold text-blue-300 mb-6 font-serif flex items-center gap-3"> <span class="text-4xl">&#127753;</span> Colombia, Actor de Paz Mundial
+</h2> <p class="text-base sm:text-lg leading-relaxed mb-4">
+En el planeta hay <strong>61 conflictos armados activos</strong>. Solo el 4% se resuelven hoy mediante acuerdos de paz (antes era el 23%). Colombia, que ha sufrido mas de siete decadas de conflicto, tiene la autoridad moral para liderar la paz en el mundo.
+</p> <div class="bg-blue-900/20 border border-blue-600/40 rounded-xl p-5 mt-6"> <h3 class="text-xl font-bold text-blue-200 mb-3">Compromisos</h3> <ul class="list-disc list-inside space-y-2 text-base"> <li>Colombia se opone al genocidio en Gaza y respalda la posicion del presidente Petro rompiendo relaciones diplomaticas</li> <li>Exigencia de juicio a Benjamin Netanyahu ante la Corte Penal Internacional</li> <li>Defensa de <strong>America Latina como zona de paz</strong>, sin proliferacion nuclear, sin bases militares extranjeras</li> <li>No alineacion con alianzas belicas como la OTAN</li> <li><strong>Diplomacia ciudadana</strong>: la sociedad civil internacional como actor de paz global</li> <li>Rechazo al "Corolario Trump a la Doctrina Monroe" y a la intervencion extranjera</li> </ul> </div> </section> <section class="bg-black/40 border-2 border-red-500/30 rounded-2xl p-6 sm:p-8 shadow-lg"> <h2 class="text-2xl sm:text-3xl font-bold text-red-300 mb-6 font-serif flex items-center gap-3"> <span class="text-4xl">&#128138;</span> Nuevo Paradigma Frente al Narcotrafico
+</h2> <p class="text-base sm:text-lg leading-relaxed">
+Colombia lleva <strong>mas de 50 anos</strong> en la llamada "guerra contra las drogas". El resultado: 6 generaciones de estructuras narcotraficantes mutantes, <strong>80 billones de pesos</strong> gastados en 20 anos, impunidad del 94%. El prohibicionismo esta agotado: el remedio ha resultado peor que la enfermedad.
+</p> <div class="bg-red-900/20 border border-red-600/40 rounded-xl p-5 mt-6"> <h3 class="text-xl font-bold text-red-200 mb-3">Compromisos</h3> <ul class="list-disc list-inside space-y-2 text-base"> <li><strong>Sustitucion del paradigma prohibicionista</strong> por uno de salud publica, desarrollo rural y justicia social</li> <li>Convocatoria a <strong>conferencia internacional sobre drogas</strong> pactada en el Acuerdo de Paz de 2016</li> <li>Exigencia de <strong>corresponsabilidad</strong> a Estados Unidos: 5 millones de consumidores, mercado interno tolerado</li> <li>Fin de la subordinacion: no mas extradiciones unilaterales ni certificaciones que humillan a la nacion</li> <li>Transformacion productiva de territorios rurales para reemplazar economias ilicitas</li> </ul> </div> </section> <section class="bg-black/40 border-2 border-emerald-500/30 rounded-2xl p-6 sm:p-8 shadow-lg"> <h2 class="text-2xl sm:text-3xl font-bold text-emerald-300 mb-6 font-serif flex items-center gap-3"> <span class="text-4xl">&#127890;</span> Proteccion de los Migrantes Colombianos
+</h2> <p class="text-base sm:text-lg leading-relaxed mb-4">
+Ivan Cepeda vivio el exilio politico. Sabe lo que significa habitar entre dos mundos. La migracion forzada constituye en si misma una grave violacion de derechos humanos. Los colombianos en el exterior son sujetos del poder constituyente, no simples remitentes de remesas.
+</p> <div class="bg-emerald-900/20 border border-emerald-600/40 rounded-xl p-5 mt-6"> <h3 class="text-xl font-bold text-emerald-200 mb-3">Compromisos</h3> <ul class="list-disc list-inside space-y-2 text-base"> <li><strong>Censo confiable y exhaustivo</strong> de la diaspora colombiana</li> <li>Canales efectivos de <strong>participacion politica</strong> desde el exterior</li> <li>Proteccion integral frente a discriminacion, xenofobia y criminalizacion</li> <li><strong>Derecho al retorno</strong> en condiciones seguras, dignas y voluntarias para exiliados y victimas</li> <li>Reconocimiento de migrantes como <strong>sujetos del poder constituyente</strong> del pueblo colombiano</li> </ul> </div> </section> </div> <div class="mt-12 text-center"> <a href="/cepeda_presidente/ejes/paz" class="inline-block bg-blue-700 hover:bg-blue-600 text-white px-6 py-3 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg">
+&#127753; Volver a Paz y Anticorrupcion
+</a> </div> </div>  </main> <footer class="mt-12 border-t border-ph-purple p-6 text-center text-sm text-gray-400"> <div class="max-w-3xl mx-auto space-y-4"> <p>⚠️ <strong>Sitio Voluntario y No Oficial</strong> ⚠️</p> <p>Esta es una iniciativa ciudadana, divertida y no oficial creada para acercar el plan de gobierno "El Poder de la Verdad" a más personas.</p> <p>
+Para más información visita: <a href="https://www.cepedapresidente.co/" target="_blank" rel="noopener noreferrer" class="text-ph-light font-bold hover:underline hover:text-white transition-colors">Página web oficial de Iván Cepeda</a>.<br> </p> <p class="text-gray-300 leading-relaxed">
+Este sitio web fue construido con herramientas automáticas usando el <a href="https://www.movimientopactohistorico.co/docs/programa-gobierno-2026-2030.pdf" target="_blank" rel="noopener noreferrer" class="text-ph-light font-bold hover:underline hover:text-white transition-colors">Programa de gobierno 2026-2030 (PDF)</a>, nuestra interpretación puede contener errores e imprecisiones.
+					Puedes descargar el <a href="https://raw.githubusercontent.com/artificialisaza/cepeda_presidente/main/programa-gobierno-2026-2030.md" download="programa-gobierno-2026-2030.md" target="_blank" rel="noopener noreferrer" class="text-ph-light font-bold hover:underline hover:text-white transition-colors">archivo de texto md</a> y usarlo en cualquier modelo de IA para entender mejor el Programa de Gobierno o hacer un proyecto como este.
+</p> <p>
+Este contenido no se rige por derechos de autor, puedes usar o modificarlo como quieras siempre que sea al amparo de la Constitución del 91 y no le haga daño a nadie.
+</p> <p class="flex justify-center gap-4 mt-4 font-bold"> <a href="https://www.instagram.com/ivancepedacastr/" target="_blank" rel="noopener noreferrer" class="hover:text-ph-light transition-colors">Instagram</a> <a href="https://x.com/IvanCepedaCast" target="_blank" rel="noopener noreferrer" class="hover:text-ph-light transition-colors">X (Twitter)</a> <a href="https://www.facebook.com/IvanCepedaCastro" target="_blank" rel="noopener noreferrer" class="hover:text-ph-light transition-colors">Facebook</a> </p> <div class="font-mono mt-4 text-xs">
+(づ｡◕‿‿◕｡)づ ¡Colombia potencia de la vida y de la paz!
+</div> </div> </footer> <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script> <script>
+			document.addEventListener('astro:page-load', () => {
+				VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+					max: 15,
+					speed: 400,
+					glare: true,
+					"max-glare": 0.2,
+				});
+			});
+		</script> </body> </html>
