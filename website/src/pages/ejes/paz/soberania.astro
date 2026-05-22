@@ -1,0 +1,101 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import AsciiPattern from '../../../components/AsciiPattern.astro';
+
+const waveArt = [
+  '  ~^~^~^~^~  ~^~^~^~^~  ~^~^~^~^~  ',
+  ' /  o   o  \\/  o   o  \\/  o   o  \\  ',
+  '|    __    ||    __    ||    __    | ',
+  ' \\__/  \\__/ \\__/  \\__/ \\__/  \\__/ ',
+];
+---
+
+<Layout title="Política Exterior Soberana - Iván Cepeda 2026" description="Política exterior autónoma, nuevo paradigma contra el narcotráfico y protección de migrantes colombianos.">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+    <AsciiPattern lines={waveArt} colors={['text-blue-400', 'text-sky-300', 'text-cyan-400', 'text-blue-300']} wrapperClass="mb-8" textClass="text-[10px] sm:text-sm" />
+    
+    <a href={import.meta.env.BASE_URL + 'ejes/paz'} class="inline-block mb-8 text-eje-peace hover:underline hover:text-white transition-colors text-sm sm:text-base">
+      &larr; Volver a Paz y Anticorrupcion
+    </a>
+
+    <header class="bg-blue-900/60 border-3 border-blue-400/50 rounded-3xl p-6 sm:p-8 mb-10 shadow-[6px_6px_0px_rgba(96,165,250,0.4)] transform -rotate-1">
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-blue-300 mb-4 font-serif drop-shadow-[0_0_18px_#60a5fa]">&#127758; Politica Exterior Soberana y de Paz</h1>
+      <p class="text-blue-100 text-lg sm:text-xl font-['Comic_Sans_MS',cursive] leading-relaxed">
+        Colombia como actor principal de paz en el mundo, con autonomia, dignidad y solidaridad con los migrantes.
+      </p>
+    </header>
+
+    <blockquote class="border-l-4 border-blue-400 pl-6 my-10 italic text-white text-xl sm:text-2xl font-medium font-serif leading-relaxed">
+      "Colombia debe ser un actor principal de la paz en el mundo. El nuevo gobierno progresista debe contribuir a parar el curso hacia una tercera guerra mundial. America Latina debe seguir siendo una zona de paz."<br/>
+      <span class="text-blue-300 text-base">-- Ivan Cepeda, Discurso en Londres</span>
+    </blockquote>
+
+    <div class="space-y-12 leading-relaxed text-lg text-gray-200 font-sans">
+      
+      <section class="bg-black/40 border-2 border-blue-500/30 rounded-2xl p-6 sm:p-8 shadow-lg">
+        <h2 class="text-2xl sm:text-3xl font-bold text-blue-300 mb-6 font-serif flex items-center gap-3">
+          <span class="text-4xl">&#127753;</span> Colombia, Actor de Paz Mundial
+        </h2>
+        <p class="text-base sm:text-lg leading-relaxed mb-4">
+          En el planeta hay <strong>61 conflictos armados activos</strong>. Solo el 4% se resuelven hoy mediante acuerdos de paz (antes era el 23%). Colombia, que ha sufrido mas de siete decadas de conflicto, tiene la autoridad moral para liderar la paz en el mundo.
+        </p>
+        <div class="bg-blue-900/20 border border-blue-600/40 rounded-xl p-5 mt-6">
+          <h3 class="text-xl font-bold text-blue-200 mb-3">Compromisos</h3>
+          <ul class="list-disc list-inside space-y-2 text-base">
+            <li>Colombia se opone al genocidio en Gaza y respalda la posicion del presidente Petro rompiendo relaciones diplomaticas</li>
+            <li>Exigencia de juicio a Benjamin Netanyahu ante la Corte Penal Internacional</li>
+            <li>Defensa de <strong>America Latina como zona de paz</strong>, sin proliferacion nuclear, sin bases militares extranjeras</li>
+            <li>No alineacion con alianzas belicas como la OTAN</li>
+            <li><strong>Diplomacia ciudadana</strong>: la sociedad civil internacional como actor de paz global</li>
+            <li>Rechazo al "Corolario Trump a la Doctrina Monroe" y a la intervencion extranjera</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="bg-black/40 border-2 border-red-500/30 rounded-2xl p-6 sm:p-8 shadow-lg">
+        <h2 class="text-2xl sm:text-3xl font-bold text-red-300 mb-6 font-serif flex items-center gap-3">
+          <span class="text-4xl">&#128138;</span> Nuevo Paradigma Frente al Narcotrafico
+        </h2>
+        <p class="text-base sm:text-lg leading-relaxed">
+          Colombia lleva <strong>mas de 50 anos</strong> en la llamada "guerra contra las drogas". El resultado: 6 generaciones de estructuras narcotraficantes mutantes, <strong>80 billones de pesos</strong> gastados en 20 anos, impunidad del 94%. El prohibicionismo esta agotado: el remedio ha resultado peor que la enfermedad.
+        </p>
+        <div class="bg-red-900/20 border border-red-600/40 rounded-xl p-5 mt-6">
+          <h3 class="text-xl font-bold text-red-200 mb-3">Compromisos</h3>
+          <ul class="list-disc list-inside space-y-2 text-base">
+            <li><strong>Sustitucion del paradigma prohibicionista</strong> por uno de salud publica, desarrollo rural y justicia social</li>
+            <li>Convocatoria a <strong>conferencia internacional sobre drogas</strong> pactada en el Acuerdo de Paz de 2016</li>
+            <li>Exigencia de <strong>corresponsabilidad</strong> a Estados Unidos: 5 millones de consumidores, mercado interno tolerado</li>
+            <li>Fin de la subordinacion: no mas extradiciones unilaterales ni certificaciones que humillan a la nacion</li>
+            <li>Transformacion productiva de territorios rurales para reemplazar economias ilicitas</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="bg-black/40 border-2 border-emerald-500/30 rounded-2xl p-6 sm:p-8 shadow-lg">
+        <h2 class="text-2xl sm:text-3xl font-bold text-emerald-300 mb-6 font-serif flex items-center gap-3">
+          <span class="text-4xl">&#127890;</span> Proteccion de los Migrantes Colombianos
+        </h2>
+        <p class="text-base sm:text-lg leading-relaxed mb-4">
+          Ivan Cepeda vivio el exilio politico. Sabe lo que significa habitar entre dos mundos. La migracion forzada constituye en si misma una grave violacion de derechos humanos. Los colombianos en el exterior son sujetos del poder constituyente, no simples remitentes de remesas.
+        </p>
+        <div class="bg-emerald-900/20 border border-emerald-600/40 rounded-xl p-5 mt-6">
+          <h3 class="text-xl font-bold text-emerald-200 mb-3">Compromisos</h3>
+          <ul class="list-disc list-inside space-y-2 text-base">
+            <li><strong>Censo confiable y exhaustivo</strong> de la diaspora colombiana</li>
+            <li>Canales efectivos de <strong>participacion politica</strong> desde el exterior</li>
+            <li>Proteccion integral frente a discriminacion, xenofobia y criminalizacion</li>
+            <li><strong>Derecho al retorno</strong> en condiciones seguras, dignas y voluntarias para exiliados y victimas</li>
+            <li>Reconocimiento de migrantes como <strong>sujetos del poder constituyente</strong> del pueblo colombiano</li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href={import.meta.env.BASE_URL + 'ejes/paz'} class="inline-block bg-blue-700 hover:bg-blue-600 text-white px-6 py-3 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg">
+        &#127753; Volver a Paz y Anticorrupcion
+      </a>
+    </div>
+  </div>
+</Layout>

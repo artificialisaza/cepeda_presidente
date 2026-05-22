@@ -2,55 +2,152 @@
 import Layout from '../../../layouts/Layout.astro';
 ---
 
-<Layout title="Austeridad Republicana - Iván Cepeda 2026" description="Servir al pueblo con austeridad republicana, derrotando la gran corrupción.">
-	<div class="max-w-4xl mx-auto px-4 py-12 font-sans">
-		
-		<div class="mb-10 text-sm">
-			<a href={import.meta.env.BASE_URL + 'ejes/seguridad'} class="text-eje-safety hover:underline font-bold transition-colors">
-				← Volver a Seguridad y Equidad Integrales
+<Layout title="El Cinturón Apretado - Iván Cepeda 2026" description="Austeridad Republicana: recorte de privilegios, ley de austeridad y cada peso ahorrado al gasto social.">
+	<div class="max-w-4xl mx-auto px-4 py-12 font-serif relative overflow-hidden">
+
+		<!-- Fondo libro mayor/contabilidad -->
+		<div class="absolute inset-0 pointer-events-none opacity-10 z-0" aria-hidden="true">
+			<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-950 via-slate-950 to-indigo-950"></div>
+			<div class="absolute inset-0" style="background: repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(59,130,246,0.05) 50px, rgba(59,130,246,0.05) 51px);"></div>
+		</div>
+
+		<div class="mb-10 text-sm relative z-10">
+			<a href={import.meta.env.BASE_URL + 'ejes/seguridad'} class="inline-flex items-center gap-2 text-blue-300 hover:text-blue-100 font-bold transition-colors bg-blue-950/60 border border-blue-500/30 px-4 py-2 rounded-full hover:bg-blue-900/60">
+				<span>🛡️</span> ← Volver a Seguridad y Prosperidad
 			</a>
 		</div>
 
-		<header class="mb-12 border-b-2 border-gray-800 pb-8">
-			<h1 class="text-4xl md:text-5xl font-bold mb-6 text-white font-serif leading-tight">
-				Austeridad Republicana
-			</h1>
-			<p class="text-xl text-gray-300 font-sans leading-relaxed">
-				Para derrotar verdaderamente la gran corrupción, debemos gobernar como servidores, comprendiendo la diferencia vital entre la austeridad republicana que defiende al pueblo y la austeridad neoliberal que lo castiga.
-			</p>
+		<header class="relative z-10 mb-12">
+			<div class="relative bg-gradient-to-br from-blue-900/80 via-slate-950/90 to-indigo-900/80 border-3 border-blue-400/30 rounded-3xl p-8 sm:p-10 shadow-[0_0_40px_rgba(59,130,246,0.1)] overflow-hidden">
+				<div class="absolute top-4 right-8 text-6xl animate-bounce opacity-50" style="animation-duration: 2.5s;">💼</div>
+				<div class="absolute bottom-6 left-8 text-5xl animate-pulse opacity-35">✂️</div>
+				
+				<h1 class="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-slate-200 to-indigo-200 font-serif leading-tight relative">
+					🛡️ El Cinturón Apretado
+				</h1>
+				<p class="text-xl text-blue-100 font-sans leading-relaxed max-w-2xl relative">
+					<strong class="text-white">Defendemos la Austeridad Republicana</strong>: aquella que reduce los gastos innecesarios del Estado, 
+					elimina los privilegios de los altos funcionarios e invierte el ahorro en el bienestar del pueblo. 
+					Quien debe apretarse el cinturón es el gobierno, <strong class="text-blue-200">no el pueblo</strong>.
+				</p>
+			</div>
 		</header>
 
-		<article class="prose prose-lg prose-invert max-w-none font-serif text-gray-300 leading-loose">
-			<p>
-				La austeridad neoliberal impulsada en Colombia por la extrema derecha ha significado siempre recortar el gasto en educación, privatizar la salud y encoger el rol del Estado justo donde las comunidades más lo necesitan. Como dice nuestra consigna, ha sido "austeridad para los pobres y abundancia para los poderosos". 
-			</p>
+		<!-- La diferencia clave -->
+		<section class="relative z-10 mb-12">
+			<h2 class="text-3xl font-bold text-blue-200 mb-8 font-sans flex items-center gap-3">
+				<span class="text-4xl">⚖️</span> Dos Austeridades, Dos Destinos
+			</h2>
 			
-			<blockquote class="border-l-4 border-eje-safety pl-6 my-8 italic text-white text-2xl font-medium">
-				"Nosotros defendemos la austeridad republicana, aquella que reduce los gastos innecesarios del Estado, elimina los privilegios de los altos funcionarios e invierte el ahorro justamente en el bienestar del pueblo."
-			</blockquote>
-
-			<p>
-				La Austeridad Republicana significa que, ante las crisis, quienes deben asumir los costos son las élites que se han enriquecido durante décadas, y no las mayorías desfavorecidas o empobrecidas.
-			</p>
-
-			<h2 class="text-3xl font-bold text-white mt-12 mb-6 font-sans">Propuestas de Medida</h2>
-			
-			<div class="space-y-8 mt-8">
-				<div class="bg-gray-900 border border-gray-800 p-8 rounded-xl">
-					<h3 class="text-2xl font-bold text-eje-safety mb-4 font-sans">Ley de Austeridad Republicana</h3>
-					<p>
-						Presentaremos al Congreso, con mensaje de urgencia, un articulado legal estricto. Esta ley controlará la burocracia desmedida y prohibirá las nóminas paralelas diseñadas únicamente para pagar favores electorales a costa del erario público.
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+				<div class="bg-gradient-to-br from-red-950/80 to-orange-950/80 border border-red-400/30 rounded-2xl p-6 shadow-lg">
+					<div class="text-5xl mb-3">❌</div>
+					<h3 class="text-xl font-bold text-red-200 mb-3">Austeridad Neoliberal</h3>
+					<p class="text-red-50/80 leading-relaxed">
+						Recorta educación, privatiza la salud y encoge el Estado donde más se necesita. 
+						<strong class="text-white">Austeridad para los pobres y abundancia para los poderosos.</strong>
+						La que impusieron Uribe y la extrema derecha.
 					</p>
 				</div>
 
-				<div class="bg-gray-900 border border-gray-800 p-8 rounded-xl">
-					<h3 class="text-2xl font-bold text-eje-safety mb-4 font-sans">Recorte de Privilegios Estatales</h3>
-					<p>
-						Las condiciones de los funcionarios del Estado (vida, vivienda, transporte, seguridad y descanso) deberán ajustarse rápidamente al principio de austeridad, acabando con los lujosos excesos de la alta casta política colombiana en épocas de tanta tensión territorial.
+				<div class="bg-gradient-to-br from-emerald-950/80 to-green-950/80 border border-emerald-400/30 rounded-2xl p-6 shadow-lg">
+					<div class="text-5xl mb-3">✅</div>
+					<h3 class="text-xl font-bold text-emerald-200 mb-3">Austeridad Republicana</h3>
+					<p class="text-emerald-50/80 leading-relaxed">
+						Reduce los gastos innecesarios del Estado, elimina privilegios de altos funcionarios e 
+						<strong class="text-white">invierte el ahorro en el bienestar del pueblo.</strong>
+						Ante las crisis, quienes asumen los costos son las élites, no las mayorías.
 					</p>
 				</div>
 			</div>
-		</article>
+		</section>
+
+		<!-- Cita -->
+		<blockquote class="relative z-10 my-12 bg-gradient-to-r from-blue-900/60 via-indigo-900/40 to-blue-900/60 border-l-4 border-blue-400 p-8 rounded-r-2xl shadow-xl">
+			<div class="absolute -top-4 -left-4 text-4xl">💎</div>
+			<p class="text-2xl md:text-3xl italic text-white font-medium leading-relaxed font-serif">
+				"Nosotros defendemos la austeridad republicana, aquella que <strong class="text-blue-200">reduce los gastos innecesarios del Estado, elimina los privilegios de los altos funcionarios e invierte el ahorro justamente en el bienestar del pueblo</strong>."
+			</p>
+			<footer class="mt-4 text-blue-300 text-sm font-sans">— Iván Cepeda, Programa de Gobierno 2026-2030</footer>
+		</blockquote>
+
+		<!-- Propuestas de Medida -->
+		<section class="relative z-10 space-y-8">
+			<h2 class="text-3xl font-bold text-blue-200 mb-6 font-sans flex items-center gap-3">
+				<span class="text-4xl">📋</span> Propuestas de Medida
+			</h2>
+
+			<div class="bg-gradient-to-r from-blue-950/80 via-slate-950/60 to-blue-950/80 border border-blue-500/30 rounded-2xl p-8 shadow-xl hover:shadow-blue-500/10 hover:border-blue-400/60 transition-all duration-300 group">
+				<div class="flex items-start gap-5">
+					<div class="text-5xl group-hover:animate-bounce transition-transform shrink-0">📜</div>
+					<div>
+						<h3 class="text-2xl font-bold text-blue-200 mb-4">Ley de Austeridad Republicana</h3>
+						<p class="text-blue-50/90 leading-relaxed text-lg">
+							Presentaremos al Congreso, con <strong class="text-white">mensaje de urgencia</strong>, un articulado legal estricto. 
+							Esta ley controlará la burocracia desmedida y prohibirá las nóminas paralelas diseñadas 
+							únicamente para pagar favores electorales a costa del erario público. 
+							Desde el primer día: reducción del salario presidencial y de ministros. Eliminación de gastos suntuarios.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-gradient-to-r from-indigo-950/80 via-violet-950/60 to-indigo-950/80 border border-indigo-500/30 rounded-2xl p-8 shadow-xl hover:shadow-indigo-500/10 hover:border-indigo-400/60 transition-all duration-300 group">
+				<div class="flex items-start gap-5">
+					<div class="text-5xl group-hover:animate-pulse transition-transform shrink-0">✂️</div>
+					<div>
+						<h3 class="text-2xl font-bold text-indigo-200 mb-4">Recorte de Privilegios Estatales</h3>
+						<p class="text-indigo-50/90 leading-relaxed text-lg">
+							Las condiciones de los funcionarios del Estado —vida, vivienda, transporte, seguridad y descanso— 
+							deberán ajustarse rápidamente al principio de austeridad, <strong class="text-white">acabando con los lujosos excesos de la alta casta política</strong> 
+							en épocas de tanta tensión territorial. Cada peso ahorrado se destinará al gasto social.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Ejemplo visual de ahorro -->
+		<section class="relative z-10 mt-12 bg-gradient-to-r from-blue-950/60 via-slate-950/40 to-indigo-950/60 border border-blue-500/20 rounded-2xl p-8">
+			<h3 class="text-2xl font-bold text-blue-200 mb-6 text-center font-sans">💰 ¿A dónde va cada peso ahorrado?</h3>
+			<div class="flex flex-wrap justify-center gap-6 text-center">
+				<div class="bg-blue-900/40 border border-blue-500/20 rounded-xl p-4 w-32">
+					<div class="text-3xl mb-2">🏥</div>
+					<div class="text-xs text-blue-100">Salud</div>
+				</div>
+				<div class="bg-emerald-900/40 border border-emerald-500/20 rounded-xl p-4 w-32">
+					<div class="text-3xl mb-2">📚</div>
+					<div class="text-xs text-emerald-100">Educación</div>
+				</div>
+				<div class="bg-cyan-900/40 border border-cyan-500/20 rounded-xl p-4 w-32">
+					<div class="text-3xl mb-2">💧</div>
+					<div class="text-xs text-cyan-100">Agua</div>
+				</div>
+				<div class="bg-amber-900/40 border border-amber-500/20 rounded-xl p-4 w-32">
+					<div class="text-3xl mb-2">🛤️</div>
+					<div class="text-xs text-amber-100">Vías</div>
+				</div>
+				<div class="bg-green-900/40 border border-green-500/20 rounded-xl p-4 w-32">
+					<div class="text-3xl mb-2">🏘️</div>
+					<div class="text-xs text-green-100">Vivienda</div>
+				</div>
+				<div class="bg-pink-900/40 border border-pink-500/20 rounded-xl p-4 w-32">
+					<div class="text-3xl mb-2">👵</div>
+					<div class="text-xs text-pink-100">Pensiones</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="relative z-10 mt-16 text-center">
+			<div class="text-6xl mb-4 hover:animate-spin cursor-default inline-block">🛡️</div>
+			<p class="text-xl font-bold text-blue-200 font-sans">
+				Gobernar como servidores, no como privilegiados. <br/>
+				<span class="text-white text-2xl">La austeridad republicana es ética en acción.</span>
+			</p>
+			<a href={import.meta.env.BASE_URL + 'ejes/seguridad'} class="inline-block mt-8 bg-blue-700 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-blue-500/30">
+				🛡️ Volver a Seguridad y Prosperidad
+			</a>
+		</div>
 
 	</div>
 </Layout>

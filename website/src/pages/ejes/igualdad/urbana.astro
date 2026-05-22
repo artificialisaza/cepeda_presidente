@@ -2,58 +2,124 @@
 import Layout from '../../../layouts/Layout.astro';
 ---
 
-<Layout title="Revolución Urbana y Equidad - Iván Cepeda 2026" description="Superación de la pobreza en las ciudades y los territorios excluidos.">
-	<div class="max-w-4xl mx-auto px-4 py-12 font-sans">
-		
-		<div class="mb-10 text-sm">
-			<a href={import.meta.env.BASE_URL + 'ejes/igualdad'} class="text-eje-equal hover:underline font-bold transition-colors">
-				← Volver a Igualdad y Antirracismo
+<Layout title="La Ciudad que Florece - Iván Cepeda 2026" description="Revolución urbana: vivienda digna, fiscalidad progresiva y rescate de lo público.">
+	<div class="max-w-4xl mx-auto px-4 py-12 font-serif relative overflow-hidden">
+
+		<!-- Fondo ciudad -->
+		<div class="absolute inset-0 pointer-events-none opacity-12 z-0" aria-hidden="true">
+			<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-950 via-indigo-950 to-slate-950"></div>
+			<div class="absolute bottom-0 left-0 w-full h-1/2" style="background: linear-gradient(to top, rgba(59,130,246,0.05), transparent);"></div>
+		</div>
+
+		<div class="mb-10 text-sm relative z-10">
+			<a href={import.meta.env.BASE_URL + 'ejes/igualdad'} class="inline-flex items-center gap-2 text-blue-300 hover:text-blue-100 font-bold transition-colors bg-blue-950/60 border border-blue-500/30 px-4 py-2 rounded-full hover:bg-blue-900/60">
+				<span>🏙️</span> ← Volver a Igualdad y Antirracismo
 			</a>
 		</div>
 
-		<header class="mb-12 border-b-2 border-gray-800 pb-8">
-			<h1 class="text-4xl md:text-5xl font-bold mb-6 text-white font-serif leading-tight">
-				La Revolución Urbana
-			</h1>
-			<p class="text-xl text-gray-300 font-sans leading-relaxed">
-				No podemos seguir repartiendo gotas de ayuda en el desierto de la desigualdad. Requerimos intervenciones estructurales en la vivienda, servicios públicos, y desarrollo territorial allí donde más se ha ignorado al pueblo.
-			</p>
+		<header class="relative z-10 mb-12">
+			<div class="relative bg-gradient-to-br from-blue-900/80 via-indigo-950/90 to-slate-900/80 border-3 border-blue-400/30 rounded-3xl p-8 sm:p-10 shadow-[0_0_40px_rgba(59,130,246,0.1)] overflow-hidden">
+				<div class="absolute top-4 right-8 text-6xl animate-bounce opacity-50" style="animation-duration: 2s;">🏙️</div>
+				<div class="absolute bottom-6 left-8 text-5xl animate-pulse opacity-35">🏘️</div>
+				
+				<h1 class="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-sky-300 to-indigo-200 font-serif leading-tight relative">
+					🏙️ La Ciudad que Florece
+				</h1>
+				<p class="text-xl text-blue-100 font-sans leading-relaxed max-w-2xl relative">
+					No podemos seguir repartiendo <strong class="text-white">gotas de ayuda en el desierto de la desigualdad</strong>. 
+					Requerimos intervenciones estructurales en vivienda, servicios públicos y desarrollo territorial 
+					allí donde más se ha ignorado al pueblo.
+				</p>
+			</div>
 		</header>
 
-		<article class="prose prose-lg prose-invert max-w-none font-serif text-gray-300 leading-loose">
-			<p>
-				Las zonas urbanas albergan profundas cicatrices de inequidad social, herederas directas del desplazamiento forzado, el abandono estatal y una planeación enfocada exclusivamente en el negocio inmobiliario de unos pocos. Nuestro enfoque busca cambiar el sistema completo.
+		<blockquote class="relative z-10 my-12 bg-gradient-to-r from-blue-900/60 via-indigo-900/40 to-blue-900/60 border-l-4 border-blue-400 p-8 rounded-r-2xl shadow-xl">
+			<div class="absolute -top-4 -left-4 text-4xl">🏗️</div>
+			<p class="text-2xl md:text-3xl italic text-white font-medium leading-relaxed font-serif">
+				"El cambio que necesitamos no puede limitarse a aliviar la pobreza con subsidios o paliativos temporales. Debemos asumir la lucha contra este mal como <strong class="text-blue-200">una política de igualdad sustantiva</strong>. Se trata de cambiar el sistema de irrigación de los derechos."
 			</p>
+			<footer class="mt-4 text-blue-300 text-sm font-sans">— Iván Cepeda, Discurso en Barranquilla</footer>
+		</blockquote>
 
-			<blockquote class="border-l-4 border-eje-equal pl-6 my-8 italic text-white text-2xl font-medium">
-				"El cambio que necesitamos no puede limitarse a aliviar la pobreza con subsidios o paliativos temporales. Debemos asumir la lucha contra este mal como una política de igualdad sustantiva... Se trata de cambiar el sistema de irrigación de los derechos, no de soluciones pasajeras."
-			</blockquote>
+		<section class="relative z-10 space-y-8">
+			<h2 class="text-3xl font-bold text-blue-200 mb-6 font-sans flex items-center gap-3">
+				<span class="text-4xl">🏗️</span> Las Propuestas Fundamentales
+			</h2>
 
-			<h2 class="text-3xl font-bold text-white mt-12 mb-6 font-sans">Las Propuestas Fundamentales</h2>
-			
-			<div class="space-y-8 mt-8">
-				<div class="bg-gray-900 border border-gray-800 p-8 rounded-xl">
-					<h3 class="text-2xl font-bold text-eje-equal mb-4 font-sans">Vivienda con Dignidad</h3>
-					<p>
-						Nuestra política de vivienda no concebirá techos como mercancías comerciales, sino como derechos fundamentales. Reforzaremos la política de autoconstrucción, los mejoramientos barriales profundos y la legalización de predios en aquellos asentamientos olvidados por el crecimiento voraz. 
-					</p>
-				</div>
-
-				<div class="bg-gray-900 border border-gray-800 p-8 rounded-xl">
-					<h3 class="text-2xl font-bold text-eje-equal mb-4 font-sans">Fiscalidad Progresiva y Redistribución</h3>
-					<p>
-						No basta con entregar subsidios: hay que redistribuir los recursos. Quienes han acaparado las rentas de la tierra y la especulación urbana deberán contribuir en mayor medida mediante una fiscalidad progresiva de la que provendrán las rentas mínimas integrales para quienes lo perdieron todo.
-					</p>
-				</div>
-
-				<div class="bg-gray-900 border border-gray-800 p-8 rounded-xl">
-					<h3 class="text-2xl font-bold text-eje-equal mb-4 font-sans">Rescate de lo Público: Salud, Agua y Educación</h3>
-					<p>
-						Las poblaciones marginadas sufren la mercantilización del agua potable permanente, sin centros de salud adecuados. Llevaremos a cabo un plan de fortalecimiento de los servicios públicos, garantizando un hábitat urbano, colegios y hospitales fuertes sin la injerencia oligopólica.
-					</p>
+			<div class="bg-gradient-to-r from-blue-950/80 via-indigo-950/60 to-blue-950/80 border border-blue-500/30 rounded-2xl p-8 shadow-xl hover:shadow-blue-500/10 hover:border-blue-400/60 transition-all duration-300 group">
+				<div class="flex items-start gap-5">
+					<div class="text-5xl group-hover:animate-bounce transition-transform shrink-0">🏠</div>
+					<div>
+						<h3 class="text-2xl font-bold text-blue-200 mb-4">Vivienda con Dignidad</h3>
+						<p class="text-blue-50/90 leading-relaxed text-lg">
+							Nuestra política de vivienda no concebirá techos como mercancías comerciales, sino como <strong class="text-white">derechos fundamentales</strong>. 
+							Reforzaremos la autoconstrucción, los mejoramientos barriales profundos y la legalización de predios en aquellos 
+							asentamientos olvidados por el crecimiento voraz. Programa masivo de vivienda para jóvenes y familias sin techo.
+						</p>
+					</div>
 				</div>
 			</div>
-		</article>
+
+			<div class="bg-gradient-to-r from-indigo-950/80 via-violet-950/60 to-indigo-950/80 border border-indigo-500/30 rounded-2xl p-8 shadow-xl hover:shadow-indigo-500/10 hover:border-indigo-400/60 transition-all duration-300 group">
+				<div class="flex items-start gap-5">
+					<div class="text-5xl group-hover:animate-pulse transition-transform shrink-0">💰</div>
+					<div>
+						<h3 class="text-2xl font-bold text-indigo-200 mb-4">Fiscalidad Progresiva y Redistribución</h3>
+						<p class="text-indigo-50/90 leading-relaxed text-lg">
+							No basta con entregar subsidios: <strong class="text-white">hay que redistribuir los recursos</strong>. Quienes han acaparado las rentas 
+							de la tierra y la especulación urbana deberán contribuir en mayor medida mediante una fiscalidad progresiva 
+							de la que provendrán las rentas mínimas integrales para quienes lo perdieron todo.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-gradient-to-r from-sky-950/80 via-cyan-950/60 to-sky-950/80 border border-sky-500/30 rounded-2xl p-8 shadow-xl hover:shadow-sky-500/10 hover:border-sky-400/60 transition-all duration-300 group">
+				<div class="flex items-start gap-5">
+					<div class="text-5xl group-hover:animate-spin transition-transform shrink-0" style="animation-duration: 4s;">🏥</div>
+					<div>
+						<h3 class="text-2xl font-bold text-sky-200 mb-4">Rescate de lo Público: Salud, Agua y Educación</h3>
+						<p class="text-sky-50/90 leading-relaxed text-lg">
+							Las poblaciones marginadas sufren la mercantilización del agua potable, sin centros de salud adecuados. 
+							Llevaremos a cabo un <strong class="text-white">plan de fortalecimiento de los servicios públicos</strong>, garantizando un hábitat urbano, 
+							colegios y hospitales fuertes sin la injerencia oligopólica. Contratación comunitaria con juntas de acción comunal.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="relative z-10 mt-16 bg-gradient-to-b from-blue-950/50 to-indigo-950/50 border border-blue-500/20 rounded-3xl p-8 sm:p-10">
+			<h2 class="text-3xl font-bold text-blue-200 mb-6 font-serif flex items-center gap-3">
+				<span class="text-4xl">🌆</span> Del Barrio al País
+			</h2>
+			<p class="text-blue-50/80 leading-relaxed text-lg mb-8 font-sans">
+				Las ciudades concentran la pobreza y también la esperanza. Son el escenario donde el desplazamiento forzado, 
+				el abandono estatal y la especulación inmobiliaria han tejido profundas cicatrices de inequidad. 
+				Pero también son el lugar donde <strong class="text-white">las comunidades organizadas han demostrado que otra ciudad es posible</strong>. 
+				Juntas de Acción Comunal, colectivos de mujeres, juventudes organizadas: ellos serán contratistas del Estado.
+			</p>
+			<div class="flex flex-wrap justify-center gap-4 text-4xl">
+				<span class="hover:scale-125 transition-transform cursor-default">🏘️</span>
+				<span class="hover:scale-125 transition-transform cursor-default">🏥</span>
+				<span class="hover:scale-125 transition-transform cursor-default">📚</span>
+				<span class="hover:scale-125 transition-transform cursor-default">💧</span>
+				<span class="hover:scale-125 transition-transform cursor-default">🚌</span>
+				<span class="hover:scale-125 transition-transform cursor-default">🌳</span>
+				<span class="hover:scale-125 transition-transform cursor-default">🤝</span>
+			</div>
+		</section>
+
+		<div class="relative z-10 mt-16 text-center">
+			<div class="text-6xl mb-4 hover:animate-spin cursor-default inline-block">🏙️</div>
+			<p class="text-xl font-bold text-blue-200 font-sans">
+				La revolución también se construye en los barrios. <br/>
+				<span class="text-white text-2xl">Vivienda, salud y agua no son privilegios: son derechos.</span>
+			</p>
+			<a href={import.meta.env.BASE_URL + 'ejes/igualdad'} class="inline-block mt-8 bg-blue-700 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-blue-500/30">
+				🏙️ Volver a Igualdad y Antirracismo
+			</a>
+		</div>
 
 	</div>
 </Layout>

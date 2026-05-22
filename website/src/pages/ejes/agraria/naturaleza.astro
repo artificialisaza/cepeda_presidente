@@ -2,55 +2,167 @@
 import Layout from '../../../layouts/Layout.astro';
 ---
 
-<Layout title="Defensa de la Naturaleza - Iván Cepeda 2026" description="Nuestra casa común: protección ambiental, transición ecológica y vida.">
-	<div class="max-w-4xl mx-auto px-4 py-12 font-sans">
-		
-		<div class="mb-10 text-sm">
-			<a href={import.meta.env.BASE_URL + 'ejes/agraria'} class="text-eje-agri hover:underline font-bold transition-colors">
-				← Volver a Revolución Agraria
+<Layout title="El Pulmón del Mundo - Iván Cepeda 2026" description="Defensa de la naturaleza, freno al extractivismo y protección de la biodiversidad colombiana.">
+	<div class="max-w-4xl mx-auto px-4 py-12 font-serif relative overflow-hidden">
+
+		<!-- Fondo de bosque -->
+		<div class="absolute inset-0 pointer-events-none opacity-20 z-0" aria-hidden="true">
+			<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-green-950 via-emerald-950 to-teal-950"></div>
+			<div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 20%, rgba(34,197,94,0.08) 0%, transparent 60%), radial-gradient(ellipse at 70% 60%, rgba(16,185,129,0.06) 0%, transparent 60%), radial-gradient(ellipse at 50% 80%, rgba(52,211,153,0.05) 0%, transparent 40%);"></div>
+		</div>
+
+		<!-- Volver -->
+		<div class="mb-10 text-sm relative z-10">
+			<a href={import.meta.env.BASE_URL + 'ejes/agraria'} class="inline-flex items-center gap-2 text-emerald-300 hover:text-emerald-100 font-bold transition-colors bg-emerald-950/60 border border-emerald-500/30 px-4 py-2 rounded-full hover:bg-emerald-900/60">
+				<span>🦜</span> ← Volver a Revolución Agraria
 			</a>
 		</div>
 
-		<header class="mb-12 border-b-2 border-gray-800 pb-8">
-			<h1 class="text-4xl md:text-5xl font-bold mb-6 text-white font-serif leading-tight">
-				Defensa de la Naturaleza
-			</h1>
-			<p class="text-xl text-gray-300 font-sans leading-relaxed">
-				Romper con el paradigma extractivista significa reconocer que la supervivencia no se negocia. El territorio natural debe dejar de concebirse como un mercado.
-			</p>
+		<!-- Header selvático -->
+		<header class="relative z-10 mb-12">
+			<div class="relative bg-gradient-to-br from-green-900/80 via-emerald-950/90 to-teal-900/80 border-3 border-emerald-400/30 rounded-3xl p-8 sm:p-10 shadow-[0_0_40px_rgba(52,211,153,0.1)] overflow-hidden">
+				<div class="absolute top-4 right-8 text-6xl animate-bounce opacity-50" style="animation-duration: 3s;">🦜</div>
+				<div class="absolute bottom-6 left-8 text-5xl animate-pulse opacity-35" style="animation-duration: 2.5s;">🌿</div>
+				<div class="absolute top-1/2 right-20 text-4xl animate-spin opacity-25" style="animation-duration: 12s;">🦋</div>
+				<div class="absolute bottom-12 right-16 text-3xl animate-bounce opacity-30" style="animation-duration: 4s;">🐒</div>
+				
+				<h1 class="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 via-green-300 to-teal-200 font-serif leading-tight relative">
+					🌳 El Pulmón del Mundo
+				</h1>
+				<p class="text-xl text-emerald-100 font-sans leading-relaxed max-w-2xl relative">
+					Colombia es uno de los países con <strong class="text-white">mayor biodiversidad del planeta</strong>. 
+					Esa riqueza no puede seguir siendo saqueada. Romper con el paradigma extractivista es reconocer que 
+					<strong class="text-emerald-200">la supervivencia no se negocia</strong>.
+				</p>
+			</div>
 		</header>
 
-		<article class="prose prose-lg prose-invert max-w-none font-serif text-gray-300 leading-loose">
-			<p>
-				El dogmatismo neoliberal nos ha convencido erróneamente de que la explotación irrestricta de páramos, selvas y sistemas hídricos representa progreso, justificando bajo sus lógicas los desastres ecológicos, la sequía y la desprotección de las comunidades garantes de nuestra excepcional biodiversidad.
+		<!-- Cita de la casa común -->
+		<blockquote class="relative z-10 my-12 bg-gradient-to-r from-green-900/60 via-emerald-900/40 to-green-900/60 border-l-4 border-emerald-400 p-8 rounded-r-2xl shadow-xl">
+			<div class="absolute -top-4 -left-4 text-4xl">🌎</div>
+			<p class="text-2xl md:text-3xl italic text-white font-medium leading-relaxed font-serif">
+				"La naturaleza y la biodiversidad no son meros recursos explotables, sino <strong class="text-emerald-200">nuestra casa común que debemos cuidar</strong>. La vida se defiende ante toda forma de violencia."
 			</p>
+			<footer class="mt-4 text-emerald-300 text-sm font-sans">— Iván Cepeda, Programa de Gobierno 2026-2030</footer>
+		</blockquote>
 
-			<blockquote class="border-l-4 border-eje-agri pl-6 my-8 italic text-white text-2xl font-medium">
-				"La naturaleza y la biodiversidad no son meros recursos explotables, sino nuestra casa común que debemos cuidar."
-			</blockquote>
-
-			<p>
-				Defenderemos la naturaleza con políticas rigurosas de Estado frente al saqueo corporativo y la devastación extractivista. Esto exige acoplar en nuestras prioridades ambientales el liderazgo de las comunidades autóctonas que históricamente han resguardado la vida integral y armónica entre lo humano y las frágiles ecologías nacionales.
-			</p>
-
-			<h2 class="text-3xl font-bold text-white mt-12 mb-6 font-sans">Líneas de Protección Biocultural</h2>
+		<!-- Tesoros de biodiversidad -->
+		<section class="relative z-10 mb-12">
+			<h2 class="text-3xl font-bold text-emerald-200 mb-8 font-sans flex items-center gap-3">
+				<span class="text-4xl">💎</span> Tesoros que Proteger
+			</h2>
 			
-			<div class="space-y-8 mt-8">
-				<div class="bg-gray-900 border border-gray-800 p-8 rounded-xl">
-					<h3 class="text-2xl font-bold text-eje-agri mb-4 font-sans">Freno al Extractivismo Predatorio</h3>
-					<p>
-						No toleraremos agendas mineras y de megaproyectos que amenacen corredores biológicos, reservas forestales y el ciclo esencial del agua potable bajo engañosas justificaciones de rentabilidad parcial de cara a la crisis climática del nuevo milenio.
-					</p>
+			<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+				<div class="bg-gradient-to-br from-green-950/80 to-emerald-950/80 border border-emerald-500/20 rounded-2xl p-6 shadow-lg group hover:border-emerald-400/60 transition-all">
+					<div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🏔️</div>
+					<h3 class="text-xl font-bold text-emerald-200 mb-3">Páramos</h3>
+					<p class="text-emerald-50/80 leading-relaxed">Santurbán y todos los páramos de Colombia protegidos. <strong class="text-white">El agua vale más que el oro.</strong> Son fábricas de agua que abastecen a millones.</p>
 				</div>
 
-				<div class="bg-gray-900 border border-gray-800 p-8 rounded-xl">
-					<h3 class="text-2xl font-bold text-eje-agri mb-4 font-sans">Transición Justa con el Liderazgo Social</h3>
-					<p>
-						Potenciaremos y escucharemos la voz de cada líder y lideresa ambiental. Aceleraremos una transición energética responsable y progresista construida de la mano de soluciones sostenibles, donde las comunidades mismas se apropien económicamente de nuevas vertientes limpias, respetando lo orgánico y natural de nuestra tierra.
-					</p>
+				<div class="bg-gradient-to-br from-teal-950/80 to-green-950/80 border border-teal-500/20 rounded-2xl p-6 shadow-lg group hover:border-teal-400/60 transition-all">
+					<div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🌳</div>
+					<h3 class="text-xl font-bold text-teal-200 mb-3">Amazonía</h3>
+					<p class="text-teal-50/80 leading-relaxed">Pulmón del mundo y hogar de pueblos ancestrales. <strong class="text-white">Defensa frente al extractivismo y la deforestación.</strong></p>
+				</div>
+
+				<div class="bg-gradient-to-br from-cyan-950/80 to-blue-950/80 border border-cyan-500/20 rounded-2xl p-6 shadow-lg group hover:border-cyan-400/60 transition-all">
+					<div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🌊</div>
+					<h3 class="text-xl font-bold text-cyan-200 mb-3">Mares y Costas</h3>
+					<p class="text-cyan-50/80 leading-relaxed">Vastos espacios oceánicos. Pesca artesanal sostenible. <strong class="text-white">Defensa frente a la explotación indiscriminada.</strong></p>
+				</div>
+
+				<div class="bg-gradient-to-br from-lime-950/80 to-yellow-950/80 border border-lime-500/20 rounded-2xl p-6 shadow-lg group hover:border-lime-400/60 transition-all">
+					<div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🌴</div>
+					<h3 class="text-xl font-bold text-lime-200 mb-3">Pacífico</h3>
+					<p class="text-lime-50/80 leading-relaxed">Un Pacífico verde, digno y soberano. <strong class="text-white">Turismo sostenible y agroecología</strong> en lugar del despojo extractivista.</p>
 				</div>
 			</div>
-		</article>
+		</section>
+
+		<!-- Líneas de Protección Biocultural -->
+		<section class="relative z-10 space-y-8">
+			<h2 class="text-3xl font-bold text-emerald-200 mb-6 font-sans flex items-center gap-3">
+				<span class="text-4xl">🛡️</span> Líneas de Protección Biocultural
+			</h2>
+
+			<div class="bg-gradient-to-r from-green-950/80 via-emerald-950/60 to-green-950/80 border border-green-500/30 rounded-2xl p-8 shadow-xl hover:shadow-green-500/10 hover:border-green-400/60 transition-all duration-300 group">
+				<div class="flex items-start gap-5">
+					<div class="text-5xl group-hover:animate-pulse transition-transform shrink-0">🚫</div>
+					<div>
+						<h3 class="text-2xl font-bold text-green-200 mb-4">Freno al Extractivismo Predatorio</h3>
+						<p class="text-green-50/90 leading-relaxed text-lg">
+							No toleraremos agendas mineras y de megaproyectos que amenacen corredores biológicos, reservas forestales y el ciclo esencial del agua. 
+							<strong class="text-white">Cero fracking. Revisión de concesiones extractivas en zonas ecológicamente sensibles.</strong> 
+							La Amazonía y la Orinoquía son reservas de vida, no zonas de extracción.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-gradient-to-r from-teal-950/80 via-cyan-950/60 to-teal-950/80 border border-teal-500/30 rounded-2xl p-8 shadow-xl hover:shadow-teal-500/10 hover:border-teal-400/60 transition-all duration-300 group">
+				<div class="flex items-start gap-5">
+					<div class="text-5xl group-hover:animate-spin transition-transform shrink-0" style="animation-duration: 3s;">⚡</div>
+					<div>
+						<h3 class="text-2xl font-bold text-teal-200 mb-4">Transición Energética Justa</h3>
+						<p class="text-teal-50/90 leading-relaxed text-lg">
+							Aceleraremos las energías renovables no convencionales construidas de la mano de soluciones sostenibles. 
+							<strong class="text-white">Las comunidades mismas se apropiarán económicamente de nuevas vertientes limpias.</strong> 
+							Bioeconomía y economías de la biodiversidad como alternativa al extractivismo.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-gradient-to-r from-emerald-950/80 via-green-950/60 to-emerald-950/80 border border-emerald-500/30 rounded-2xl p-8 shadow-xl hover:shadow-emerald-500/10 hover:border-emerald-400/60 transition-all duration-300 group">
+				<div class="flex items-start gap-5">
+					<div class="text-5xl group-hover:animate-bounce transition-transform shrink-0">👥</div>
+					<div>
+						<h3 class="text-2xl font-bold text-emerald-200 mb-4">Liderazgo Social y Comunitario</h3>
+						<p class="text-emerald-50/90 leading-relaxed text-lg">
+							Potenciaremos y escucharemos la voz de cada líder y lideresa ambiental. 
+							<strong class="text-white">Autoridades ambientales indígenas</strong> reconocidas por el Decreto 1275 de 2024. 
+							Consejos ambientales regionales con participación comunitaria vinculante. 
+							Estatutos especiales para Amazonía y Pacífico.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Narrativa: el bosque como maestro -->
+		<section class="relative z-10 mt-16 bg-gradient-to-b from-green-950/50 to-emerald-950/50 border border-emerald-500/20 rounded-3xl p-8 sm:p-10">
+			<h2 class="text-3xl font-bold text-emerald-200 mb-6 font-serif flex items-center gap-3">
+				<span class="text-4xl">🧘</span> Lo que el Bosque nos Enseña
+			</h2>
+			<p class="text-emerald-50/80 leading-relaxed text-lg mb-8 font-sans">
+				Las comunidades indígenas y afrodescendientes han demostrado que es posible vivir <strong class="text-white">en armonía con la naturaleza sin destruirla</strong>. 
+				El bosque no es un obstáculo para el desarrollo: es el maestro de una economía para la vida. 
+				Donde occidente ve "recursos", los pueblos ancestrales ven parientes.
+			</p>
+			
+			<div class="flex flex-wrap justify-center gap-4 text-4xl">
+				<span class="hover:scale-125 transition-transform cursor-default" title="Selva">🌳</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Río">💧</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Jaguar">🐆</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Cóndor">🦅</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Delfín rosado">🐬</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Orquídea">🌸</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Mariposa">🦋</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Rana dorada">🐸</span>
+			</div>
+		</section>
+
+		<!-- Cierre -->
+		<div class="relative z-10 mt-16 text-center">
+			<div class="text-6xl mb-4 hover:animate-spin cursor-default inline-block">🌎</div>
+			<p class="text-xl font-bold text-emerald-200 font-sans">
+				La naturaleza no es un recurso: es nuestra casa común. <br/>
+				<span class="text-white text-2xl">Defenderla es defendernos.</span>
+			</p>
+			<a href={import.meta.env.BASE_URL + 'ejes/agraria'} class="inline-block mt-8 bg-emerald-700 hover:bg-emerald-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-emerald-500/30">
+				🌿 Volver a Revolución Agraria
+			</a>
+		</div>
 
 	</div>
 </Layout>

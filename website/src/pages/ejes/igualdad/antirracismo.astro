@@ -2,62 +2,157 @@
 import Layout from '../../../layouts/Layout.astro';
 ---
 
-<Layout title="El Movimiento Antirracista - Iván Cepeda 2026" description="El pacto ético es antirracista. Desmantelamiento de la discriminación estructural.">
-	<div class="max-w-4xl mx-auto px-4 py-12 font-sans">
-		
-		<div class="mb-10 text-sm">
-			<a href={import.meta.env.BASE_URL + 'ejes/igualdad'} class="text-eje-equal hover:underline font-bold transition-colors">
-				← Volver a Igualdad y Antirracismo
+<Layout title="El Tambor de la Libertad - Iván Cepeda 2026" description="La rebelión antirracista: desmantelamiento de la discriminación estructural y reconocimiento de los pueblos excluidos.">
+	<div class="max-w-4xl mx-auto px-4 py-12 font-serif relative overflow-hidden">
+
+		<!-- Fondo carnaval/vibrante -->
+		<div class="absolute inset-0 pointer-events-none opacity-15 z-0" aria-hidden="true">
+			<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-pink-950 via-purple-950 to-orange-950"></div>
+			<div class="absolute inset-0" style="background: radial-gradient(ellipse at 20% 30%, rgba(236,72,153,0.1) 0%, transparent 50%), radial-gradient(ellipse at 80% 70%, rgba(249,115,22,0.08) 0%, transparent 50%), radial-gradient(ellipse at 50% 50%, rgba(168,85,247,0.06) 0%, transparent 40%);"></div>
+		</div>
+
+		<!-- Volver -->
+		<div class="mb-10 text-sm relative z-10">
+			<a href={import.meta.env.BASE_URL + 'ejes/igualdad'} class="inline-flex items-center gap-2 text-pink-300 hover:text-pink-100 font-bold transition-colors bg-pink-950/60 border border-pink-500/30 px-4 py-2 rounded-full hover:bg-pink-900/60">
+				<span>🪘</span> ← Volver a Igualdad y Antirracismo
 			</a>
 		</div>
 
-		<header class="mb-12 border-b-2 border-gray-800 pb-8">
-			<h1 class="text-4xl md:text-5xl font-bold mb-6 text-white font-serif leading-tight">
-				La Rebelión Antirracista
-			</h1>
-			<p class="text-xl text-gray-300 font-sans leading-relaxed">
-				Una verdadera revolución ética no puede existir mientras nuestra sociedad no desarraigue las lógicas coloniales. El movimiento debe centrarse en los saberes y la integración política de los pueblos excluidos.
-			</p>
+		<!-- Header: Tambor de la Libertad -->
+		<header class="relative z-10 mb-12">
+			<div class="relative bg-gradient-to-br from-pink-900/80 via-purple-950/90 to-orange-900/80 border-3 border-pink-400/30 rounded-3xl p-8 sm:p-10 shadow-[0_0_40px_rgba(236,72,153,0.12)] overflow-hidden">
+				<div class="absolute top-4 right-8 text-6xl animate-bounce opacity-55" style="animation-duration: 2s;">🪘</div>
+				<div class="absolute bottom-6 left-8 text-5xl animate-pulse opacity-40" style="animation-duration: 2.5s;">✊🏾</div>
+				<div class="absolute top-1/3 right-20 text-4xl animate-spin opacity-30" style="animation-duration: 6s;">🎨</div>
+				
+				<h1 class="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-orange-300 to-purple-200 font-serif leading-tight relative">
+					🪘 El Tambor de la Libertad
+				</h1>
+				<p class="text-xl text-pink-100 font-sans leading-relaxed max-w-2xl relative">
+					Una verdadera <strong class="text-white">revolución ética</strong> no puede existir mientras no desarraiguemos las lógicas coloniales. 
+					El movimiento debe centrarse en los saberes y la integración política de los pueblos excluidos.
+				</p>
+			</div>
 		</header>
 
-		<article class="prose prose-lg prose-invert max-w-none font-serif text-gray-300 leading-loose">
-			<p>
-				Durante la historia de Colombia, las instituciones y el centralismo ignoraron profundamente a las comunidades del litoral Pacífico, a la Amazonia, al Caribe profundo y a todas las formaciones indígenas y afrodescendientes, quienes han librado batallas ancestrales para preservar no solo sus derechos, sino el territorio en sí. 
+		<!-- Cita central -->
+		<blockquote class="relative z-10 my-12 bg-gradient-to-r from-pink-900/60 via-purple-900/40 to-pink-900/60 border-l-4 border-pink-400 p-8 rounded-r-2xl shadow-xl">
+			<div class="absolute -top-4 -left-4 text-4xl">🔥</div>
+			<p class="text-2xl md:text-3xl italic text-white font-medium leading-relaxed font-serif">
+				"En Colombia el daño moral ha sido profundizado por el patriarcalismo contra las mujeres, la discriminación y también por <strong class="text-pink-200">el racismo sistémico contra los pueblos indígenas, afrodescendientes y las comunidades rurales</strong>."
 			</p>
-			
-			<p>
-				Hoy, enfrentamos un sistema de exclusión violenta. La rebelión antirracista consiste en convertir el respeto y la autonomía de estas organizaciones ciudadanas en base obligatoria del Estado colombiano. 
-			</p>
+			<footer class="mt-4 text-pink-300 text-sm font-sans">— Iván Cepeda, Programa de Gobierno 2026-2030</footer>
+		</blockquote>
 
-			<blockquote class="border-l-4 border-eje-equal pl-6 my-8 italic text-white text-2xl font-medium">
-				"En Colombia el daño moral ha sido profundizado por el patriarcalismo contra las mujeres, la discriminación y también por el racismo sistémico contra los pueblos indígenas, afrodescendientes y las comunidades rurales."
-			</blockquote>
-
-			<h2 class="text-3xl font-bold text-white mt-12 mb-6 font-sans">Ejes del Enfoque Antirracista</h2>
+		<!-- La Herencia que Resistimos -->
+		<section class="relative z-10 mb-12">
+			<h2 class="text-3xl font-bold text-pink-200 mb-8 font-sans flex items-center gap-3">
+				<span class="text-4xl">📜</span> La Herencia que Resistimos
+			</h2>
 			
-			<div class="space-y-8 mt-8">
-				<div class="bg-gray-900 border border-gray-800 p-8 rounded-xl">
-					<h3 class="text-2xl font-bold text-eje-equal mb-4 font-sans">Reconocimiento Pleno al Territorio</h3>
-					<p>
-						Los territorios habitados por pueblos indígenas y comunidades afros están en constante peligro de despojo. Nuestra meta es blindar legal, militar e institucionalmente su autonomía territorial, frenando el avance del paramilitarismo y del extractivismo irresponsable en sus cuencas y reservas.
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+				<div class="bg-gradient-to-br from-pink-950/80 to-purple-950/80 border border-pink-400/20 rounded-2xl p-6 shadow-lg hover:border-pink-400/60 transition-all group">
+					<div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🌊</div>
+					<h3 class="text-xl font-bold text-pink-200 mb-3">Litoral Pacífico</h3>
+					<p class="text-pink-50/80 leading-relaxed">
+						Las instituciones ignoraron profundamente a las comunidades del litoral Pacífico, la Amazonia y el Caribe profundo. 
+						<strong class="text-white">Pueblos que han librado batallas ancestrales</strong> para preservar no solo sus derechos, sino el territorio mismo.
 					</p>
 				</div>
 
-				<div class="bg-gray-900 border border-gray-800 p-8 rounded-xl">
-					<h3 class="text-2xl font-bold text-eje-equal mb-4 font-sans">Contratación Pública Comunitaria</h3>
-					<p>
-						Nuestra política incluye que las Juntas de Acción Comunal y las guardias territoriales participen de manera directa, superando los frenos burocráticos de la ley 80. Garantizando que la inversión llega directo a resolver los problemas de las comunidades periféricas, Tumaco, Puerto Tejada y Buenaventura deben ver en sus obras públicas la mano del mismo pueblo, combatiendo tanto el racismo como la corrupción de las élites locales.
-					</p>
-				</div>
-
-				<div class="bg-gray-900 border border-gray-800 p-8 rounded-xl">
-					<h3 class="text-2xl font-bold text-eje-equal mb-4 font-sans">Erradicación de Estigmas Institucionales</h3>
-					<p>
-						Frenar el perfilamiento sistemático que sufren los jóvenes afro e indígenas por parte de los aparatos de seguridad y justicia. Impulsaremos reformas estructurales para que la educación desde la primera infancia incluya un enfoque decolonial que enaltezca la herencia africana e indígena y borre la segregación naturalizada de nuestra sociedad.
+				<div class="bg-gradient-to-br from-orange-950/80 to-pink-950/80 border border-orange-400/20 rounded-2xl p-6 shadow-lg hover:border-orange-400/60 transition-all group">
+					<div class="text-5xl mb-3 group-hover:scale-110 transition-transform">⛓️</div>
+					<h3 class="text-xl font-bold text-orange-200 mb-3">Exclusión Violenta</h3>
+					<p class="text-orange-50/80 leading-relaxed">
+						Hoy enfrentamos un <strong class="text-white">sistema de exclusión violenta</strong>. La rebelión antirracista convierte el respeto 
+						y la autonomía de las organizaciones ciudadanas en base obligatoria del Estado colombiano.
 					</p>
 				</div>
 			</div>
-		</article>
+		</section>
+
+		<!-- Ejes del Enfoque Antirracista -->
+		<section class="relative z-10 space-y-8">
+			<h2 class="text-3xl font-bold text-pink-200 mb-6 font-sans flex items-center gap-3">
+				<span class="text-4xl">✊🏾</span> Ejes del Enfoque Antirracista
+			</h2>
+
+			<div class="bg-gradient-to-r from-pink-950/80 via-purple-950/60 to-pink-950/80 border border-pink-500/30 rounded-2xl p-8 shadow-xl hover:shadow-pink-500/10 hover:border-pink-400/60 transition-all duration-300 group">
+				<div class="flex items-start gap-5">
+					<div class="text-5xl group-hover:animate-bounce transition-transform shrink-0">🗺️</div>
+					<div>
+						<h3 class="text-2xl font-bold text-pink-200 mb-4">Reconocimiento Pleno al Territorio</h3>
+						<p class="text-pink-50/90 leading-relaxed text-lg">
+							Los territorios habitados por pueblos indígenas y comunidades afros están en constante peligro de despojo. 
+							<strong class="text-white">Blindaremos legal, militar e institucionalmente su autonomía territorial</strong>, frenando el avance del paramilitarismo 
+							y del extractivismo irresponsable en sus cuencas y reservas.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-gradient-to-r from-purple-950/80 via-orange-950/60 to-purple-950/80 border border-purple-500/30 rounded-2xl p-8 shadow-xl hover:shadow-purple-500/10 hover:border-purple-400/60 transition-all duration-300 group">
+				<div class="flex items-start gap-5">
+					<div class="text-5xl group-hover:animate-pulse transition-transform shrink-0">🏗️</div>
+					<div>
+						<h3 class="text-2xl font-bold text-purple-200 mb-4">Contratación Pública Comunitaria</h3>
+						<p class="text-purple-50/90 leading-relaxed text-lg">
+							Las Juntas de Acción Comunal y las guardias territoriales participarán de manera directa, superando los frenos burocráticos de la Ley 80. 
+							<strong class="text-white">Tumaco, Puerto Tejada y Buenaventura verán en sus obras públicas la mano del mismo pueblo</strong>, 
+							combatiendo tanto el racismo como la corrupción de las élites locales.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-gradient-to-r from-amber-950/80 via-orange-950/60 to-amber-950/80 border border-amber-500/30 rounded-2xl p-8 shadow-xl hover:shadow-amber-500/10 hover:border-amber-400/60 transition-all duration-300 group">
+				<div class="flex items-start gap-5">
+					<div class="text-5xl group-hover:animate-spin transition-transform shrink-0" style="animation-duration: 4s;">📚</div>
+					<div>
+						<h3 class="text-2xl font-bold text-amber-200 mb-4">Erradicación de Estigmas Institucionales</h3>
+						<p class="text-amber-50/90 leading-relaxed text-lg">
+							Frenaremos el perfilamiento sistemático que sufren los jóvenes afro e indígenas por parte de los aparatos de seguridad y justicia. 
+							<strong class="text-white">Educación desde la primera infancia con enfoque decolonial</strong> que enaltezca la herencia africana e indígena 
+							y borre la segregación naturalizada de nuestra sociedad.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- El Tambor - simbología -->
+		<section class="relative z-10 mt-16 bg-gradient-to-b from-pink-950/50 to-orange-950/50 border border-pink-500/20 rounded-3xl p-8 sm:p-10">
+			<h2 class="text-3xl font-bold text-pink-200 mb-6 font-serif flex items-center gap-3">
+				<span class="text-4xl">🥁</span> El Tambor que Resuena
+			</h2>
+			<p class="text-pink-50/80 leading-relaxed text-lg mb-8 font-sans">
+				El tambor es resistencia, es comunicación, es <strong class="text-white">el latido de los pueblos que se niegan a desaparecer</strong>. 
+				Desde los palenques hasta las guardias indígenas, la música y la cultura han sido trincheras de dignidad. 
+				La rebelión antirracista también se baila, se canta y se celebra.
+			</p>
+			
+			<div class="flex flex-wrap justify-center gap-4 text-4xl">
+				<span class="hover:scale-125 transition-transform cursor-default" title="Tambor">🥁</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Marimba">🎹</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Cantos">🎵</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Danza">💃🏾</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Resistencia">✊🏾</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Libertad">🕊️</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Colombia">🇨🇴</span>
+			</div>
+		</section>
+
+		<!-- Cierre -->
+		<div class="relative z-10 mt-16 text-center">
+			<div class="text-6xl mb-4 hover:animate-spin cursor-default inline-block">✊🏾</div>
+			<p class="text-xl font-bold text-pink-200 font-sans">
+				"LA REVOLUCIÓN ÉTICA ES ANTIRRACISTA" <br/>
+				<span class="text-white text-2xl">Colombia es una nación plural. La diversidad no es amenaza, es riqueza.</span>
+			</p>
+			<a href={import.meta.env.BASE_URL + 'ejes/igualdad'} class="inline-block mt-8 bg-pink-700 hover:bg-pink-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-pink-500/30">
+				🪘 Volver a Igualdad y Antirracismo
+			</a>
+		</div>
 
 	</div>
 </Layout>

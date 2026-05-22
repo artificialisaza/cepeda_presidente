@@ -1,0 +1,103 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import AsciiPattern from '../../../components/AsciiPattern.astro';
+
+const artLines = [
+  '  ****  ****  ****  ****  ****  ****  ',
+  ' *    **    **    **    **    **    * ',
+  '*  ~~  *  ~~  *  ~~  *  ~~  *  ~~  *',
+  ' *    **    **    **    **    **    * ',
+  '  ****  ****  ****  ****  ****  ****  ',
+];
+---
+
+<Layout title="Rebelión Antirracista y Desarrollo Afro - Iván Cepeda 2026" description="Desarrollo territorial de Tumaco, Buenaventura y Puerto Tejada como parte de la revolución ética antirracista.">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+    <AsciiPattern lines={artLines} colors={['text-pink-400', 'text-yellow-400', 'text-green-400', 'text-pink-400', 'text-yellow-400']} wrapperClass="mb-8" textClass="text-[10px] sm:text-sm" />
+    
+    <a href={import.meta.env.BASE_URL + 'ejes/igualdad'} class="inline-block mb-8 text-eje-equal hover:underline hover:text-white transition-colors text-sm sm:text-base">
+      &larr; Volver a Igualdad y Antirracismo
+    </a>
+
+    <header class="bg-pink-900/60 border-3 border-pink-400/50 rounded-3xl p-6 sm:p-8 mb-10 shadow-[6px_6px_0px_rgba(244,114,182,0.4)] transform -rotate-1">
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-pink-300 mb-4 font-serif drop-shadow-[0_0_18px_#f472b6]">&#9994;&#127998; Rebelion Antirracista y Desarrollo de Territorios Afro</h1>
+      <p class="text-pink-100 text-lg sm:text-xl font-['Comic_Sans_MS',cursive] leading-relaxed">
+        La revolucion etica es antirracista. El desarrollo con justicia para Tumaco, Buenaventura y Puerto Tejada.
+      </p>
+    </header>
+
+    <blockquote class="border-l-4 border-eje-equal pl-6 my-10 italic text-white text-xl sm:text-2xl font-medium font-serif leading-relaxed">
+      "Colombia es una nacion plural, integrada por pueblos indigenas, comunidades afrodescendientes, campesinas y urbanas. La diversidad no es una amenaza, sino una expresion legitima de nuestra humanidad compartida."<br/>
+      <span class="text-pink-300 text-base">-- Ivan Cepeda, Discurso en la Universidad Nacional</span>
+    </blockquote>
+
+    <div class="space-y-12 leading-relaxed text-lg text-gray-200 font-sans">
+      
+      <!-- Tumaco -->
+      <section class="bg-black/40 border-2 border-pink-500/30 rounded-2xl p-6 sm:p-8 shadow-lg">
+        <h2 class="text-2xl sm:text-3xl font-bold text-pink-300 mb-6 font-serif flex items-center gap-3">
+          <span class="text-4xl">&#127754;</span> Tumaco, Pacifico Narisense
+        </h2>
+        <p class="text-base sm:text-lg leading-relaxed mb-4">
+          Tumaco es un territorio de riqueza biocultural inmensa, pero ha sido golpeado por el abandono estatal, el narcotrafico y la violencia. Nuestra propuesta busca un <strong>desarrollo territorial sostenible</strong> que reconozca a las comunidades afrodescendientes como protagonistas, con inversion en infraestructura, educacion y economias licitas.
+        </p>
+        <div class="bg-pink-900/20 border border-pink-600/40 rounded-xl p-5 mt-6">
+          <h3 class="text-xl font-bold text-pink-200 mb-3">Compromisos concretos</h3>
+          <ul class="list-disc list-inside space-y-2 text-base">
+            <li><strong>Pacto Territorial del Pacifico Narisense</strong> con participacion vinculante de Consejos Comunitarios</li>
+            <li>Apuesta por la <strong>agroecologia</strong> y las economias culturales en lugar del despojo extractivista</li>
+            <li><strong>Turismo sostenible</strong> gestionado por comunidades afro</li>
+            <li>Conexion vial y fluvial con el resto del pais</li>
+            <li>Programas de <strong>sustitucion de economias ilicitas</strong> con inversion social garantizada</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Buenaventura -->
+      <section class="bg-black/40 border-2 border-purple-500/30 rounded-2xl p-6 sm:p-8 shadow-lg">
+        <h2 class="text-2xl sm:text-3xl font-bold text-purple-300 mb-6 font-serif flex items-center gap-3">
+          <span class="text-4xl">&#9873;</span> Buenaventura, Puerto de Vida
+        </h2>
+        <p class="text-base sm:text-lg leading-relaxed mb-4">
+          Buenaventura es el puerto mas importante de Colombia sobre el Pacifico. Sin embargo, historicamente la riqueza que alli se genera no se ha traducido en bienestar para sus habitantes. El desarrollo del puerto debe beneficiar a las comunidades locales, no solo a los grandes capitales.
+        </p>
+        <div class="bg-purple-900/20 border border-purple-600/40 rounded-xl p-5 mt-6">
+          <h3 class="text-xl font-bold text-purple-200 mb-3">Compromisos concretos</h3>
+          <ul class="list-disc list-inside space-y-2 text-base">
+            <li><strong>Regalias portuarias</strong> destinadas prioritariamente al desarrollo local</li>
+            <li><strong>Estatuto especial</strong> para la region del Pacifico que rompa con el modelo extractivista</li>
+            <li>Inversion en <strong>acueductos, alcantarillado y vivienda digna</strong> en las comunas</li>
+            <li>Fortalecimiento de los <strong>Consejos Comunitarios</strong> como autoridades territoriales</li>
+            <li>Empleo digno para la juventud bonaerense en actividades portuarias y logisticas</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Puerto Tejada -->
+      <section class="bg-black/40 border-2 border-amber-500/30 rounded-2xl p-6 sm:p-8 shadow-lg">
+        <h2 class="text-2xl sm:text-3xl font-bold text-amber-300 mb-6 font-serif flex items-center gap-3">
+          <span class="text-4xl">&#127477;</span> Puerto Tejada, Corazon del Cauca
+        </h2>
+        <p class="text-base sm:text-lg leading-relaxed mb-4">
+          Puerto Tejada, en el norte del Cauca, es un municipio con fuerte presencia afrodescendiente e indigena, que ha resistido los embates del conflicto armado y la exclusion. Nuestra propuesta de desarrollo se enmarca en el <strong>Pacto Territorial del Cauca</strong>, con una inversion de 27.6 billones de pesos en 205 proyectos estrategicos.
+        </p>
+        <div class="bg-amber-900/20 border border-amber-600/40 rounded-xl p-5 mt-6">
+          <h3 class="text-xl font-bold text-amber-200 mb-3">Compromisos concretos</h3>
+          <ul class="list-disc list-inside space-y-2 text-base">
+            <li>Integracion en los <strong>205 proyectos estrategicos</strong> del Pacto Territorial del Cauca</li>
+            <li><strong>Reforma agraria</strong> con entrega de tierras a comunidades afro y campesinas del norte del Cauca</li>
+            <li>Fortalecimiento de la <strong>economia popular</strong> y las cadenas productivas locales</li>
+            <li>Presencia efectiva del Estado social, no solo del Estado militar</li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href={import.meta.env.BASE_URL + 'ejes/igualdad'} class="inline-block bg-pink-700 hover:bg-pink-600 text-white px-6 py-3 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg">
+        &#9994;&#127998; Volver a Igualdad y Antirracismo
+      </a>
+    </div>
+  </div>
+</Layout>

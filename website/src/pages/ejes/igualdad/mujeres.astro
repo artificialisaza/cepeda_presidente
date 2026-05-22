@@ -2,62 +2,161 @@
 import Layout from '../../../layouts/Layout.astro';
 ---
 
-<Layout title="Las Mujeres en el Centro - Iván Cepeda 2026" description="Democratización de las relaciones y desarticulación del sistema patriarcal.">
-	<div class="max-w-4xl mx-auto px-4 py-12 font-sans">
-		
-		<div class="mb-10 text-sm">
-			<a href={import.meta.env.BASE_URL + 'ejes/igualdad'} class="text-eje-equal hover:underline font-bold transition-colors">
-				← Volver a Igualdad y Antirracismo
+<Layout title="Las Tejedoras de la Vida - Iván Cepeda 2026" description="Las mujeres en el centro: igualdad transformadora, desmontando el patriarcado con poder de decisión real.">
+	<div class="max-w-4xl mx-auto px-4 py-12 font-serif relative overflow-hidden">
+
+		<!-- Fondo textil -->
+		<div class="absolute inset-0 pointer-events-none opacity-12 z-0" aria-hidden="true">
+			<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-rose-950 via-fuchsia-950 to-violet-950"></div>
+			<!-- Patrón de hilos entrecruzados -->
+			<div class="absolute inset-0" style="background: repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(244,114,182,0.06) 30px, rgba(244,114,182,0.06) 32px), repeating-linear-gradient(-45deg, transparent, transparent 30px, rgba(168,85,247,0.06) 30px, rgba(168,85,247,0.06) 32px);"></div>
+		</div>
+
+		<!-- Volver -->
+		<div class="mb-10 text-sm relative z-10">
+			<a href={import.meta.env.BASE_URL + 'ejes/igualdad'} class="inline-flex items-center gap-2 text-rose-300 hover:text-rose-100 font-bold transition-colors bg-rose-950/60 border border-rose-500/30 px-4 py-2 rounded-full hover:bg-rose-900/60">
+				<span>🙋🏾‍♀️</span> ← Volver a Igualdad y Antirracismo
 			</a>
 		</div>
 
-		<header class="mb-12 border-b-2 border-gray-800 pb-8">
-			<h1 class="text-4xl md:text-5xl font-bold mb-6 text-white font-serif leading-tight">
-				Las Mujeres en el Centro
-			</h1>
-			<p class="text-xl text-gray-300 font-sans leading-relaxed">
-				La verdadera igualdad transformadora exige asumir que las mujeres siempre han sostenido la vida, superando las estructuras excluyentes y patriarcales de la política tradicional.
-			</p>
+		<!-- Header: Las Tejedoras -->
+		<header class="relative z-10 mb-12">
+			<div class="relative bg-gradient-to-br from-rose-900/80 via-fuchsia-950/90 to-violet-900/80 border-3 border-rose-400/30 rounded-3xl p-8 sm:p-10 shadow-[0_0_40px_rgba(244,114,182,0.1)] overflow-hidden">
+				<div class="absolute top-4 right-8 text-6xl animate-bounce opacity-50" style="animation-duration: 2.5s;">🧶</div>
+				<div class="absolute bottom-6 left-8 text-5xl animate-pulse opacity-40">🙋🏾‍♀️</div>
+				<div class="absolute top-1/2 right-20 text-4xl animate-spin opacity-25" style="animation-duration: 7s;">🌸</div>
+				
+				<h1 class="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-rose-200 via-fuchsia-300 to-violet-200 font-serif leading-tight relative">
+					🧶 Las Tejedoras de la Vida
+				</h1>
+				<p class="text-xl text-rose-100 font-sans leading-relaxed max-w-2xl relative">
+					La verdadera <strong class="text-white">igualdad transformadora</strong> exige asumir que las mujeres siempre han sostenido la vida, 
+					superando las estructuras excluyentes y patriarcales de la política tradicional.
+				</p>
+			</div>
 		</header>
 
-		<article class="prose prose-lg prose-invert max-w-none font-serif text-gray-300 leading-loose">
-			<p>
-				Por generaciones, Colombia ha funcionado sobre la herencia de lógicas patriarcales y machistas que invisibilizan los liderazgos genuinos de las mujeres, reduciendo su impacto a roles de soporte mientras históricamente se les han negado las esferas de decisión política y económica. Nuestro programa no busca un ajuste cosmético, sino un replanteamiento de este orden.
+		<!-- Cita -->
+		<blockquote class="relative z-10 my-12 bg-gradient-to-r from-rose-900/60 via-fuchsia-900/40 to-rose-900/60 border-l-4 border-rose-400 p-8 rounded-r-2xl shadow-xl">
+			<div class="absolute -top-4 -left-4 text-4xl">💪</div>
+			<p class="text-2xl md:text-3xl italic text-white font-medium leading-relaxed font-serif">
+				"Las mujeres no solo poseen los mismos derechos, sino que <strong class="text-rose-200">deben ocupar espacios decisorios en la vida política y económica</strong>. La revolución pacífica y decisoria pasa necesariamente por democratizar las relaciones entre hombres y mujeres."
 			</p>
+			<footer class="mt-4 text-rose-300 text-sm font-sans">— Iván Cepeda, Programa de Gobierno 2026-2030</footer>
+		</blockquote>
 
-			<blockquote class="border-l-4 border-eje-equal pl-6 my-8 italic text-white text-2xl font-medium">
-				"Las mujeres no solo poseen los mismos derechos, sino que deben ocupar espacios decisorios en la vida política y económica."
-			</blockquote>
-
-			<p>
-				La revolución pacífica y decisoria pasa necesariamente por democratizar las relaciones entre hombres y mujeres a nivel estructural. Significa la garantía directa sobre los derechos reproductivos y de seguridad, el reconocimiento económico del trabajo de cuidado no remunerado y el desmantelamiento de las redes de violencia sistemática en sus hogares y entornos profesionales.
-			</p>
-
-			<h2 class="text-3xl font-bold text-white mt-12 mb-6 font-sans">Líneas de Transformación</h2>
+		<!-- Hilos de la transformación - tarjetas de datos -->
+		<section class="relative z-10 mb-12">
+			<h2 class="text-3xl font-bold text-rose-200 mb-8 font-sans flex items-center gap-3">
+				<span class="text-4xl">🧵</span> Los Hilos que Sostienen Colombia
+			</h2>
 			
-			<div class="space-y-8 mt-8">
-				<div class="bg-gray-900 border border-gray-800 p-8 rounded-xl">
-					<h3 class="text-2xl font-bold text-eje-equal mb-4 font-sans">Poder de Decisión Real</h3>
-					<p>
-						Avanzaremos hacia gabinetes y estructuras administrativas con paridad sustantiva, fortaleciendo el financiamiento y la protección para las lideresas comunitarias que, en muchos territorios, lideran la búsqueda de la paz y la subsistencia ambiental pese a la enorme amenaza armada.
-					</p>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				<div class="bg-gradient-to-b from-rose-950/80 to-pink-950/80 border border-rose-400/20 rounded-2xl p-6 text-center shadow-lg hover:border-rose-400/60 transition-all group">
+					<div class="text-5xl mb-3 group-hover:scale-110 transition-transform">👩🏽‍👧🏽</div>
+					<div class="text-3xl font-black text-rose-300 mb-2">70%</div>
+					<p class="text-rose-50/80">Del trabajo de cuidado no remunerado recae sobre mujeres</p>
 				</div>
 
-				<div class="bg-gray-900 border border-gray-800 p-8 rounded-xl">
-					<h3 class="text-2xl font-bold text-eje-equal mb-4 font-sans">Erradicación de la Violencia Patriarcal</h3>
-					<p>
-						No más impunidad ante la violencia machista. Abordaremos el feminicidio y todas las formas de violencia de género desde un enfoque preventivo y estructural, capacitando a las fuerzas del Estado para la atención prioritaria de estas denuncias sin revictimizar a quienes buscan ayuda.
-					</p>
+				<div class="bg-gradient-to-b from-fuchsia-950/80 to-purple-950/80 border border-fuchsia-400/20 rounded-2xl p-6 text-center shadow-lg hover:border-fuchsia-400/60 transition-all group">
+					<div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🚨</div>
+					<div class="text-3xl font-black text-fuchsia-300 mb-2">1 cada 3</div>
+					<p class="text-rose-50/80">Mujeres ha sufrido violencia física o sexual en Colombia</p>
 				</div>
 
-				<div class="bg-gray-900 border border-gray-800 p-8 rounded-xl">
-					<h3 class="text-2xl font-bold text-eje-equal mb-4 font-sans">Economía del Cuidado y Reconocimiento</h3>
-					<p>
-						Implementación del Sistema Nacional de Cuidado como una verdadera estructura de redistribución. Reconocer económica, política y socialmente el trabajo de las madres cabeza de familia, aliviando su carga mediante redes públicas de atención infantil, lavanderías y apoyos continuos impulsados por el Estado.
-					</p>
+				<div class="bg-gradient-to-b from-violet-950/80 to-indigo-950/80 border border-violet-400/20 rounded-2xl p-6 text-center shadow-lg hover:border-violet-400/60 transition-all group">
+					<div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🏛️</div>
+					<div class="text-3xl font-black text-violet-300 mb-2"><30%</div>
+					<p class="text-rose-50/80">Participación femenina en cargos de elección popular</p>
 				</div>
 			</div>
-		</article>
+		</section>
+
+		<!-- Líneas de Transformación -->
+		<section class="relative z-10 space-y-8">
+			<h2 class="text-3xl font-bold text-rose-200 mb-6 font-sans flex items-center gap-3">
+				<span class="text-4xl">✨</span> Líneas de Transformación
+			</h2>
+
+			<div class="bg-gradient-to-r from-rose-950/80 via-pink-950/60 to-rose-950/80 border border-rose-500/30 rounded-2xl p-8 shadow-xl hover:shadow-rose-500/10 hover:border-rose-400/60 transition-all duration-300 group">
+				<div class="flex items-start gap-5">
+					<div class="text-5xl group-hover:animate-bounce transition-transform shrink-0">👑</div>
+					<div>
+						<h3 class="text-2xl font-bold text-rose-200 mb-4">Poder de Decisión Real</h3>
+						<p class="text-rose-50/90 leading-relaxed text-lg">
+							Avanzaremos hacia <strong class="text-white">gabinetes y estructuras administrativas con paridad sustantiva</strong>, 
+							fortaleciendo el financiamiento y la protección para las lideresas comunitarias que, en muchos territorios, 
+							lideran la búsqueda de la paz y la subsistencia ambiental pese a la enorme amenaza armada.
+							Las mujeres decidirán sobre los destinos de Colombia en igualdad real.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-gradient-to-r from-fuchsia-950/80 via-rose-950/60 to-fuchsia-950/80 border border-fuchsia-500/30 rounded-2xl p-8 shadow-xl hover:shadow-fuchsia-500/10 hover:border-fuchsia-400/60 transition-all duration-300 group">
+				<div class="flex items-start gap-5">
+					<div class="text-5xl group-hover:animate-pulse transition-transform shrink-0">🛡️</div>
+					<div>
+						<h3 class="text-2xl font-bold text-fuchsia-200 mb-4">Erradicación de la Violencia Patriarcal</h3>
+						<p class="text-fuchsia-50/90 leading-relaxed text-lg">
+							<strong class="text-white">No más impunidad ante la violencia machista.</strong> Abordaremos el feminicidio y todas las formas 
+							de violencia de género desde un enfoque preventivo y estructural, capacitando a las fuerzas del Estado para la 
+							atención prioritaria de estas denuncias sin revictimizar a quienes buscan ayuda. 
+							La violencia contra las mujeres es una vergüenza nacional que vamos a erradicar.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-gradient-to-r from-violet-950/80 via-purple-950/60 to-violet-950/80 border border-violet-500/30 rounded-2xl p-8 shadow-xl hover:shadow-violet-500/10 hover:border-violet-400/60 transition-all duration-300 group">
+				<div class="flex items-start gap-5">
+					<div class="text-5xl group-hover:animate-spin transition-transform shrink-0" style="animation-duration: 4s;">🏠</div>
+					<div>
+						<h3 class="text-2xl font-bold text-violet-200 mb-4">Economía del Cuidado y Reconocimiento</h3>
+						<p class="text-violet-50/90 leading-relaxed text-lg">
+							Implementación del <strong class="text-white">Sistema Nacional de Cuidado</strong> como una verdadera estructura de redistribución. 
+							Reconocer económica, política y socialmente el trabajo de las madres cabeza de familia, aliviando su carga mediante 
+							redes públicas de atención infantil, lavanderías y apoyos continuos impulsados por el Estado. 
+							Cuidar no es un favor: es trabajo que sostiene la sociedad.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Tejiendo futuro -->
+		<section class="relative z-10 mt-16 bg-gradient-to-b from-rose-950/50 to-violet-950/50 border border-rose-500/20 rounded-3xl p-8 sm:p-10">
+			<h2 class="text-3xl font-bold text-rose-200 mb-6 font-serif flex items-center gap-3">
+				<span class="text-4xl">🪡</span> Tejiendo el Futuro
+			</h2>
+			<p class="text-rose-50/80 leading-relaxed text-lg mb-8 font-sans">
+				Las mujeres colombianas han sido <strong class="text-white">las primeras en buscar a sus desaparecidos, en defender el territorio, en construir paz desde las comunidades</strong>. 
+				Las Madres Buscadoras, las Madres de Soacha, las lideresas campesinas e indígenas: ellas convirtieron el amor en búsqueda metódica, 
+				el dolor en organización, el silencio en verdad. La revolución ética también es feminista.
+			</p>
+			
+			<div class="flex flex-wrap justify-center gap-4 text-4xl">
+				<span class="hover:scale-125 transition-transform cursor-default" title="Liderazgo">👩🏽‍🦱</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Cuidado">🤲</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Educación">📚</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Salud">🏥</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Justicia">⚖️</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Paz">🕊️</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Poder">💪🏾</span>
+			</div>
+		</section>
+
+		<!-- Cierre -->
+		<div class="relative z-10 mt-16 text-center">
+			<div class="text-6xl mb-4 hover:animate-spin cursor-default inline-block">🙋🏾‍♀️</div>
+			<p class="text-xl font-bold text-rose-200 font-sans">
+				Sin las mujeres no hay democracia. Sin las mujeres no hay paz. <br/>
+				<span class="text-white text-2xl">Las mujeres están en el centro de la transformación.</span>
+			</p>
+			<a href={import.meta.env.BASE_URL + 'ejes/igualdad'} class="inline-block mt-8 bg-rose-700 hover:bg-rose-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-rose-500/30">
+				🙋🏾‍♀️ Volver a Igualdad y Antirracismo
+			</a>
+		</div>
 
 	</div>
 </Layout>

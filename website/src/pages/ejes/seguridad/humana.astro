@@ -2,55 +2,151 @@
 import Layout from '../../../layouts/Layout.astro';
 ---
 
-<Layout title="Seguridad Humana - Iván Cepeda 2026" description="La Seguridad Humana es protección integral, no una excusa para la guerra.">
-	<div class="max-w-4xl mx-auto px-4 py-12 font-sans">
-		
-		<div class="mb-10 text-sm">
-			<a href={import.meta.env.BASE_URL + 'ejes/seguridad'} class="text-eje-safety hover:underline font-bold transition-colors">
-				← Volver a Seguridad y Equidad Integrales
+<Layout title="La Muralla de la Dignidad - Iván Cepeda 2026" description="Seguridad Humana: trabajo, salud, educación y protección integral, no militarismo.">
+	<div class="max-w-4xl mx-auto px-4 py-12 font-serif relative overflow-hidden">
+
+		<!-- Fondo fortaleza/pilares -->
+		<div class="absolute inset-0 pointer-events-none opacity-10 z-0" aria-hidden="true">
+			<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-sky-950 via-blue-950 to-indigo-950"></div>
+			<div class="absolute inset-0" style="background: radial-gradient(ellipse at 50% 40%, rgba(96,165,250,0.06) 0%, transparent 50%), radial-gradient(ellipse at 30% 80%, rgba(59,130,246,0.05) 0%, transparent 50%);"></div>
+		</div>
+
+		<div class="mb-10 text-sm relative z-10">
+			<a href={import.meta.env.BASE_URL + 'ejes/seguridad'} class="inline-flex items-center gap-2 text-sky-300 hover:text-sky-100 font-bold transition-colors bg-sky-950/60 border border-sky-500/30 px-4 py-2 rounded-full hover:bg-sky-900/60">
+				<span>🏞️</span> ← Volver a Seguridad y Prosperidad
 			</a>
 		</div>
 
-		<header class="mb-12 border-b-2 border-gray-800 pb-8">
-			<h1 class="text-4xl md:text-5xl font-bold mb-6 text-white font-serif leading-tight">
-				La Seguridad Humana
-			</h1>
-			<p class="text-xl text-gray-300 font-sans leading-relaxed">
-				Proteger la vida significa que la seguridad no es solo Fuerza Pública; es trabajo, salud, educación y cultura.
-			</p>
+		<header class="relative z-10 mb-12">
+			<div class="relative bg-gradient-to-br from-sky-900/80 via-blue-950/90 to-indigo-900/80 border-3 border-sky-400/30 rounded-3xl p-8 sm:p-10 shadow-[0_0_40px_rgba(96,165,250,0.1)] overflow-hidden">
+				<div class="absolute top-4 right-8 text-6xl animate-bounce opacity-50" style="animation-duration: 2s;">🏰</div>
+				<div class="absolute bottom-6 left-8 text-5xl animate-pulse opacity-35">🤝</div>
+				
+				<h1 class="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-200 via-blue-300 to-indigo-200 font-serif leading-tight relative">
+					🏰 La Muralla de la Dignidad
+				</h1>
+				<p class="text-xl text-sky-100 font-sans leading-relaxed max-w-2xl relative">
+					La verdadera seguridad no se basa solo en represión, sino en la <strong class="text-white">certeza de tener techo, empleo, salud y un Estado que funciona y protege a su gente</strong>. 
+					Frente a la doctrina de la guerra total, impulsamos la Seguridad Humana: no militarista, construida con las comunidades.
+				</p>
+			</div>
 		</header>
 
-		<article class="prose prose-lg prose-invert max-w-none font-serif text-gray-300 leading-loose">
-			<p>
-				La política tradicional nos ha vendido la falsa promesa de que la "mano dura" puede garantizar bienestar. Pero la historia de nuestro país muestra que la violencia como respuesta estatal solo engendra mayor inseguridad y dolor profundo para el pueblo organizado.
+		<!-- Cita -->
+		<blockquote class="relative z-10 my-12 bg-gradient-to-r from-sky-900/60 via-blue-900/40 to-sky-900/60 border-l-4 border-sky-400 p-8 rounded-r-2xl shadow-xl">
+			<div class="absolute -top-4 -left-4 text-4xl">🕊️</div>
+			<p class="text-2xl md:text-3xl italic text-white font-medium leading-relaxed font-serif">
+				"Uribe y la extrema derecha colombiana promovieron la austeridad neoliberal, el desplazamiento forzado y <strong class="text-sky-200">las doctrinas de seguridad estatal que incorporan la tesis del enemigo interno</strong>. Nosotros impulsamos una política de Seguridad Humana."
 			</p>
+			<footer class="mt-4 text-sky-300 text-sm font-sans">— Iván Cepeda, Programa de Gobierno 2026-2030</footer>
+		</blockquote>
 
-			<blockquote class="border-l-4 border-eje-safety pl-6 my-8 italic text-white text-2xl font-medium">
-				"Uribe y la extrema derecha colombiana promovieron la austeridad neoliberal, el desplazamiento forzado y las doctrinas de seguridad estatal que incorporan la tesis del enemigo interno."
-			</blockquote>
-
-			<p>
-				Frente a esta doctrina caduca de la guerra total, nosotros impulsamos la Política de Seguridad Humana. Una doctrina no militarista, porque la mayor seguridad se logra cuando hay paz, y cuando el Estado se reconcilia con la ciudadanía.
-			</p>
-
-			<h2 class="text-3xl font-bold text-white mt-12 mb-6 font-sans">Pilares de la Política</h2>
+		<!-- Los Pilares de la Muralla -->
+		<section class="relative z-10 mb-12">
+			<h2 class="text-3xl font-bold text-sky-200 mb-8 font-sans flex items-center gap-3">
+				<span class="text-4xl">🧱</span> Los Pilares de la Seguridad Humana
+			</h2>
 			
-			<div class="space-y-8 mt-8">
-				<div class="bg-gray-900 border border-gray-800 p-8 rounded-xl">
-					<h3 class="text-2xl font-bold text-eje-safety mb-4 font-sans">Seguridad Vinculada a lo Social</h3>
-					<p>
-						Nuestra política de Seguridad Humana estará permanentemente articulada a las políticas sociales y ambientales. Consideramos que darle empleo a un joven es en sí mismo una política de seguridad, reduciendo el caldo de cultivo de las bandas ilegales.
-					</p>
+			<div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+				<div class="bg-gradient-to-b from-sky-950/80 to-blue-950/80 border border-sky-400/20 rounded-2xl p-5 text-center shadow-lg hover:border-sky-400/60 transition-all group">
+					<div class="text-4xl mb-2 group-hover:animate-bounce">💼</div>
+					<h3 class="text-lg font-bold text-sky-200">Trabajo</h3>
+					<p class="text-sky-50/70 text-sm mt-1">Empleo digno como política de seguridad</p>
 				</div>
-
-				<div class="bg-gray-900 border border-gray-800 p-8 rounded-xl">
-					<h3 class="text-2xl font-bold text-eje-safety mb-4 font-sans">Alianza con las Comunidades</h3>
-					<p>
-						La Fuerza Pública debe actuar en firme alianza con las comunidades. La inteligencia territorial es parte de la seguridad, por lo que la participación comunitaria en las definiciones estratégicas, mediante los Consejos de Seguridad, debe ser indispensable y vinculante para el éxito de estos operativos.
-					</p>
+				<div class="bg-gradient-to-b from-blue-950/80 to-indigo-950/80 border border-blue-400/20 rounded-2xl p-5 text-center shadow-lg hover:border-blue-400/60 transition-all group">
+					<div class="text-4xl mb-2 group-hover:animate-pulse">🏥</div>
+					<h3 class="text-lg font-bold text-blue-200">Salud</h3>
+					<p class="text-blue-50/70 text-sm mt-1">Derecho garantizado, no negocio</p>
+				</div>
+				<div class="bg-gradient-to-b from-indigo-950/80 to-violet-950/80 border border-indigo-400/20 rounded-2xl p-5 text-center shadow-lg hover:border-indigo-400/60 transition-all group">
+					<div class="text-4xl mb-2 group-hover:animate-bounce">📚</div>
+					<h3 class="text-lg font-bold text-indigo-200">Educación</h3>
+					<p class="text-indigo-50/70 text-sm mt-1">Formación para la libertad</p>
+				</div>
+				<div class="bg-gradient-to-b from-violet-950/80 to-purple-950/80 border border-violet-400/20 rounded-2xl p-5 text-center shadow-lg hover:border-violet-400/60 transition-all group">
+					<div class="text-4xl mb-2 group-hover:animate-pulse">🎭</div>
+					<h3 class="text-lg font-bold text-violet-200">Cultura</h3>
+					<p class="text-violet-50/70 text-sm mt-1">Arte y memoria para la paz</p>
 				</div>
 			</div>
-		</article>
+		</section>
+
+		<!-- Pilares de la Política -->
+		<section class="relative z-10 space-y-8">
+			<h2 class="text-3xl font-bold text-sky-200 mb-6 font-sans flex items-center gap-3">
+				<span class="text-4xl">🏛️</span> Pilares de la Política de Seguridad Humana
+			</h2>
+
+			<div class="bg-gradient-to-r from-sky-950/80 via-blue-950/60 to-sky-950/80 border border-sky-500/30 rounded-2xl p-8 shadow-xl hover:shadow-sky-500/10 hover:border-sky-400/60 transition-all duration-300 group">
+				<div class="flex items-start gap-5">
+					<div class="text-5xl group-hover:animate-bounce transition-transform shrink-0">🤝</div>
+					<div>
+						<h3 class="text-2xl font-bold text-sky-200 mb-4">Seguridad Vinculada a lo Social</h3>
+						<p class="text-sky-50/90 leading-relaxed text-lg">
+							Nuestra política de Seguridad Humana estará <strong class="text-white">permanentemente articulada a las políticas sociales y ambientales</strong>. 
+							Consideramos que darle empleo a un joven es en sí mismo una política de seguridad, 
+							reduciendo el caldo de cultivo de las bandas ilegales. La represión sola nunca ha traído paz.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-gradient-to-r from-blue-950/80 via-indigo-950/60 to-blue-950/80 border border-blue-500/30 rounded-2xl p-8 shadow-xl hover:shadow-blue-500/10 hover:border-blue-400/60 transition-all duration-300 group">
+				<div class="flex items-start gap-5">
+					<div class="text-5xl group-hover:animate-pulse transition-transform shrink-0">👥</div>
+					<div>
+						<h3 class="text-2xl font-bold text-blue-200 mb-4">Alianza con las Comunidades</h3>
+						<p class="text-blue-50/90 leading-relaxed text-lg">
+							La Fuerza Pública debe actuar en <strong class="text-white">firme alianza con las comunidades</strong>. La inteligencia territorial es parte de la seguridad, 
+							por lo que la participación comunitaria en las definiciones estratégicas, mediante los Consejos de Seguridad, 
+							debe ser indispensable y vinculante. La seguridad se construye desde los territorios, no desde los escritorios.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Protección de líderes (dato clave) -->
+		<section class="relative z-10 mt-12 bg-gradient-to-r from-red-950/50 via-sky-950/30 to-red-950/50 border border-red-500/20 rounded-2xl p-8 text-center">
+			<div class="text-5xl mb-3">🚨</div>
+			<div class="text-3xl font-black text-red-300 mb-2">LÍNEA ROJA</div>
+			<p class="text-xl text-red-100 font-sans leading-relaxed">
+				<strong class="text-white">No asesinar líderes sociales y firmantes de paz</strong> es línea roja en cualquier diálogo con grupos armados. 
+				La Comisión Nacional de Garantías de Seguridad se activará con rigor. Enfoque de seguridad humana, no militarista.
+			</p>
+		</section>
+
+		<!-- Epílogo -->
+		<section class="relative z-10 mt-12 bg-gradient-to-b from-sky-950/50 to-blue-950/50 border border-sky-500/20 rounded-3xl p-8 sm:p-10">
+			<h2 class="text-3xl font-bold text-sky-200 mb-6 font-serif flex items-center gap-3">
+				<span class="text-4xl">🕊️</span> La Paz Trae Seguridad
+			</h2>
+			<p class="text-sky-50/80 leading-relaxed text-lg mb-8 font-sans">
+				Durante décadas nos vendieron la falsa promesa de que la "mano dura" garantiza bienestar. 
+				Pero la historia de Colombia muestra que <strong class="text-white">la violencia como respuesta estatal solo engendra mayor inseguridad</strong>. 
+				La mayor seguridad se logra cuando hay paz, y cuando el Estado se reconcilia con la ciudadanía. 
+				La Seguridad Humana no es debilidad: es la verdadera fortaleza de una nación que cuida a su gente.
+			</p>
+			<div class="flex flex-wrap justify-center gap-4 text-4xl">
+				<span class="hover:scale-125 transition-transform cursor-default">🏠</span>
+				<span class="hover:scale-125 transition-transform cursor-default">💼</span>
+				<span class="hover:scale-125 transition-transform cursor-default">🏥</span>
+				<span class="hover:scale-125 transition-transform cursor-default">📚</span>
+				<span class="hover:scale-125 transition-transform cursor-default">🤝</span>
+				<span class="hover:scale-125 transition-transform cursor-default">🕊️</span>
+			</div>
+		</section>
+
+		<div class="relative z-10 mt-16 text-center">
+			<div class="text-6xl mb-4 hover:animate-spin cursor-default inline-block">🏰</div>
+			<p class="text-xl font-bold text-sky-200 font-sans">
+				La verdadera seguridad se construye con dignidad. <br/>
+				<span class="text-white text-2xl">Sin muros militares: con pilares sociales.</span>
+			</p>
+			<a href={import.meta.env.BASE_URL + 'ejes/seguridad'} class="inline-block mt-8 bg-sky-700 hover:bg-sky-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-sky-500/30">
+				🏞️ Volver a Seguridad y Prosperidad
+			</a>
+		</div>
 
 	</div>
 </Layout>

@@ -2,58 +2,160 @@
 import Layout from '../../../layouts/Layout.astro';
 ---
 
-<Layout title="Poder de la Juventud - Iván Cepeda 2026" description="Garantías reales para una juventud libre: educación asertiva, bienestar y protagonismo.">
-	<div class="max-w-4xl mx-auto px-4 py-12 font-sans">
-		
-		<div class="mb-10 text-sm">
-			<a href={import.meta.env.BASE_URL + 'ejes/igualdad'} class="text-eje-equal hover:underline font-bold transition-colors">
-				← Volver a Igualdad y Antirracismo
+<Layout title="La Chispa del Cambio - Iván Cepeda 2026" description="El poder de la juventud: educación, trabajo digno, desestigmatización y protagonismo juvenil.">
+	<div class="max-w-4xl mx-auto px-4 py-12 font-serif relative overflow-hidden">
+
+		<!-- Fondo estallido/grafiti -->
+		<div class="absolute inset-0 pointer-events-none opacity-15 z-0" aria-hidden="true">
+			<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-950 via-fuchsia-950 to-cyan-950"></div>
+			<div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, rgba(168,85,247,0.1) 0%, transparent 50%), radial-gradient(ellipse at 70% 30%, rgba(34,211,238,0.08) 0%, transparent 50%), radial-gradient(ellipse at 50% 80%, rgba(236,72,153,0.06) 0%, transparent 40%);"></div>
+		</div>
+
+		<!-- Volver -->
+		<div class="mb-10 text-sm relative z-10">
+			<a href={import.meta.env.BASE_URL + 'ejes/igualdad'} class="inline-flex items-center gap-2 text-purple-300 hover:text-purple-100 font-bold transition-colors bg-purple-950/60 border border-purple-500/30 px-4 py-2 rounded-full hover:bg-purple-900/60">
+				<span>✊🔥</span> ← Volver a Igualdad y Antirracismo
 			</a>
 		</div>
 
-		<header class="mb-12 border-b-2 border-gray-800 pb-8">
-			<h1 class="text-4xl md:text-5xl font-bold mb-6 text-white font-serif leading-tight">
-				El Poder de la Juventud
-			</h1>
-			<p class="text-xl text-gray-300 font-sans leading-relaxed">
-				La rebeldía de la juventud en el estallido social demostró ser esperanza y cambio. Gobernar también es darle paso a un país con un futuro libre y digno para ellos.
-			</p>
+		<!-- Header: La Chispa -->
+		<header class="relative z-10 mb-12">
+			<div class="relative bg-gradient-to-br from-purple-900/80 via-fuchsia-950/90 to-cyan-900/80 border-3 border-purple-400/30 rounded-3xl p-8 sm:p-10 shadow-[0_0_40px_rgba(168,85,247,0.12)] overflow-hidden">
+				<div class="absolute top-4 right-8 text-6xl animate-bounce opacity-55" style="animation-duration: 1.8s;">🔥</div>
+				<div class="absolute bottom-6 left-8 text-5xl animate-pulse opacity-40">✊</div>
+				<div class="absolute top-1/2 right-16 text-4xl animate-spin opacity-30" style="animation-duration: 5s;">🎨</div>
+				
+				<h1 class="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-200 via-fuchsia-300 to-cyan-200 font-serif leading-tight relative">
+					✊🔥 La Chispa del Cambio
+				</h1>
+				<p class="text-xl text-purple-100 font-sans leading-relaxed max-w-2xl relative">
+					La rebeldía de la juventud en el <strong class="text-white">estallido social demostró ser esperanza y cambio</strong>. 
+					Gobernar también es darle paso a un país con un futuro libre y digno para las nuevas generaciones.
+				</p>
+			</div>
 		</header>
 
-		<article class="prose prose-lg prose-invert max-w-none font-serif text-gray-300 leading-loose">
-			<p>
-				Las nuevas generaciones de Colombia han pagado el costo más elevado de un sistema que tradicionalmente les cierra las puertas a la educación superior, a un empleo digno y al libre desarrollo de su proyecto de vida. La precarización de las juventudes empujó a la nación a un necesario estallido social que sacudió la consciencia del país civil, reivindicando que las calles deben llenarse de voces de cambio sostenido, no de desesperanza armada.
+		<!-- Cita - desde Cali -->
+		<blockquote class="relative z-10 my-12 bg-gradient-to-r from-purple-900/60 via-fuchsia-900/40 to-purple-900/60 border-l-4 border-purple-400 p-8 rounded-r-2xl shadow-xl">
+			<div class="absolute -top-4 -left-4 text-4xl">💜</div>
+			<p class="text-2xl md:text-3xl italic text-white font-medium leading-relaxed font-serif">
+				"Desde la ciudad de Cali, donde la juventud nos recordó en el estallido social que <strong class="text-purple-200">la rebeldía puede ser esperanza y cambio</strong>... necesitamos impulsar programas que realmente garanticen a la juventud de este país un futuro libre."
 			</p>
+			<footer class="mt-4 text-purple-300 text-sm font-sans">— Iván Cepeda, Discurso en Cali</footer>
+		</blockquote>
 
-			<blockquote class="border-l-4 border-eje-equal pl-6 my-8 italic text-white text-2xl font-medium">
-				"Desde la ciudad de Cali, donde la juventud nos recordó en el estallido social que la rebeldía puede ser esperanza y cambio... necesitamos impulsar programas que realmente garanticen a la juventud de este país un futuro libre."
-			</blockquote>
-
-			<h2 class="text-3xl font-bold text-white mt-12 mb-6 font-sans">Compromisos con el Futuro Libre</h2>
+		<!-- Lo que la juventud ha pagado -->
+		<section class="relative z-10 mb-12">
+			<h2 class="text-3xl font-bold text-purple-200 mb-8 font-sans flex items-center gap-3">
+				<span class="text-4xl">⏳</span> El Costo más Alto
+			</h2>
 			
-			<div class="space-y-8 mt-8">
-				<div class="bg-gray-900 border border-gray-800 p-8 rounded-xl">
-					<h3 class="text-2xl font-bold text-eje-equal mb-4 font-sans">Revolución en la Educación Superior Integral</h3>
-					<p>
-						Nuestra apuesta es que ningún joven se quede atrás. Desmontaremos los embudos burocráticos y la crisis de endeudamiento del ICETEX, impulsando una verdadera educación universitaria y técnica a gran escala, financiada estructuralmente por un modelo estatal fuerte que la asuma como derecho absoluto y no como un negocio pasajero.
-					</p>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				<div class="bg-gradient-to-b from-purple-950/80 to-fuchsia-950/80 border border-purple-400/20 rounded-2xl p-6 text-center shadow-lg hover:border-purple-400/60 transition-all group">
+					<div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🎓</div>
+					<div class="text-4xl font-black text-purple-300 mb-2">60%</div>
+					<p class="text-purple-50/80">Jóvenes sin acceso a educación superior</p>
 				</div>
 
-				<div class="bg-gray-900 border border-gray-800 p-8 rounded-xl">
-					<h3 class="text-2xl font-bold text-eje-equal mb-4 font-sans">Programas de Trabajo Digno y Progreso Cívico</h3>
-					<p>
-						Haremos frente a las tasas absurdas de desempleo juvenil priorizando estímulos institucionales a la primera inserción laboral. Fomentaremos las economías populares y digitales como campo formal, de tal manera que el talento precoz en las ciudades y los campos no deba huir del país para lograr el progreso.
-					</p>
+				<div class="bg-gradient-to-b from-fuchsia-950/80 to-pink-950/80 border border-fuchsia-400/20 rounded-2xl p-6 text-center shadow-lg hover:border-fuchsia-400/60 transition-all group">
+					<div class="text-5xl mb-3 group-hover:scale-110 transition-transform">📉</div>
+					<div class="text-4xl font-black text-fuchsia-300 mb-2">2x</div>
+					<p class="text-purple-50/80">Tasa de desempleo juvenil duplica el promedio nacional</p>
 				</div>
 
-				<div class="bg-gray-900 border border-gray-800 p-8 rounded-xl">
-					<h3 class="text-2xl font-bold text-eje-equal mb-4 font-sans">Desestigmatización de la Rebeldía Justa</h3>
-					<p>
-						Acabar de tajo con la brutal persecución institucional hacia los jóvenes que reclaman legítimamente sus derechos. Exigir la protección de la protesta ciudadana en base a las convenciones de Derechos Humanos y frenando cualquier tipo de perfilamiento o abuso de la fuerza contra la vida de la juventud activa de nuestra Colombia.
-					</p>
+				<div class="bg-gradient-to-b from-cyan-950/80 to-blue-950/80 border border-cyan-400/20 rounded-2xl p-6 text-center shadow-lg hover:border-cyan-400/60 transition-all group">
+					<div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🕊️</div>
+					<div class="text-4xl font-black text-cyan-300 mb-2">2021</div>
+					<p class="text-purple-50/80">Año en que la juventud le recordó a Colombia su dignidad</p>
 				</div>
 			</div>
-		</article>
+		</section>
+
+		<!-- Compromisos con el Futuro -->
+		<section class="relative z-10 space-y-8">
+			<h2 class="text-3xl font-bold text-purple-200 mb-6 font-sans flex items-center gap-3">
+				<span class="text-4xl">🚀</span> Compromisos con el Futuro Libre
+			</h2>
+
+			<div class="bg-gradient-to-r from-purple-950/80 via-indigo-950/60 to-purple-950/80 border border-purple-500/30 rounded-2xl p-8 shadow-xl hover:shadow-purple-500/10 hover:border-purple-400/60 transition-all duration-300 group">
+				<div class="flex items-start gap-5">
+					<div class="text-5xl group-hover:animate-bounce transition-transform shrink-0">📚</div>
+					<div>
+						<h3 class="text-2xl font-bold text-purple-200 mb-4">Revolución en la Educación Superior</h3>
+						<p class="text-purple-50/90 leading-relaxed text-lg">
+							Nuestra apuesta es que <strong class="text-white">ningún joven se quede atrás</strong>. Desmontaremos los embudos burocráticos 
+							y la crisis de endeudamiento del ICETEX. Impulsaremos una verdadera educación universitaria y técnica a gran escala, 
+							financiada estructuralmente por un modelo estatal fuerte que la asuma como <strong class="text-white">derecho absoluto y no como negocio</strong>.
+							Universidades en los territorios para quien nunca tuvo acceso.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-gradient-to-r from-fuchsia-950/80 via-pink-950/60 to-fuchsia-950/80 border border-fuchsia-500/30 rounded-2xl p-8 shadow-xl hover:shadow-fuchsia-500/10 hover:border-fuchsia-400/60 transition-all duration-300 group">
+				<div class="flex items-start gap-5">
+					<div class="text-5xl group-hover:animate-pulse transition-transform shrink-0">💼</div>
+					<div>
+						<h3 class="text-2xl font-bold text-fuchsia-200 mb-4">Programas de Trabajo Digno</h3>
+						<p class="text-fuchsia-50/90 leading-relaxed text-lg">
+							Haremos frente a las tasas absurdas de desempleo juvenil priorizando <strong class="text-white">estímulos institucionales a la primera inserción laboral</strong>. 
+							Fomentaremos las economías populares y digitales como campo formal. El talento precoz en las ciudades y los campos 
+							no debe huir del país para lograr el progreso.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-gradient-to-r from-cyan-950/80 via-sky-950/60 to-cyan-950/80 border border-cyan-500/30 rounded-2xl p-8 shadow-xl hover:shadow-cyan-500/10 hover:border-cyan-400/60 transition-all duration-300 group">
+				<div class="flex items-start gap-5">
+					<div class="text-5xl group-hover:animate-spin transition-transform shrink-0" style="animation-duration: 3s;">🛡️</div>
+					<div>
+						<h3 class="text-2xl font-bold text-cyan-200 mb-4">Desestigmatización de la Rebeldía Justa</h3>
+						<p class="text-cyan-50/90 leading-relaxed text-lg">
+							Acabar de tajo con la brutal persecución institucional hacia los jóvenes que reclaman legítimamente sus derechos. 
+							<strong class="text-white">Protección de la protesta ciudadana</strong> en base a las convenciones de Derechos Humanos, 
+							frenando cualquier tipo de perfilamiento o abuso de la fuerza contra la juventud activa.
+							Libertad inmediata para quienes solo cometieron el delito de rebelarse contra la injusticia.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- La Chispa: narrativa -->
+		<section class="relative z-10 mt-16 bg-gradient-to-b from-purple-950/50 to-fuchsia-950/50 border border-purple-500/20 rounded-3xl p-8 sm:p-10">
+			<h2 class="text-3xl font-bold text-purple-200 mb-6 font-serif flex items-center gap-3">
+				<span class="text-4xl">✨</span> La Chispa que Enciende la Pradera
+			</h2>
+			<p class="text-purple-50/80 leading-relaxed text-lg mb-8 font-sans">
+				El estallido social de 2021 no fue un accidente. Fue la culminación de décadas de exclusión. 
+				Fue la juventud diciendo: <strong class="text-white">"existimos, resistimos y no nos vamos a callar"</strong>. 
+				Nuestro gobierno recoge esa energía no para apagarla, sino para encauzarla en una transformación democrática profunda. 
+				La juventud no es el futuro: es el presente de Colombia.
+			</p>
+			
+			<div class="flex flex-wrap justify-center gap-4 text-4xl">
+				<span class="hover:scale-125 transition-transform cursor-default" title="Educación">📚</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Trabajo">💼</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Arte">🎨</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Música">🎵</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Deporte">⚽</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Ciencia">🔬</span>
+				<span class="hover:scale-125 transition-transform cursor-default" title="Libertad">🕊️</span>
+			</div>
+		</section>
+
+		<!-- Cierre -->
+		<div class="relative z-10 mt-16 text-center">
+			<div class="text-6xl mb-4 hover:animate-spin cursor-default inline-block">✊🔥</div>
+			<p class="text-xl font-bold text-purple-200 font-sans">
+				La juventud no es peligro: es potencia. <br/>
+				<span class="text-white text-2xl">Gobernar es abrirles las puertas del futuro.</span>
+			</p>
+			<a href={import.meta.env.BASE_URL + 'ejes/igualdad'} class="inline-block mt-8 bg-purple-700 hover:bg-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-purple-500/30">
+				✊ Volver a Igualdad y Antirracismo
+			</a>
+		</div>
 
 	</div>
 </Layout>
